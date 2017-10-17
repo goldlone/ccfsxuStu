@@ -1,0 +1,144 @@
+package cn.goldlone.action;
+
+import cn.goldlone.dao.CSPDao;
+import cn.goldlone.entity.Certification;
+import cn.goldlone.model.ScoreInfo;
+import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * CSP相关操作
+ * Created by CN on 2017/10/17.
+ */
+public class CSPAction  extends ActionSupport{
+
+    // 会员号
+    private String no;
+    private int certNo;
+    private int lowScore;
+    private int highScore;
+
+    private CSPDao dao = new CSPDao();
+    /**
+     * 获取认证名集合
+     * @return
+     */
+    public String getCertSet() throws IOException {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+        ArrayList<Certification> list = dao.getCertSet();
+
+        res.put("ret", true);
+        res.put("len", list.size());
+        res.put("data", new JSONArray(list));
+
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
+    /**
+     * 根据会员号查询成绩
+     * @return
+     * @throws IOException
+     */
+    public String getScoreByNo() throws IOException{
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+        System.out.println("会员号"+this.getNo());
+        if(no!=null) {
+            List<ScoreInfo> list = dao.selectScoreByMemberNo(no);
+            res.put("ret", true);
+            res.put("len", list.size());
+            res.put("data", new JSONArray(list));
+        } else {
+            res.put("ret", false);
+        }
+
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
+    /**
+     * 查询成绩
+     * @return
+     * @throws IOException
+     */
+    public String queryScore() throws IOException {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+        System.out.println(certNo+" "+lowScore+" "+highScore+" ");
+        List<ScoreInfo> list = dao.queryScore(certNo, lowScore, highScore);
+
+        res.put("ret", true);
+        res.put("len", list.size());
+        res.put("data", new JSONArray(list));
+
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+
+    public int getCertNo() {
+        return certNo;
+    }
+
+    public void setCertNo(int certNo) {
+        this.certNo = certNo;
+    }
+
+    public int getLowScore() {
+        return lowScore;
+    }
+
+    public void setLowScore(int lowScore) {
+        this.lowScore = lowScore;
+    }
+
+    public int getHighScore() {
+        return highScore;
+    }
+
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
+    }
+}

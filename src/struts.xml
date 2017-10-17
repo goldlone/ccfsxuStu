@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- 指定默认编码集 ,对于请求参数带有中文的的情况应该设置为GBK或者GB2312,默认为UTF-8-->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- 是否每次HTTP请求到达时，都重新加载国际化资源，默认值为false -->
+	<constant name="struts.i18n.reload" value="true"></constant>
+	<!-- struts.xml修改后，是否重新加载改文件。在开发阶段建议将此属性设置为false，提高开发效率 -->
+	<constant name="struts.configuartion.xml.reload" value="false"></constant>
+	<!-- 是否使用struts2的开发模式，可以获得更多的报错信息，便于调试。开发阶段设置为true -->
+	<constant name="devMode" value="true"></constant>
+	<!-- 设置浏览器是否缓存静态页面，开发阶段设置为false，以获得服务器最新响应，默认值true -->
+	<constant name="struts.serve.static.browserCache" value="fasle"></constant>
+	<!-- （没啥用）配置服务器运行时的端口，一般情况下该属性不修改，如果端口号占用则重新分配端口号。默认值为 -->
+	<constant name="struts.url.http.port" value="8080"></constant>
+	<!-- 指定后缀名 -->
+	<constant name="struts.action.extension" value=",html,action"></constant>
+	
+	
+	<package name="default" namespace="/" extends="struts-default" >
+		<!-- 默认action,没有找到action时 -->
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/error.jsp</result>
+		</action>
+		
+		<!-- 登录 -->
+		<action name="login" class="cn.goldlone.action.MemberAction" method="login"></action>
+		<!-- 获取年级集合 -->
+		<action name="getGradeSet" class="cn.goldlone.action.MemberAction" method="getGradeSet"></action>
+		<!-- 查询会员信息 -->
+		<action name="queryMember" class="cn.goldlone.action.MemberAction" method="queryMember"></action>
+
+		<!-- 获取认证名集合 -->
+		<action name="getCertSet" class="cn.goldlone.action.CSPAction" method="getCertSet"></action>
+		<!-- 根据会员号查询成绩 -->
+		<action name="getScoreByNo" class="cn.goldlone.action.CSPAction" method="getScoreByNo"></action>
+		<!-- 查询成绩 -->
+		<action name="queryScore" class="cn.goldlone.action.CSPAction" method="queryScore"></action>
+
+
+		<!-- 获取全部会员信息 -->
+		<action name="selectAllMember" class="cn.goldlone.action.MemberAction" method="selectAllMember"></action>
+		<!-- 获取过期或未过期会员信息 -->
+		<action name="selectExpiredMember" class="cn.goldlone.action.MemberAction" method="selectExpiredMember"></action>
+		<!-- 根据会员号查询会员信息 -->
+		<action name="selectMemberByNo" class="cn.goldlone.action.MemberAction" method="selectMemberByNo"></action>
+	</package>
+	
+</struts>
