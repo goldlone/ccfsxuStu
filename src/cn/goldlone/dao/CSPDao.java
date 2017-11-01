@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.goldlone.entity.ApplicationInfo;
 import cn.goldlone.entity.Certification;
 import cn.goldlone.entity.Score;
 import cn.goldlone.model.ScoreInfo;
@@ -276,12 +277,82 @@ public class CSPDao {
 
 		return list;
 	}
-	
+
+	/**
+	 * 获取未开始的认证集合
+	 * @return
+	 */
+	public ArrayList<Certification> getCertSetNotStart() {
+		ArrayList<Certification> list = new ArrayList<>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			conn = DBDao.getConnection();
+			sql = "SELECT C_no, C_name " +
+					"FROM Certification " +
+					"WHERE now() < C_startTime;";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Certification cert = new Certification();
+				cert.setNo(rs.getInt(1));
+				cert.setName(rs.getString(2));
+				list.add(cert);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+			DBDao.closeResultSet(rs);
+		}
+
+		return list;
+	}
+
+	/**
+	 * 插入报名信息
+	 * @param info
+	 * @return
+	 */
+	public boolean insertApplication(ApplicationInfo info) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			conn = DBDao.getConnection();
+			sql = "INSERT INTO Application(A_certNo, A_language, A_memberNo, A_id, " +
+					"A_degree, A_purpose, A_school, A_username, A_password) " +
+					"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(info.getCertNo()));
+			pstmt.setString(2, info.getLanguage());
+			pstmt.setString(3,  info.getMemberNo());
+			pstmt.setString(4,info.getId());
+			pstmt.setString(5,info.getDegree());
+			pstmt.setString(6,info.getPurpose());
+			pstmt.setString(7,info.getSchool());
+			pstmt.setString(8,info.getUsername());
+			pstmt.setString(9,info.getPassword());
+			pstmt.execute();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+		}
+
+		return false;
+	}
 	
 	public static void main(String[] args) {
 //		List<ScoreInfo> list = (new CSPDao()).selectScoreByMemberNo("65535G");
-		List<ScoreInfo> list = (new CSPDao()).selectScoreByNo(11);
-		System.out.println(list.size());
+//		List<ScoreInfo> list = (new CSPDao()).selectScoreByNo(11);
+		List<Certification> list = (new CSPDao()).getCertSetNotStart();
+//		System.out.println(list.size());
 		for(int i=0; i<list.size(); i++) {
 			System.out.println(list.get(i));
 		}

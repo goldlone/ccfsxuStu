@@ -41,6 +41,14 @@
 		<!-- 查询成绩 -->
 		<action name="queryScore" class="cn.goldlone.action.CSPAction" method="queryScore"></action>
 
+		<!-- 报名CSP -->
+		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate">		</action>
+		<action name="getCertSetNotStart" class="cn.goldlone.action.ApplicationCSPAction" method="getCertSetNotStart"></action>
+
+
+
+		<!-- 获取图书类别 -->
+		<action name="getBookType" class="cn.goldlone.action.BookAction" method="getBookType"></action>
 
 		<!-- 获取全部会员信息 -->
 		<action name="selectAllMember" class="cn.goldlone.action.MemberAction" method="selectAllMember"></action>

@@ -23,4 +23,12 @@ public class Certification {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Certification{" +
+                "no=" + no +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
