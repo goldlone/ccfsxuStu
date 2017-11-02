@@ -4,6 +4,7 @@ import cn.goldlone.dao.CSPDao;
 import cn.goldlone.entity.Certification;
 import cn.goldlone.model.ScoreInfo;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,7 +20,7 @@ import java.util.List;
  * CSP相关操作
  * Created by CN on 2017/10/17.
  */
-public class CSPAction  extends ActionSupport{
+public class CSPAction  extends ActionSupport implements ModelDriven<Certification>{
 
     // 会员号
     private String no;
@@ -27,6 +28,7 @@ public class CSPAction  extends ActionSupport{
     private int lowScore;
     private int highScore;
 
+    private Certification cert = new Certification();
     private CSPDao dao = new CSPDao();
     /**
      * 获取认证名集合
@@ -109,6 +111,25 @@ public class CSPAction  extends ActionSupport{
         return null;
     }
 
+    /**
+     * 添加CSP认证考试
+     * @return
+     * @throws IOException
+     */
+    public String addCertification() throws IOException {
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+        boolean ret = dao.insertCert(cert);
+        res.put("ret", ret);
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
 
     public String getNo() {
         return no;
@@ -140,5 +161,10 @@ public class CSPAction  extends ActionSupport{
 
     public void setHighScore(int highScore) {
         this.highScore = highScore;
+    }
+
+    @Override
+    public Certification getModel() {
+        return this.cert;
     }
 }

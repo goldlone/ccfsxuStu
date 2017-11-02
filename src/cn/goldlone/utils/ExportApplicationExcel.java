@@ -29,7 +29,9 @@ public class ExportApplicationExcel {
                 "身份证号", "手机", "邮箱", "语言", "身份",
                 "目的", "考研学校", "用户名", "密码", "照片名", "收费"};
         //创建Excel文件
-        File file = new File("./web/excel/applicate.xls");
+        String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        path = path.substring(0, path.indexOf("/WEB-INF"));
+        File file = new File(path+"/excel/applicate.xls");
         try {
             file.createNewFile();
             //创建工作簿

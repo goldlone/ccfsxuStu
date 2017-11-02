@@ -40,12 +40,15 @@
 		<action name="getScoreByNo" class="cn.goldlone.action.CSPAction" method="getScoreByNo"></action>
 		<!-- 查询成绩 -->
 		<action name="queryScore" class="cn.goldlone.action.CSPAction" method="queryScore"></action>
+		<!-- 添加CSP认证考试 -->
+		<action name="addCertification" class="cn.goldlone.action.CSPAction" method="addCertification"></action>
 
 		<!-- 报名CSP -->
 		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate">		</action>
 		<action name="getCertSetNotStart" class="cn.goldlone.action.ApplicationCSPAction" method="getCertSetNotStart"></action>
 		<!-- 上传照片 -->
 		<action name="uploadPhoto" class="cn.goldlone.action.ApplicationCSPAction" method="uploadPhoto"></action>
+		<action name="getApplication" class="cn.goldlone.action.ApplicationCSPAction" method="getApplication"></action>
 
 
 

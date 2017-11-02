@@ -247,6 +247,37 @@ public class CSPDao {
 	}
 
 	/**
+	 * 添加CSP认证
+	 * @param cert
+	 * @return
+	 */
+	public boolean insertCert(Certification cert) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			conn = DBDao.getConnection();
+			sql = "INSERT INTO Certification(C_name, C_startTime, C_endTime, C_memberFee, C_notMemberFee) " +
+					"VALUES(?, ?, ?, ?,?);";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cert.getName());
+			pstmt.setString(2,  cert.getStartTime());
+			pstmt.setString(3, cert.getEndTime());
+			pstmt.setInt(4, cert.getMemberFee());
+			pstmt.setInt(5, cert.getNotMemberFee());
+			pstmt.execute();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+		}
+
+		return false;
+	}
+
+	/**
 	 * 获取认证名集合
 	 * @return
 	 */
@@ -378,6 +409,11 @@ public class CSPDao {
 		return false;
 	}
 
+	/**
+	 * 查询报名信息
+	 * @param certNo
+	 * @return
+	 */
 	public ArrayList<ApplicationInfo> selectApplicationInfo(int certNo) {
 		ArrayList<ApplicationInfo> list = new ArrayList<ApplicationInfo>();
 		Connection conn = null;
@@ -392,6 +428,7 @@ public class CSPDao {
 			}
 			else {
 				sql = "SELECT * from Application WHERE A_certNo = ?;";
+				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, certNo);
 			}
 			rs = pstmt.executeQuery();

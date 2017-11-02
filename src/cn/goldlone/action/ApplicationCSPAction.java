@@ -3,6 +3,7 @@ package cn.goldlone.action;
 import cn.goldlone.dao.CSPDao;
 import cn.goldlone.entity.ApplicationInfo;
 import cn.goldlone.entity.Certification;
+import cn.goldlone.utils.ExportApplicationExcel;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
@@ -107,17 +108,25 @@ public class ApplicationCSPAction extends ActionSupport implements ModelDriven<A
         return null;
     }
 
-    public String getApplicationInfo() throws IOException {
+    /**
+     * 导出报名信息表
+     * @return
+     * @throws IOException
+     */
+    public String getApplication() throws IOException {
         HttpServletResponse response = ServletActionContext.getResponse();
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
         PrintWriter out = response.getWriter();
-
         JSONObject res = new JSONObject();
-        res.put("ret", true);
-        List<Certification> list = dao.getCertSetNotStart();
-        res.put("len", list.size());
-        res.put("data", new JSONArray(list));
+        try {
+            new ExportApplicationExcel().exportInfo(Integer.parseInt(info.getCertNo()));
+            res.put("ret", true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            res.put("ret", false);
+        }
+
         out.print(res.toString());
         out.flush();
         out.close();
@@ -135,9 +144,5 @@ public class ApplicationCSPAction extends ActionSupport implements ModelDriven<A
 
     public void setPhoto(File photo) {
         this.photo = photo;
-    }
-
-    public static void main(String[] args) throws IOException {
-        new ApplicationCSPAction().uploadPhoto();
     }
 }

@@ -47,7 +47,7 @@ INSERT INTO Member VALUES('65535G', '程宁', '201502401086', '18435187057', '85
 -- CSP（CCSP）认证信息表
 drop table if exists Certification;
 create table Certification(
-	C_no int not null,
+	C_no int not null AUTO_INCREMENT,
 	C_name varchar(30) not null,
 	C_startTime datetime,
 	C_endTime datetime,

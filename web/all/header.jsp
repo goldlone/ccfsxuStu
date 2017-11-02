@@ -11,11 +11,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="javascript:volid(0);" style="cursor: default;">CCFSXU会员管理系统</a>
+      <a class="navbar-brand" href="#" style="cursor: default;">CCFSXU会员管理系统</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/index.jsp">注销</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../master/main.jsp">管理端</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../member/application.jsp">CSP预报名</a></li>
