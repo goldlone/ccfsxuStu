@@ -64,6 +64,7 @@ public class ApplicationCSPAction extends ActionSupport implements ModelDriven<A
         res.put("len", list.size());
         res.put("data", new JSONArray(list));
         out.print(res.toString());
+        System.out.println(res.toString());
         out.flush();
         out.close();
 

@@ -58,9 +58,9 @@
           <li><a href="#" style="color: #000;cursor:default;">
             <h4 class="sub-header">CSP管理</h4></a>
           </li>
-          <li class="active"><a href="csp.jsp">查询CSP成绩</a></li>
+          <li><a href="csp.jsp">查询CSP成绩</a></li>
           <li><a href="./insertScore.jsp">录入CSP成绩</a></li>
-          <li><a href="../master/managerApplication.jsp">CSP报名管理</a></li>
+          <li class="active"><a href="../master/managerApplication.jsp">CSP报名管理</a></li>
           <li><a href="analy.jsp">会员进步状况分析</a></li>
         </ul>
         <ul class="nav nav-sidebar">
@@ -194,7 +194,7 @@
     function addCert() {
       bootbox.confirm({
         title: "请核实填写的信息？",
-        message: "请确认认证考试信息填写完整。",
+        message: "请确认认证考试信息填写完整，*使用中文数字代替。",
         buttons: {
           cancel: {
             label: '<i class="fa fa-times"></i> 取消'
@@ -219,7 +219,7 @@
             if(res.ret)
               bootbox.alert("添加成功");
             else
-              bootbox.alert("添加失败，请检查信息是否填写完整和准确");
+              bootbox.alert("添加失败，请检查信息是否填写完整和准确，或者该认证已被添加");
           },
           fail: function (res) {
             console.log(res);

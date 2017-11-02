@@ -48,14 +48,14 @@ INSERT INTO Member VALUES('65535G', '程宁', '201502401086', '18435187057', '85
 drop table if exists Certification;
 create table Certification(
 	C_no int not null AUTO_INCREMENT,
-	C_name varchar(30) not null,
+	C_name varchar(30) not null UNIQUE,
 	C_startTime datetime,
 	C_endTime datetime,
 	C_memberFee int,
 	C_notMemberFee int,
 	primary key(C_no)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-insert into Certification values(11, '第十一次CSP认证', '2017-09-17 13:30:00', '2017-09-17 17:30:00', 180, 300);
+insert into Certification values(11, '第十一次CCF计算机软件能力认证', '2017-09-17 13:30:00', '2017-09-17 17:30:00', 180, 300);
 
 -- 会员CSP（CCSP）成绩信息表
 drop table if exists Score;
