@@ -17,6 +17,7 @@ public class ApplicationInfo {
     private String school;
     private String username;
     private String password;
+    private String photoName;
 
     public String getCertNo() {
         return certNo;
@@ -114,6 +115,14 @@ public class ApplicationInfo {
         this.school = school;
     }
 
+    public String getPhotoName() {
+        return photoName;
+    }
+
+    public void setPhotoName(String photoName) {
+        this.photoName = photoName;
+    }
+
     @Override
     public String toString() {
         return "ApplicationInfo{" +
@@ -129,6 +138,7 @@ public class ApplicationInfo {
                 ", school='" + school + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", photoName='" + photoName + '\'' +
                 '}';
     }
 }

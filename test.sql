@@ -61,6 +61,7 @@ DROP TABLE IF EXISTS Application;
 create table Application(
   A_certNo int,
   A_memberNo varchar(8),
+  A_name VARCHAR(20),
   A_language varchar(10),
   A_fee int,
   A_id VARCHAR(20),
@@ -70,7 +71,11 @@ create table Application(
   A_username VARCHAR(50),
   A_password VARCHAR(50),
   A_photo varchar(255),
+  A_phone VARCHAR(11),
+  A_email VARCHAR(30),
   primary key(A_certNo, A_memberNo),
   foreign key(A_CertNo) references Certification(C_no),
   foreign key(A_memberNo) references Member(M_memberNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+SELECT * from Application;

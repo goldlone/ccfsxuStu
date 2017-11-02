@@ -40,7 +40,10 @@
 		<!-- start content -->
 		<div class="container-fluid">
 			<h2 align="center">CSP预报名</h2><hr>
-			<div class="col-sm-9 col-md-10 col-sm-offset-4 main">
+			<div class="col-md-5 col-sm-offset-4">
+				<div class="alert alert-info" role="alert">初次参加CSP认证需提供一张一寸照片<br>非第一次不必上传</div>
+			</div>
+			<div class="col-sm-7 col-md-10 col-sm-offset-4 main">
 				<form class="form-horizontal" id="applicateForm">
 					<div class="form-group">
 						<label class="col-md-1 control-label">考试名称</label>
@@ -104,25 +107,17 @@
 						</select>
 						</div>
 					</div>
-			<!--
-				<div class="form-group">
-					<label class="col-md-1 control-label">所在单位</label>
-					<div class="col-md-4">
-						<span class="form-control">山西大学</span>
-					</div>
-				</div>
-			-->
 					<div class="form-group">
 						<label class="col-md-1 control-label">认证目的</label>
 						<div class="col-md-4">
 							<select class="form-control" name="purpose" id="purpose" required onchange="showkaoyanInput()">
-							<option value="就业">就业</option>
-							<option value="考研">考研</option>
-							<option value="其他">其他</option>
-						</select>
+								<option value="就业">就业</option>
+								<option value="考研">考研</option>
+								<option value="其他">其他</option>
+							</select>
 						</div>
-						<div class="col-md-4">
-							<input name="school" id="kaoyan" type="text" style="display: none;" class="form-control" placeholder="请输入考研意向学校">
+						<div class="col-md-2">
+							<input name="school" id="kaoyan" type="text" style="display: none;" class="form-control" placeholder="考研意向学校">
 						</div>
 					</div>
 					<div class="form-group">
@@ -131,28 +126,33 @@
 							<input type="text" name="username" class="form-control" placeholder="请输入登录账号，没有先注册" required>
 						</div>
 						<div class="col-md-1"><a class="btn btn-info" target="_blank" href="http://www.cspro.org/lead/application/ccf/login.jsp">登录测试</a></div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-1 control-label">登录密码</label>
+						<div class="col-md-4">
+							<input type="password" name="password" class="form-control" placeholder="请输入登录密码" required>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<button class="btn btn-lg btn-primary btn-block" type="button" onclick="showTips()">提交</button>
+					</div>
+				</form>
 			</div>
-			<div class="form-group">
-				<label class="col-md-1 control-label">登录密码</label>
-				<div class="col-md-4">
-					<input type="password" name="password" class="form-control" placeholder="请输入登录密码" required>
-				</div>
+			<div class="col-sm-7 col-md-10 col-sm-offset-4 main">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="exampleInputFile" class="col-md-1 control-label">上传照片</label>
+						<div class="col-md-4 control-label">
+							<input type="file" id="exampleInputFile">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<button  id="fileInput" class="btn btn-lg btn-primary btn-block" type="button" onclick="uploadPhoto()">确认上传</button>
+					</div>
+				</form>
 			</div>
-			<!--
-			<div class="form-group">
-				<label for="exampleInputFile" class="col-md-1 control-label">上传照片</label>
-				<div class="col-md-4 control-label">
-					<input type="file" id="exampleInputFile">
-				</div>
-			</div>
-			-->
-			<div class="col-md-5">
-				<button class="btn btn-lg btn-primary btn-block" type="button" onclick="showTips()">提交</button>
-			</div>
-		</form>
-		</div>
-		<!-- end content -->
-		</div>
+			<!-- end content -->
+	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -175,7 +175,6 @@
 					type:"POST",
 					url:"getCertSetNotStart",
 					success: function (res) {
-						console.log(res);
 						var tempStr;
 						for(var i=0; i<res.data.length; i++) {
 							tempStr = "<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>";
@@ -207,9 +206,10 @@
             	bootbox.alert("报名成功");
 					  else
               bootbox.alert("报名失败，请联系工作人员");
-            console.log(res);
+//            console.log(res);
 					},
 					fail: function (res) {
+					  bootbox.alert("报名失败，请联系工作人员");
 						console.log(res);
 					}
 				});
@@ -267,6 +267,47 @@
           return serializeObj;
         };
       })(jQuery);
+
+      var xhr = new XMLHttpRequest();
+      // 上传照片
+			function uploadPhoto() {
+        var fileObj = $("#exampleInputFile")[0].files[0];
+        var FileController = "uploadPhoto";
+        // FormData 对象
+        var form = new FormData();
+        form.append("photo", fileObj);// 文件对象
+				form.append("memberNo", document.getElementsByName("memberNo").item(0).value);
+        // XMLHttpRequest 对象
+        xhr.open("post", FileController, true);
+        xhr.onload = function () {
+//           alert("上传完成!");
+        };
+        xhr.send(form);
+        xhr.onreadystatechange = callbackUpload;
+      }
+      function callbackUpload() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+//					var temp = xhr.responseText;
+//					console.log(temp);
+					var obj = jQuery.parseJSON(xhr.responseText);
+//					console.log(obj);
+					if(obj.ret) {
+						bootbox.alert({
+							size: "small",
+							title: "提示信息",
+							message: "提交成功!",
+							callback: function(){  }
+						});
+					} else {
+						bootbox.alert({
+							size: "small",
+							title: "提交失败",
+							message: "请在填写报名信息后再提交照片!",
+							callback: function(){  }
+						});
+					}
+      	}
+      }
 		</script>
 
   </body>

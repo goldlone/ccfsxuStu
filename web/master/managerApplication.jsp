@@ -79,8 +79,17 @@
     <!-- start content -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">CSP管理</h1>
-      <h4 class="sub-header">查询CSP成绩</h4>
+      <h4 class="sub-header">CSP报名管理</h4>
 
+      <div class="table-responsive">
+        <form class="form-inline" id="queryForm">
+          <label>考试名称</label>
+          <select id="certName" name="certNo" class="form-control">
+            <option value="0">所有</option>
+          </select>
+          <a class="btn btn-default" onclick="queryApplication()">查询</a>
+        </form>
+      </div>
 
 
   </div>
@@ -117,6 +126,9 @@
   }
   getCertSet();
 
+  function queryApplication() {
+
+  }
   // 获取CSP成绩列表
   function queryCSP() {
     $.ajax({

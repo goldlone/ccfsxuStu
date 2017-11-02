@@ -323,9 +323,9 @@ public class CSPDao {
 		String sql = null;
 		try {
 			conn = DBDao.getConnection();
-			sql = "INSERT INTO Application(A_certNo, A_language, A_memberNo, A_id, " +
-					"A_degree, A_purpose, A_school, A_username, A_password) " +
-					"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+			sql = "INSERT INTO Application(A_certNo, A_language, A_memberNo, A_id, A_degree, A_purpose, " +
+					"A_school, A_username, A_password, A_name, A_email, A_phone) " +
+					"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, Integer.parseInt(info.getCertNo()));
 			pstmt.setString(2, info.getLanguage());
@@ -336,6 +336,9 @@ public class CSPDao {
 			pstmt.setString(7,info.getSchool());
 			pstmt.setString(8,info.getUsername());
 			pstmt.setString(9,info.getPassword());
+			pstmt.setString(10,info.getName());
+			pstmt.setString(11,info.getEmail());
+			pstmt.setString(12,info.getPhone());
 			pstmt.execute();
 			return true;
 		} catch (SQLException e) {
@@ -346,6 +349,78 @@ public class CSPDao {
 		}
 
 		return false;
+	}
+
+	/**
+	 * 修改照片名
+	 * @param memberNo
+	 * @param filename
+	 * @return
+	 */
+	public boolean updateFile(String memberNo, String filename) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			conn = DBDao.getConnection();
+			sql = "UPDATE Application SET A_photo = ? WHERE A_memberNo = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, filename);
+			pstmt.setString(2, memberNo);
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+		}
+		return false;
+	}
+
+	public ArrayList<ApplicationInfo> selectApplicationInfo(int certNo) {
+		ArrayList<ApplicationInfo> list = new ArrayList<ApplicationInfo>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			conn = DBDao.getConnection();
+			if(certNo == 0) {
+				sql = "SELECT * from Application;";
+				pstmt = conn.prepareStatement(sql);
+			}
+			else {
+				sql = "SELECT * from Application WHERE A_certNo = ?;";
+				pstmt.setInt(1, certNo);
+			}
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ApplicationInfo info = new ApplicationInfo();
+				info.setCertNo(String.valueOf(rs.getInt("A_certNo")));
+				info.setMemberNo(rs.getString("A_memberNo"));
+				info.setName(rs.getString("A_name"));
+				info.setLanguage(rs.getString("A_language"));
+				info.setId(rs.getString("A_id"));
+				info.setDegree(rs.getString("A_degree"));
+				info.setPurpose(rs.getString("A_purpose"));
+				info.setSchool(rs.getString("A_school"));
+				info.setUsername(rs.getString("A_username"));
+				info.setPassword(rs.getString("A_password"));
+				info.setPhone(rs.getString("A_phone"));
+				info.setEmail(rs.getString("A_email"));
+				info.setPhotoName(rs.getString("A_photo"));
+				list.add(info);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+			DBDao.closeResultSet(rs);
+		}
+
+		return list;
 	}
 	
 	public static void main(String[] args) {

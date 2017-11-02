@@ -44,6 +44,8 @@
 		<!-- 报名CSP -->
 		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate">		</action>
 		<action name="getCertSetNotStart" class="cn.goldlone.action.ApplicationCSPAction" method="getCertSetNotStart"></action>
+		<!-- 上传照片 -->
+		<action name="uploadPhoto" class="cn.goldlone.action.ApplicationCSPAction" method="uploadPhoto"></action>
 
 
 
