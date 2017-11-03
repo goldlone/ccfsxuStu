@@ -50,10 +50,10 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 		}
 		int num = Checks.checkLogin(user.getEmail(), user.getPasswd(), ServletActionContext.getRequest());
 		if(num == 10001) {
-			Cookie cookie = new Cookie("ssocookie", "sso");
-			cookie.setPath("/");
-			HttpServletResponse response = ServletActionContext.getResponse();
-			response.addCookie(cookie);
+//			Cookie cookie = new Cookie("ssocookie", "sso");
+//			cookie.setPath("/");
+//			HttpServletResponse response = ServletActionContext.getResponse();
+//			response.addCookie(cookie);
 			return SUCCESS;
 		} else {
 			return LOGIN;
@@ -67,6 +67,7 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 	 */
 	public String logout() {
 		ServletActionContext.getRequest().getSession().invalidate();
+		Cookie[] cookies = ServletActionContext.getRequest().getCookies();
 		return LOGIN;
 	}
 

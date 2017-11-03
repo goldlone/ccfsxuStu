@@ -38,21 +38,22 @@ public class Checks {
 
     /**
      * 检查Coolie是否合法
+     * 目前取消SSO
      * @param request
      * @return
      */
     public static boolean checkCookie(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        if(cookies!=null) {
-            for(Cookie cookie : cookies) {
-                if(cookie.getName().equals("ssocookie")
-                        && cookie.getValue().equals("sso")) {
-                    return true;
-                }
-            }
-        }
+//        Cookie[] cookies = request.getCookies();
+//        if(cookies!=null) {
+//            for(Cookie cookie : cookies) {
+//                if(cookie.getName().equals("ssocookie")
+//                        && cookie.getValue().equals("sso")) {
+//                    return true;
+//                }
+//            }
+//        }
 
-        return false;
+        return true;
     }
 
     /**
