@@ -300,7 +300,7 @@
       // 上传照片
 			function uploadPhoto() {
         var fileObj = $("#exampleInputFile")[0].files[0];
-        var FileController = "uploadPhoto";
+        var FileController = "/uploadPhoto";
         // FormData 对象
         var form = new FormData();
         form.append("photo", fileObj);// 文件对象
