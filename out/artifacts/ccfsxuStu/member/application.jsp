@@ -160,12 +160,12 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <script type="text/javascript" src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../assets/js/vendor/holder.min.js"></script>
+    <script src="/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-		<script src="../assets/js/bootbox.min.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="/assets/js/bootbox.min.js"></script>
 
   	<script text="text/javascript">
       getCertSetNotStart();
@@ -176,7 +176,6 @@
 					url: "/getMemberInfo",
 					type: "POST",
           success: function (res) {
-					  console.log(res);
 					  if(res.ret) {
               document.getElementsByName("memberNo")[0].value = res.data[0].no;
               document.getElementsByName("name")[0].value = res.data[0].name;
@@ -203,7 +202,6 @@
 					url:"/getCertSetNotStart",
 					success: function (res) {
 						var tempStr;
-						console.log(res);
 						for(var i=0; i<res.data.length; i++) {
 							tempStr = "<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>";
 						}
@@ -227,7 +225,7 @@
 			function applicate() {
 				$.ajax({
 					type:"POST",
-					url:"applicate",
+					url:"/applicate",
 					data: $("#applicateForm").serialize(),
 					success: function (res) {
 					  if(res.ret)
@@ -300,7 +298,7 @@
       // 上传照片
 			function uploadPhoto() {
         var fileObj = $("#exampleInputFile")[0].files[0];
-        var FileController = "uploadPhoto";
+        var FileController = "/uploadPhoto";
         // FormData 对象
         var form = new FormData();
         form.append("photo", fileObj);// 文件对象

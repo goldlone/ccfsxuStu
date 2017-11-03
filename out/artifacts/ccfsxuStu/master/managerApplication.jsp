@@ -151,7 +151,7 @@
     // 获取考试集合
     function getCertSet() {
       $.ajax({
-        url: "getCertSet",
+        url: "/getCertSet",
         type: "post",
         success: function (res) {
 //          console.log(res);
@@ -171,7 +171,7 @@
     function queryApplication() {
 //      window.open("/excel/applicate.xls", '', '', false);
       $.ajax({
-        url: "getApplication",
+        url: "/getApplication",
         type: "post",
         data: $("#downloadForm").serialize(),
         success: function (res) {
@@ -212,7 +212,7 @@
 
       function add() {
         $.ajax({
-          url:"addCertification",
+          url:"/addCertification",
           type: "post",
           data: $("#addCertForm").serialize(),
           success: function (res) {

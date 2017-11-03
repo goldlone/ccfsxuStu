@@ -136,7 +136,7 @@
       // 获取考试集合
       function getCertSet() {
           $.ajax({
-              url: "getCertSet",
+              url: "/getCertSet",
               type: "post",
               success: function (res) {
                   console.log(res);
@@ -154,7 +154,7 @@
       // 获取CSP成绩列表
       function queryCSP() {
           $.ajax({
-              url: "queryScore",
+              url: "/queryScore",
               type: "post",
               data: $("#queryForm").serialize(),
               success: function (res) {
@@ -169,7 +169,7 @@
       
       function getScoreByNo() {
           $.ajax({
-              url: "getScoreByNo",
+              url: "/getScoreByNo",
               type: "post",
               data: $("#selectScoreByNoForm").serialize(),
               success: function (res) {

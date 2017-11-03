@@ -47,7 +47,7 @@
             	<h4 class="sub-header">会员信息</h4></a>
             </li>
             <li><a href="./main.jsp" >查询会员信息</a></li>
-            <li><a href="../master/managerApplication.jsp">CSP报名管理</a></li>
+            <li><a href="./managerApplication.jsp">CSP报名管理</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="#" style="color: #000;cursor:default;">

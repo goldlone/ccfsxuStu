@@ -145,7 +145,7 @@
     	function getGradeSet() {
             $.ajax({
                 type:"post",
-                url:"getGradeSet",
+                url:"/getGradeSet",
                 error: function (res) {
                     console.log("年级集合请求出错");
                     console.log(res);
@@ -188,7 +188,7 @@
     	function queryMember() {
     		$.ajax({
     			type:"post",
-                url:"queryMember",
+                url:"/queryMember",
                 data: $('#queryForm').serialize(),
                 error: function (res) {
                     console.log(res);

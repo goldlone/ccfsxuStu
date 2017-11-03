@@ -176,7 +176,6 @@
 					url: "/getMemberInfo",
 					type: "POST",
           success: function (res) {
-					  console.log(res);
 					  if(res.ret) {
               document.getElementsByName("memberNo")[0].value = res.data[0].no;
               document.getElementsByName("name")[0].value = res.data[0].name;
@@ -203,7 +202,6 @@
 					url:"/getCertSetNotStart",
 					success: function (res) {
 						var tempStr;
-						console.log(res);
 						for(var i=0; i<res.data.length; i++) {
 							tempStr = "<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>";
 						}
