@@ -16,7 +16,7 @@ import java.io.File;
  */
 public class ExportApplicationExcel {
     public static void main(String[] args) {
-        new ExportApplicationExcel().exportInfo(0);
+//        new ExportApplicationExcel().exportInfo(0);
     }
 
     /**

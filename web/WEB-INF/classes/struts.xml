@@ -24,11 +24,17 @@
 		<!-- 默认action,没有找到action时 -->
 		<default-action-ref name="index"></default-action-ref>
 		<action name="index">
-			<result>/error.jsp</result>
+			<result>/all/error.jsp</result>
 		</action>
 		
 		<!-- 登录 -->
-		<action name="login" class="cn.goldlone.action.MemberAction" method="login"></action>
+		<action name="login" class="cn.goldlone.action.MemberAction" method="login">
+			<result name="success" type="redirect">${gotoUrl}</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="logout" class="cn.goldlone.action.MemberAction" method="logout">
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
 		<!-- 获取年级集合 -->
 		<action name="getGradeSet" class="cn.goldlone.action.MemberAction" method="getGradeSet"></action>
 		<!-- 查询会员信息 -->
@@ -44,11 +50,12 @@
 		<action name="addCertification" class="cn.goldlone.action.CSPAction" method="addCertification"></action>
 
 		<!-- 报名CSP -->
-		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate">		</action>
+		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate"></action>
 		<action name="getCertSetNotStart" class="cn.goldlone.action.ApplicationCSPAction" method="getCertSetNotStart"></action>
 		<!-- 上传照片 -->
 		<action name="uploadPhoto" class="cn.goldlone.action.ApplicationCSPAction" method="uploadPhoto"></action>
 		<action name="getApplication" class="cn.goldlone.action.ApplicationCSPAction" method="getApplication"></action>
+		<action name="getMemberInfo" class="cn.goldlone.action.ApplicationCSPAction" method="getMemberInfo"></action>
 
 
 
@@ -61,6 +68,33 @@
 		<action name="selectExpiredMember" class="cn.goldlone.action.MemberAction" method="selectExpiredMember"></action>
 		<!-- 根据会员号查询会员信息 -->
 		<action name="selectMemberByNo" class="cn.goldlone.action.MemberAction" method="selectMemberByNo"></action>
+	</package>
+
+	<!-- 会员权限拥有者 -->
+	<package name="member" namespace="/member" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/all/error.jsp</result>
+		</action>
+		<!-- CSP预报名 -->
+		<action name="application" class="cn.goldlone.action.member.ApplicationAction" method="execute" >
+			<result name="success">/member/application.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+	</package>
+
+	<!-- 管理员权限拥有者 -->
+	<package name="master" namespace="/master" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/all/error.jsp</result>
+		</action>
+		<!-- 查询会员信息 -->
+		<action name="selectMemberInfo" class="cn.goldlone.action.master.SelectMemberInfoAction">
+			<result name="success">/master/selectMemberInfo</result>
+			<result name="login">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
 	</package>
 	
 </struts>

@@ -7,16 +7,168 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/65535G.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/excel/applicate.xls" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/excel/applicate.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/model/LoginInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/all/power.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/BookAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/CSPAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/BookDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/CSPDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/DBDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/ApplicationInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Book.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/BookType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/BorrowBook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Certification.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/DegreeInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/MemberType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Score.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/model/RegistInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/model/ScoreInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/model/UserInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/servlet/AddMember.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/servlet/GetMember.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/ExportApplicationExcel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/IOUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/ImportMemberInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/CDL.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/Cookie.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/CookieList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/HTTP.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/HTTPTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONArray.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONML.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONObject$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONObject$Null.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONPointer$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONPointer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONPointerException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONStringer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/JSONWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/Property.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/XML$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/XML$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/XML.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/org/json/XMLTokener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/commons-fileupload-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/jxl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/log4j-api-2.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/ognl-3.1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/lib/struts2-core-2.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/all/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/all/header.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/brand/bootstrap-outline.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/brand/bootstrap-punchout.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/brand/bootstrap-solid.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/docs.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/docs.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/ie10-viewport-bug-workaround.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/my/dashboard.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/my/signin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/src/docs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/css/src/pygments-manni.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/flash/ZeroClipboard.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/components.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/devices.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/expo-lyft.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/expo-newsweek.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/expo-riot.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/expo-vogue.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/img/sass-less.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/bootbox.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/customize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/docs.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/ie-emulation-modes-warning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/ie10-viewport-bug-workaround.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/ie8-responsive-file-warning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/my/nav.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/raw-files.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/src/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/src/customizer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/Blob.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/FileSaver.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/ZeroClipboard.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/anchor.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/autoprefixer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/holder.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/jquery-3.2.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/jszip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/less.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/assets/js/vendor/uglify.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/cspJsp/applicateFail.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/cspJsp/applicateSuccess.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/dist/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/excel/applicate.xls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/analy.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/backBook.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/book.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/borrowBook.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/csp.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertMember.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertScore.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/main.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/managerApplication.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/member/application.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e37acfc1-a925-4bb8-8ae0-bc049ff8312c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e37acfc1-a925-4bb8-8ae0-bc049ff8312c.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/model/UserInfo.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/model/UserInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/ExportApplicationExcel.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/ExportApplicationExcel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccfsxu.sql" afterPath="$PROJECT_DIR$/ccfsxu.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/managerApplication.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/managerApplication.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/managerApplication.jsp" afterPath="$PROJECT_DIR$/web/master/managerApplication.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/model/UserInfo.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/model/UserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sql" afterPath="$PROJECT_DIR$/test.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/all/header.jsp" afterPath="$PROJECT_DIR$/web/all/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/member/application.jsp" afterPath="$PROJECT_DIR$/web/member/application.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +224,24 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
+        <option name="myItemId" value="Member" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ccfsxu@118.89.199.103" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ccfsxu" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
         <option name="myItemId" value="Certification" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
@@ -80,12 +250,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="managerApplication.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/master/managerApplication.jsp">
+      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="196" column="41" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="41" />
+            <state relative-caret-position="260">
+              <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,18 +275,8 @@
       <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1025">
-              <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSPAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/CSPAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-318">
-              <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+            <state relative-caret-position="775">
+              <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -113,32 +285,13 @@
       <file leaf-file-name="ApplicationCSPAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+            <state relative-caret-position="74">
+              <caret line="157" column="14" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="14" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
+                <element signature="method#getCertSetNotStart#0;class#ApplicationCSPAction#0" expanded="false" />
+                <element signature="method#uploadPhoto#0;class#ApplicationCSPAction#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ccfsxu.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ccfsxu.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,38 +299,62 @@
       <file leaf-file-name="application.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="277" column="40" lean-forward="false" selection-start-line="277" selection-start-column="40" selection-end-line="277" selection-end-column="40" />
+            <state relative-caret-position="793">
+              <caret line="185" column="39" lean-forward="false" selection-start-line="185" selection-start-column="39" selection-end-line="185" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSPDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java">
+      <file leaf-file-name="power.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/all/power.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6075">
-              <caret line="253" column="29" lean-forward="false" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="29" />
+            <state relative-caret-position="125">
+              <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Checks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="29" column="64" lean-forward="false" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="174" column="29" lean-forward="false" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1831#1842#0" expanded="false" />
-                <element signature="e#3056#3067#0" expanded="false" />
-                <element signature="e#4332#4343#0" expanded="false" />
-                <element signature="method#getCertSetNotStart#0;class#CSPDao#0" expanded="false" />
-                <marker date="1509614869169" expanded="true" signature="1098:1146" ph="insert into Score... " />
-                <marker date="1509614869169" expanded="true" signature="2026:2266" ph="select M_nam... Score" />
-                <marker date="1509614869169" expanded="true" signature="3251:3454" ph="select M_nam... Score" />
-                <marker date="1509614869169" expanded="true" signature="4549:4829" ph="SELECT M_nam... Score" />
-                <marker date="1509614869169" expanded="true" signature="4978:5226" ph="SELECT M_nam... Score" />
-                <marker date="1509614869169" expanded="true" signature="6206:6303" ph="select M_mem... Member" />
-                <marker date="1509614869169" expanded="true" signature="6787:6904" ph="INSERT INTO Application... " />
-                <marker date="1509614869169" expanded="true" signature="7648:7687" ph="SELECT C_no,... Certification" />
-                <marker date="1509614869169" expanded="true" signature="8411:8495" ph="SELECT C_no,... Certification" />
-                <marker date="1509614869169" expanded="true" signature="9157:9364" ph="INSERT INTO Application... " />
-                <marker date="1509614869169" expanded="true" signature="10377:10407" ph="UPDATE Appli... " />
-                <marker date="1509614869169" expanded="true" signature="10377:10432" ph="UPDATE Appli... " />
-                <marker date="1509614869169" expanded="true" signature="11114:11139" ph="SELECT * fro... Application" />
-                <marker date="1509614869169" expanded="true" signature="11209:11253" ph="SELECT * fro... Application" />
+                <element signature="e#622#630#0" expanded="true" />
+                <marker date="1509717644587" expanded="true" signature="789:866" ph="select M_pas... Member" />
+                <marker date="1509717644587" expanded="true" signature="1531:1572" ph="SELECT * FRO... Member" />
+                <marker date="1509717644587" expanded="true" signature="1861:1934" ph="INSERT INTO Member... " />
+                <marker date="1509717644587" expanded="true" signature="3231:3575" ph="select M_mem... Member" />
+                <marker date="1509717644587" expanded="true" signature="4860:5235" ph="select M_mem... Member" />
+                <marker date="1509717644587" expanded="true" signature="6034:6079" ph="SELECT * FRO... Member" />
+                <marker date="1509717644587" expanded="true" signature="6034:6095" ph="SELECT * FRO... Member" />
+                <marker date="1509717644587" expanded="true" signature="6781:7153" ph="select M_mem... Member" />
+                <marker date="1509717644587" expanded="true" signature="8529:8939" ph="select M_mem... Member" />
+                <marker date="1509717644587" expanded="true" signature="8979:9373" ph="select M_mem... Member" />
+                <marker date="1509717644587" expanded="true" signature="10623:10658" ph="select disti... Member" />
+                <marker date="1509717644587" expanded="true" signature="13566:13613" ph="select M_pow... Member" />
               </folding>
             </state>
           </provider>
@@ -193,6 +370,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>application</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -205,7 +387,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/DBDao.class" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/master/analy.jsp" />
         <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
         <option value="$PROJECT_DIR$/web/master/book.jsp" />
@@ -215,18 +396,31 @@
         <option value="$PROJECT_DIR$/web/master/insertScore.jsp" />
         <option value="$PROJECT_DIR$/web/master/main.jsp" />
         <option value="$PROJECT_DIR$/web/photos/test.txt" />
-        <option value="$PROJECT_DIR$/test.sql" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/ApplicationInfo.java" />
-        <option value="$PROJECT_DIR$/web/all/header.jsp" />
-        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/Certification.java" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/CSPAction.java" />
+        <option value="$PROJECT_DIR$/web/master/managerApplication.jsp" />
+        <option value="$PROJECT_DIR$/src/org/json/Cookie.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/SSOChecks.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationCSPAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
+        <option value="$PROJECT_DIR$/web/all/power.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/model/LoginInfo.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java" />
+        <option value="$PROJECT_DIR$/ccfsxu.sql" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/model/UserInfo.java" />
+        <option value="$PROJECT_DIR$/test.sql" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" />
+        <option value="$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/http/HttpSession.class" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java" />
         <option value="$PROJECT_DIR$/web/member/application.jsp" />
-        <option value="$PROJECT_DIR$/ccfsxu.sql" />
-        <option value="$PROJECT_DIR$/web/master/managerApplication.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/web/all/header.jsp" />
       </list>
     </option>
   </component>
@@ -270,9 +464,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -425,7 +616,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ccfsxuStu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ccfsxuStu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goldlone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -461,20 +674,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
+              <option name="myItemId" value="goldlone" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="member" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ccfsxuStu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ccfsxuStu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goldlone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,11 +736,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ideaWorkspace\ccfsxuStu\web\all" />
       <recent name="E:\ideaWorkspace\ccfsxuStu" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\assets\js" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\src" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\WEB-INF" />
-      <recent name="E:\ideaWorkspace\ccfsxuStu\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -538,6 +784,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="cn.goldlone.utils.ExportApplicationExcel" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ccfsxuStu" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MemberDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.goldlone.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.goldlone.dao.MemberDao" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1023,15 +1289,17 @@
         </option>
       </method>
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat 8.5" />
       <item index="1" class="java.lang.String" itemvalue="Application.ApplicationCSPAction" />
       <item index="2" class="java.lang.String" itemvalue="Application.ExportApplicationExcel" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MemberDao" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ExportApplicationExcel" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ApplicationCSPAction" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.MemberDao" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ExportApplicationExcel" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ApplicationCSPAction" />
       </list>
     </recent_temporary>
   </component>
@@ -1048,12 +1316,13 @@
       <workItem from="1509530645451" duration="18572000" />
       <workItem from="1509594908703" duration="13102000" />
       <workItem from="1509610056689" duration="5813000" />
-      <workItem from="1509629360252" duration="2298000" />
+      <workItem from="1509629360252" duration="7128000" />
+      <workItem from="1509693173977" duration="18406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39785000" />
+    <option name="totallyTimeSpent" value="63021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1068,8 +1337,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20801815" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1079,10 +1348,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30967742" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5370968" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24032257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1111,171 +1380,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3025">
-          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8775">
-          <caret line="351" column="12" lean-forward="false" selection-start-line="351" selection-start-column="12" selection-end-line="351" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1831#1842#0" expanded="false" />
-            <element signature="e#3056#3067#0" expanded="false" />
-            <element signature="e#4332#4343#0" expanded="false" />
-            <element signature="method#getCertSetNotStart#0;class#CSPDao#0" expanded="false" />
-            <marker date="1509614869169" expanded="true" signature="1098:1146" ph="insert into Score... " />
-            <marker date="1509614869169" expanded="true" signature="2026:2266" ph="select M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="3251:3454" ph="select M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="4549:4829" ph="SELECT M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="4978:5226" ph="SELECT M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="6206:6303" ph="select M_mem... Member" />
-            <marker date="1509614869169" expanded="true" signature="6787:6904" ph="INSERT INTO Application... " />
-            <marker date="1509614869169" expanded="true" signature="7648:7687" ph="SELECT C_no,... Certification" />
-            <marker date="1509614869169" expanded="true" signature="8411:8495" ph="SELECT C_no,... Certification" />
-            <marker date="1509614869169" expanded="true" signature="9157:9364" ph="INSERT INTO Application... " />
-            <marker date="1509614869169" expanded="true" signature="10377:10407" ph="UPDATE Appli... " />
-            <marker date="1509614869169" expanded="true" signature="10377:10432" ph="UPDATE Appli... " />
-            <marker date="1509614869169" expanded="true" signature="11114:11139" ph="SELECT * fro... Application" />
-            <marker date="1509614869169" expanded="true" signature="11209:11253" ph="SELECT * fro... Application" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="47" column="102" lean-forward="false" selection-start-line="47" selection-start-column="102" selection-end-line="47" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/csp.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/DBDao.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dist/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dist/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/bootbox.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="176" lean-forward="false" selection-start-line="5" selection-start-column="176" selection-end-line="5" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="25">
-            <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1360,14 +1464,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Application">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1375,14 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-275">
           <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1399,39 +1495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/ScoreInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="40" column="54" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1468,64 +1531,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Certification">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="277" column="40" lean-forward="false" selection-start-line="277" selection-start-column="40" selection-end-line="277" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
-          </folding>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1537,18 +1554,248 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ccfsxu.sql">
+    <entry file="file://$PROJECT_DIR$/web/master/managerApplication.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+        <state relative-caret-position="1293">
+          <caret line="196" column="24" lean-forward="false" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/managerApplication.jsp">
+    <entry file="file://$PROJECT_DIR$/src/org/json/Cookie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="196" column="41" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="41" />
+        <state relative-caret-position="1257">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/struts2/lib/struts2-dom-api.jar!/resources/dtds/struts-2.5.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="109" column="10" lean-forward="false" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/aria.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="1216" column="22" lean-forward="false" selection-start-line="1216" selection-start-column="22" selection-end-line="1216" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/ScoreInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/RegistInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/all/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/IOUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/LoginInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Member">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="177" column="41" lean-forward="true" selection-start-line="177" selection-start-column="41" selection-end-line="177" selection-end-column="41" />
+          <folding>
+            <element signature="e#2665#2666#0" expanded="true" />
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="method#toString#0;class#UserInfo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccfsxu.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/http/HttpSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="174" column="29" lean-forward="false" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="29" />
+          <folding>
+            <element signature="e#622#630#0" expanded="true" />
+            <marker date="1509717644587" expanded="true" signature="789:866" ph="select M_pas... Member" />
+            <marker date="1509717644587" expanded="true" signature="1531:1572" ph="SELECT * FRO... Member" />
+            <marker date="1509717644587" expanded="true" signature="1861:1934" ph="INSERT INTO Member... " />
+            <marker date="1509717644587" expanded="true" signature="3231:3575" ph="select M_mem... Member" />
+            <marker date="1509717644587" expanded="true" signature="4860:5235" ph="select M_mem... Member" />
+            <marker date="1509717644587" expanded="true" signature="6034:6079" ph="SELECT * FRO... Member" />
+            <marker date="1509717644587" expanded="true" signature="6034:6095" ph="SELECT * FRO... Member" />
+            <marker date="1509717644587" expanded="true" signature="6781:7153" ph="select M_mem... Member" />
+            <marker date="1509717644587" expanded="true" signature="8529:8939" ph="select M_mem... Member" />
+            <marker date="1509717644587" expanded="true" signature="8979:9373" ph="select M_mem... Member" />
+            <marker date="1509717644587" expanded="true" signature="10623:10658" ph="select disti... Member" />
+            <marker date="1509717644587" expanded="true" signature="13566:13613" ph="select M_pow... Member" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="157" column="14" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="14" />
+          <folding>
+            <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
+            <element signature="method#getCertSetNotStart#0;class#ApplicationCSPAction#0" expanded="false" />
+            <element signature="method#uploadPhoto#0;class#ApplicationCSPAction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="29" column="64" lean-forward="false" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/all/power.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="185" column="39" lean-forward="false" selection-start-line="185" selection-start-column="39" selection-end-line="185" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding />
         </state>
       </provider>

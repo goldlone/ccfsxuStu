@@ -2,12 +2,14 @@ package cn.goldlone.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import cn.goldlone.utils.Checks;
 import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,64 +30,44 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 	
 	private Member user = new Member();
 	private MemberDao dao = new MemberDao();
+	private String gotoUrl;
 	
 	/**
 	 * 会员登录
+	 * 10001 - 登录成功
+	 * 10002 - 密码错误
+	 * 10003 - 未注册
 	 * @return
 	 */
 	public String login() throws IOException {
-		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpServletResponse response = ServletActionContext.getResponse();
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
-		JSONObject res = new JSONObject();
-
 		if(user.getEmail()==null || "".equals(user.getEmail())) {
 			// 邮箱为空
-			res.put("ret", false);
-			res.put("code", 10004);
-			System.out.println(res.toString());
-			out.print(res.toString());
-			out.flush();
-			out.close();
-			return null;
+			return LOGIN;
 		}
 		if(user.getPasswd()==null || "".equals(user.getPasswd())) {
 			// 密码为空
-			res.put("ret", false);
-			res.put("code", 10005);
-			System.out.println(res.toString());
-			out.print(res.toString());
-			out.flush();
-			out.close();
-			return null;
+			return LOGIN;
 		}
-		int num = dao.login(user.getEmail(), user.getPasswd());
-		switch (num) {
-			case 10001:
-				// 登录成功
-				res.put("ret", true);
-				res.put("code", 10001);
-				break;
-			case 10002:
-				// 密码错误
-				res.put("ret", false);
-				res.put("code", 10002);
-				break;
-			case 10003:
-				// 未注册
-				res.put("ret", false);
-				res.put("code", 10003);
-				break;
+		int num = Checks.checkLogin(user.getEmail(), user.getPasswd(), ServletActionContext.getRequest());
+		if(num == 10001) {
+			Cookie cookie = new Cookie("ssocookie", "sso");
+			cookie.setPath("/");
+			HttpServletResponse response = ServletActionContext.getResponse();
+			response.addCookie(cookie);
+			return SUCCESS;
+		} else {
+			return LOGIN;
 		}
-		System.out.println(res.toString());
-		out.print(res.toString());
-		out.flush();
-		out.close();
 
-		return null;
+	}
+
+	/**
+	 * 注销登录
+	 * @return
+	 */
+	public String logout() {
+		ServletActionContext.getRequest().getSession().invalidate();
+		return LOGIN;
 	}
 
 	/**
@@ -171,13 +153,6 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 
 		return null;
 	}
-	
-	
-
-
-
-
-
 
 	/**
 	 * 查询过期或未过期会员信息
@@ -249,5 +224,13 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 	@Override
 	public Member getModel() {
 		return user;
+	}
+
+	public String getGotoUrl() {
+		return gotoUrl;
+	}
+
+	public void setGotoUrl(String gotoUrl) {
+		this.gotoUrl = gotoUrl;
 	}
 }

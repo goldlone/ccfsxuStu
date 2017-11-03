@@ -1,17 +1,22 @@
 package cn.goldlone.action;
 
 import cn.goldlone.dao.CSPDao;
+import cn.goldlone.dao.MemberDao;
 import cn.goldlone.entity.ApplicationInfo;
 import cn.goldlone.entity.Certification;
+import cn.goldlone.model.UserInfo;
 import cn.goldlone.utils.ExportApplicationExcel;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import sun.rmi.runtime.Log;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -64,7 +69,6 @@ public class ApplicationCSPAction extends ActionSupport implements ModelDriven<A
         res.put("len", list.size());
         res.put("data", new JSONArray(list));
         out.print(res.toString());
-        System.out.println(res.toString());
         out.flush();
         out.close();
 
@@ -128,6 +132,35 @@ public class ApplicationCSPAction extends ActionSupport implements ModelDriven<A
             res.put("ret", false);
         }
 
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
+    /**
+     * 获取初始化的会员信息
+     * @return
+     * @throws IOException
+     */
+    public String getMemberInfo() throws IOException {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+        Object memberNo = request.getSession().getAttribute("memberNo");
+        if(memberNo == null) {
+            res.put("ret", false);
+        }
+        else {
+            ArrayList<UserInfo> list = new MemberDao().selectMemberByNo(memberNo.toString());
+            JSONArray arr = new JSONArray(list);
+            res.put("data", arr);
+            res.put("ret", true);
+        }
         out.print(res.toString());
         out.flush();
         out.close();

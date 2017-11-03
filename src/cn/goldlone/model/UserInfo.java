@@ -40,6 +40,8 @@ public class UserInfo {
 	private int power;
 	// 是否加分
 	private int addScore;
+	// 是否过期
+	private boolean expired;
 
 	public String getNo() {
 		return no;
@@ -167,6 +169,14 @@ public class UserInfo {
 
 	public void setAddScore(int addScore) {
 		this.addScore = addScore;
+	}
+
+	public boolean isExpired() {
+		return expired;
+	}
+
+	public void setExpired(boolean expired) {
+		this.expired = expired;
 	}
 
 	@Override

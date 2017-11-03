@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import cn.goldlone.entity.Member;
+import cn.goldlone.model.LoginInfo;
 import cn.goldlone.model.RegistInfo;
 import cn.goldlone.model.UserInfo;
 
@@ -23,38 +24,26 @@ public class MemberDao {
 	/**
 	 * 用户登录
 	 * @param email
-	 * @param passwd
 	 * @return
 	 */
-	public int login(String email, String passwd) {
+	public ArrayList<String> login(String email) {
+		ArrayList<String> list = new ArrayList<String>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		ResultSet rs = null;
 		try {
 			conn = DBDao.getConnection();
-			sql = "select M_passwd "
+			sql = "select M_passwd, M_memberNo "
 					+ "from Member "
 					+ "where M_email = ?;";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
-			String realPasswd = null;
-			while(rs.next()) {
-				realPasswd = rs.getString(1);
+			if(rs.next()) {
+				list.add(rs.getString(1));
+				list.add(rs.getString(2));
 			}
-			if(realPasswd == null) {
-				// 用户未注册
-				return 10003;
-			}
-			if(realPasswd.equals(passwd)) {
-				// 用户登录成功
-				return 10001;
-			} else {
-				// 密码错误
-				return 10002;
-			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -63,7 +52,7 @@ public class MemberDao {
 			DBDao.closeResultSet(rs);
 		}
 		
-		return 0;
+		return list;
 	}
 	
 	/**
@@ -222,7 +211,13 @@ public class MemberDao {
 				user.setAddScore(rs.getInt(16));
 				list.add(user);
 			}
-			
+			sql = "SELECT * FROM Member WHERE M_memberNo = ? AND now()>M_endTime";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				list.get(0).setExpired(true);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -453,7 +448,37 @@ public class MemberDao {
 		
 		return list;
 	}
-	
+
+	/**
+	 * 查询权限
+	 * @param memeberNo
+	 * @return
+	 */
+	public int selectPower(String memeberNo) {
+		int power = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			conn = DBDao.getConnection();
+			sql = "select M_power from Member WHERE M_memberNo = ?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memeberNo);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				power = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBDao.closeConnection(conn);
+			DBDao.closePreparedStatement(pstmt);
+			DBDao.closeResultSet(rs);
+		}
+
+		return power;
+	}
 	
 	
 	public static void main(String[] args) {

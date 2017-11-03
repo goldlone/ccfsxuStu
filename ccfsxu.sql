@@ -26,7 +26,7 @@ CREATE TABLE Member(
 	M_name varchar(20) not null,
 	M_stuNo varchar(20) not null,
 	M_phone varchar(11) not null,
-	M_email varchar(50),
+	M_email varchar(50) NOT NULL UNIQUE,
 	M_discipline varchar(20),
 	M_grade int not null,
 	M_class int,

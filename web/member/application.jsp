@@ -55,13 +55,13 @@
 					<div class="form-group">
 						<label class="col-md-1 control-label">考生姓名</label>
 						<div class="col-md-4">
-							<input class="form-control" id="name" name="name" value="程宁">
+							<input class="form-control" id="name" name="name" value="">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-1 control-label">会员号</label>
 						<div class="col-md-4">
-							<input class="form-control" name="memberNo" value="65535G" >
+							<input class="form-control" name="memberNo" value="" >
 						</div>
 					</div>
 					<div class="form-group">
@@ -76,10 +76,10 @@
 							<input type="number" name="phone" class="form-control" placeholder="请输入手机号" required>
 						</div>
 					</div>
-					<div class="">
+					<div class="form-group">
 						<label class="col-md-1 control-label">邮箱</label>
 						<div class="col-md-4">
-							<input class="form-control" name="email" value="857353825@qq.com" />
+							<input class="form-control" name="email" value="" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -169,13 +169,41 @@
 
   	<script text="text/javascript">
       getCertSetNotStart();
+      getMemberIfo();
+      // 获取会员信息
+			function getMemberIfo() {
+				$.ajax({
+					url: "/getMemberInfo",
+					type: "POST",
+          success: function (res) {
+					  console.log(res);
+					  if(res.ret) {
+              document.getElementsByName("memberNo")[0].value = res.data[0].no;
+              document.getElementsByName("name")[0].value = res.data[0].name;
+              document.getElementsByName("phone")[0].value = res.data[0].phone;
+              document.getElementsByName("email")[0].value = res.data[0].email;
+              document.getElementsByName("id")[0].value = res.data[0].id;
+              if(res.data[0].expired) {
+                document.getElementsByName("memberNo")[0].value = "会员已过期，请先续费";
+							}
+            }
+            else {
+					    window.location.href = "/login";
+						}
+					},
+					fail: function (res) {
+            console.log(res);
+          }
+				});
+      }
 			// 获取未开始认证考试的集合
 			function getCertSetNotStart() {
 				$.ajax({
 					type:"POST",
-					url:"getCertSetNotStart",
+					url:"/getCertSetNotStart",
 					success: function (res) {
 						var tempStr;
+						console.log(res);
 						for(var i=0; i<res.data.length; i++) {
 							tempStr = "<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>";
 						}
