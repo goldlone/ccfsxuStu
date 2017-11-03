@@ -31,6 +31,7 @@
 		<action name="login" class="cn.goldlone.action.MemberAction" method="login">
 			<result name="success" type="redirect">${gotoUrl}</result>
 			<result name="login">/login.jsp</result>
+			<result name="input">/login.jsp</result>
 		</action>
 		<action name="logout" class="cn.goldlone.action.MemberAction" method="logout">
 			<result name="login" type="redirect">/login.jsp</result>

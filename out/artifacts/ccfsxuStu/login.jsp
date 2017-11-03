@@ -47,7 +47,7 @@
         <input name="passwd" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
 
         <input type="hidden" name="gotoUrl" value="${gotoUrl}">
-        <div id="warnInfo" class="alert alert-danger" role="alert"></div>
+        <div id="warnInfo" class="alert alert-danger" role="alert"><s:fielderror name="loginError"></s:fielderror></div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         <%--<a class="btn btn-lg btn-primary btn-block" onclick="login()">登录</a>--%>

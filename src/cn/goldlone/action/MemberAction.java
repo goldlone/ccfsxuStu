@@ -42,23 +42,31 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 	public String login() throws IOException {
 		if(user.getEmail()==null || "".equals(user.getEmail())) {
 			// 邮箱为空
-			return LOGIN;
+			this.addFieldError("loginError", "邮箱不能为空");
+			return INPUT;
 		}
 		if(user.getPasswd()==null || "".equals(user.getPasswd())) {
 			// 密码为空
-			return LOGIN;
+			this.addFieldError("loginError", "密码不能为空");
+			return INPUT;
 		}
 		int num = Checks.checkLogin(user.getEmail(), user.getPasswd(), ServletActionContext.getRequest());
-		if(num == 10001) {
-//			Cookie cookie = new Cookie("ssocookie", "sso");
-//			cookie.setPath("/");
-//			HttpServletResponse response = ServletActionContext.getResponse();
-//			response.addCookie(cookie);
-			return SUCCESS;
-		} else {
-			return LOGIN;
+		switch (num) {
+			case 10001:
+//				Cookie cookie = new Cookie("ssocookie", "sso");
+//				cookie.setPath("/");
+//				HttpServletResponse response = ServletActionContext.getResponse();
+//				response.addCookie(cookie);
+				return SUCCESS;
+			case 10002:
+				this.addFieldError("loginError", "密码错误");
+				break;
+			case 10003:
+				this.addFieldError("loginError", "未注册，请联系CCFSXU学生分会");
+				break;
 		}
 
+		return INPUT;
 	}
 
 	/**
