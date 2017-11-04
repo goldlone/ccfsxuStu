@@ -7,10 +7,10 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 查询会员信息
+ * 分析CSP成绩
  * Created by CN on 2017/11/3.
  */
-public class SelectMemberInfoAction extends ActionSupport {
+public class AnalysisCSPScoreAction extends ActionSupport {
 
     private String gotoUrl;
     @Override
@@ -22,7 +22,7 @@ public class SelectMemberInfoAction extends ActionSupport {
             else
                 return "power";
         }
-        gotoUrl = "/master/selectMemberInfo";
+        gotoUrl = "/master/analysisCSPScore";
 
         return LOGIN;
     }

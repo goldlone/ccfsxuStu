@@ -100,6 +100,54 @@
 			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
+		<!-- 插入会员信息 -->
+		<action name="insertMemberInfo" class="cn.goldlone.action.master.InsertMemberInfoAction">
+			<result name="success">/master/insertMember.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 查询CSP成绩信息 -->
+		<action name="selectCSPScore" class="cn.goldlone.action.master.SelectCSPScoreAction">
+			<result name="success">/master/selectCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 插入CSP成绩信息 -->
+		<action name="insertCSPScore" class="cn.goldlone.action.master.InsertCSPScoreAction">
+			<result name="success">/master/insertCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 管理CSP报名 -->
+		<action name="managerCSPApplication" class="cn.goldlone.action.master.ManagerCSPApplicationAction">
+			<result name="success">/master/managerCSPApplication.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 分析CSP成绩 -->
+		<action name="analysisCSPScore" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/master/analysisCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 查询图书信息 -->
+		<action name="selectBookInfo" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/master/book.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 借书 -->
+		<action name="borrowBook" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/master/borrowBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 还书 -->
+		<action name="backBook" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/master/backBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
 	</package>
 	
 </struts>

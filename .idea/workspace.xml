@@ -7,24 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="修改API地址">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/MemberAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/AnalysisCSPScoreAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/BackBookAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/BorrowBookAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertMemberInfoAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/ManagerCSPApplicationAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectBookInfoAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPScoreAction.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/analy.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/csp.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertScore.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/managerApplication.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/all/header.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/all/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/backBook.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/backBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/book.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/book.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/borrowBook.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/borrowBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertMember.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertMember.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/main.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/member/analyScore.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/member/analyScore.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/member/application.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/member/application.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/photos/me.txt" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/photos/me.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/all/error.jsp" afterPath="$PROJECT_DIR$/web/all/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/all/header.jsp" afterPath="$PROJECT_DIR$/web/all/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/all/power.jsp" afterPath="$PROJECT_DIR$/web/all/power.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/backBook.jsp" afterPath="$PROJECT_DIR$/web/master/backBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/book.jsp" afterPath="$PROJECT_DIR$/web/master/book.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/borrowBook.jsp" afterPath="$PROJECT_DIR$/web/master/borrowBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertMember.jsp" afterPath="$PROJECT_DIR$/web/master/insertMember.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/main.jsp" afterPath="$PROJECT_DIR$/web/master/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/managerApplication.jsp" afterPath="$PROJECT_DIR$/web/master/managerApplication.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/member/analyScore.jsp" afterPath="$PROJECT_DIR$/web/member/analyScore.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/member/application.jsp" afterPath="$PROJECT_DIR$/web/member/application.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/photos/me.txt" afterPath="$PROJECT_DIR$/web/photos/me.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/master/analy.jsp" afterPath="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/master/csp.jsp" afterPath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/master/insertScore.jsp" afterPath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/master/managerApplication.jsp" afterPath="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,16 +85,62 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
+      <file leaf-file-name="analysisCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="169" selection-end-column="53" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="382">
+              <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="64" column="28" lean-forward="false" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="book.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/master/book.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="borrowBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="63" column="30" lean-forward="false" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-457">
+              <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertMember.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,97 +148,31 @@
       <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+            <state relative-caret-position="-1000">
+              <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="30" />
               <folding>
-                <marker date="1509783373300" expanded="true" signature="6235:6260" ph="..." />
+                <marker date="1509791345843" expanded="true" signature="6317:6342" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java">
+      <file leaf-file-name="managerCSPApplication.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+            <state relative-caret-position="-2425">
+              <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <file leaf-file-name="selectCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="32" />
+            <state relative-caret-position="1450">
+              <caret line="58" column="15" lean-forward="true" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="27" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analyScore.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/member/analyScore.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="44" column="2" lean-forward="false" selection-start-line="44" selection-start-column="2" selection-end-line="54" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="power.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/all/power.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="27" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/all/error.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="managerApplication.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/master/managerApplication.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
-              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationCSPAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="155" column="29" lean-forward="false" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
-              <folding>
-                <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
-                <element signature="method#getCertSetNotStart#0;class#ApplicationCSPAction#0" expanded="false" />
-                <element signature="method#uploadPhoto#0;class#ApplicationCSPAction#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -209,13 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/DBDao.class" />
-        <option value="$PROJECT_DIR$/web/master/analy.jsp" />
-        <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
-        <option value="$PROJECT_DIR$/web/master/book.jsp" />
-        <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
-        <option value="$PROJECT_DIR$/web/master/insertScore.jsp" />
-        <option value="$PROJECT_DIR$/web/photos/test.txt" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/ApplicationInfo.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/Certification.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java" />
@@ -231,19 +219,14 @@
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" />
         <option value="$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/http/HttpSession.class" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java" />
-        <option value="$PROJECT_DIR$/web/master/csp.jsp" />
-        <option value="$PROJECT_DIR$/web/master/insertMember.jsp" />
         <option value="$PROJECT_DIR$/web/all/footer.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
-        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/AnalyScoreAction.java" />
         <option value="$PROJECT_DIR$/web/photos/me.txt" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
-        <option value="$PROJECT_DIR$/web/master/main.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
         <option value="$PROJECT_DIR$/web/all/header.jsp" />
         <option value="$PROJECT_DIR$/web/member/application.jsp" />
@@ -251,6 +234,27 @@
         <option value="$PROJECT_DIR$/web/all/power.jsp" />
         <option value="$PROJECT_DIR$/web/all/error.jsp" />
         <option value="$PROJECT_DIR$/web/master/managerApplication.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertMemberInfoAction.java" />
+        <option value="$PROJECT_DIR$/web/master/csp.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPScoreAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/ManagerCSPApplicationAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/AnalysisCSPScoreAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/BackBookAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/BorrowBookAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectBookInfoAction.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
+        <option value="$PROJECT_DIR$/web/master/book.jsp" />
+        <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
+        <option value="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/main.jsp" />
+        <option value="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
+        <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/insertMember.jsp" />
       </list>
     </option>
   </component>
@@ -334,24 +338,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -366,24 +352,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -450,7 +418,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
+              <option name="myItemId" value="master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,6 +441,9 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.goldlone.action.master" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\all" />
       <recent name="E:\ideaWorkspace\ccfsxuStu" />
@@ -1057,7 +1028,7 @@
       <workItem from="1509629360252" duration="7128000" />
       <workItem from="1509693173977" duration="25439000" />
       <workItem from="1509733299781" duration="1335000" />
-      <workItem from="1509778588686" duration="9516000" />
+      <workItem from="1509778588686" duration="12687000" />
     </task>
     <task id="LOCAL-00001" summary="修改API地址">
       <created>1509722737907</created>
@@ -1077,7 +1048,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80905000" />
+    <option name="totallyTimeSpent" value="84076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1095,36 +1066,36 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43870968" sideWeight="0.5045386" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.4969743" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20801815" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3983871" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.4935484" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22239032" sideWeight="0.5064516" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22239032" sideWeight="0.5064516" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1148,80 +1119,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/CertificationInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/entity/BorrowBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6075">
-          <caret line="253" column="29" lean-forward="false" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1831#1842#0" expanded="false" />
-            <element signature="e#3056#3067#0" expanded="false" />
-            <element signature="e#4332#4343#0" expanded="false" />
-            <element signature="method#getCertSetNotStart#0;class#CSPDao#0" expanded="false" />
-            <marker date="1509614869169" expanded="true" signature="1098:1146" ph="insert into Score... " />
-            <marker date="1509614869169" expanded="true" signature="2026:2266" ph="select M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="3251:3454" ph="select M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="4549:4829" ph="SELECT M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="4978:5226" ph="SELECT M_nam... Score" />
-            <marker date="1509614869169" expanded="true" signature="6206:6303" ph="select M_mem... Member" />
-            <marker date="1509614869169" expanded="true" signature="6787:6904" ph="INSERT INTO Application... " />
-            <marker date="1509614869169" expanded="true" signature="7648:7687" ph="SELECT C_no,... Certification" />
-            <marker date="1509614869169" expanded="true" signature="8411:8495" ph="SELECT C_no,... Certification" />
-            <marker date="1509614869169" expanded="true" signature="9157:9364" ph="INSERT INTO Application... " />
-            <marker date="1509614869169" expanded="true" signature="10377:10407" ph="UPDATE Appli... " />
-            <marker date="1509614869169" expanded="true" signature="10377:10432" ph="UPDATE Appli... " />
-            <marker date="1509614869169" expanded="true" signature="11114:11139" ph="SELECT * fro... Application" />
-            <marker date="1509614869169" expanded="true" signature="11209:11253" ph="SELECT * fro... Application" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/entity/Certification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Certification" />
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/CSPAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/json/Cookie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1257">
-          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/struts2/lib/struts2-dom-api.jar!/resources/dtds/struts-2.5.dtd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="109" column="10" lean-forward="false" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/aria.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1216" column="22" lean-forward="false" selection-start-line="1216" selection-start-column="22" selection-end-line="1216" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/ScoreInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1305,62 +1202,6 @@
             <marker date="1509717644587" expanded="true" signature="10623:10658" ph="select disti... Member" />
             <marker date="1509717644587" expanded="true" signature="13566:13613" ph="select M_pow... Member" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/csp.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4193">
-          <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/insertScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="57" column="75" lean-forward="false" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="57" column="75" lean-forward="false" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/book.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="57" column="75" lean-forward="false" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="57" column="75" lean-forward="false" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/analy.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="57" column="75" lean-forward="false" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,22 +1292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/member/AnalyScoreAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -1516,17 +1341,7 @@
         <state relative-caret-position="775">
           <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="27" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-          <folding>
-            <marker date="1509783373300" expanded="true" signature="6235:6260" ph="..." />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1567,10 +1382,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/managerApplication.jsp">
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPScoreAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+        <state relative-caret-position="400">
+          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/InsertMemberInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/ManagerCSPApplicationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/AnalysisCSPScoreAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/BackBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/BorrowBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectBookInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="145" column="30" lean-forward="false" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="64" column="28" lean-forward="false" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="63" column="30" lean-forward="false" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="58" column="15" lean-forward="true" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2425">
+          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1000">
+          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <marker date="1509791345843" expanded="true" signature="6317:6342" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-457">
+          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/book.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
           <folding />
         </state>
       </provider>

@@ -7,10 +7,10 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 查询会员信息
+ * 借书
  * Created by CN on 2017/11/3.
  */
-public class SelectMemberInfoAction extends ActionSupport {
+public class BorrowBookAction extends ActionSupport {
 
     private String gotoUrl;
     @Override
@@ -22,7 +22,7 @@ public class SelectMemberInfoAction extends ActionSupport {
             else
                 return "power";
         }
-        gotoUrl = "/master/selectMemberInfo";
+        gotoUrl = "/master/borrowBook";
 
         return LOGIN;
     }

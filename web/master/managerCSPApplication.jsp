@@ -51,25 +51,25 @@
           <li><a href="#" style="color: #000;cursor: default;">
             <h4 class="sub-header">会员信息</h4></a>
           </li>
-          <li><a href="./main.jsp" >查询会员信息</a></li>
-          <li><a href="./insertMember.jsp">录入会员信息</a></li>
+          <li><a href="/master/selectMemberInfo" >查询会员信息</a></li>
+          <li><a href="/master/insertMemberInfo">录入会员信息</a></li>
         </ul>
         <ul class="nav nav-sidebar">
           <li><a href="#" style="color: #000;cursor:default;">
             <h4 class="sub-header">CSP管理</h4></a>
           </li>
-          <li><a href="csp.jsp">查询CSP成绩</a></li>
-          <li><a href="./insertScore.jsp">录入CSP成绩</a></li>
-          <li class="active"><a href="../master/managerApplication.jsp">CSP报名管理</a></li>
-          <li><a href="analy.jsp">会员进步状况分析</a></li>
+          <li><a href="/master/selectCSPScore">查询CSP成绩</a></li>
+          <li><a href="/master/insertCSPScore">录入CSP成绩</a></li>
+          <li class="active"><a href="/master/managerCSPApplication">CSP报名管理</a></li>
+          <li><a href="/master/analysisCSPScore">会员进步状况分析</a></li>
         </ul>
         <ul class="nav nav-sidebar">
           <li><a href="#" style="color: #000;cursor:default;">
             <h4 class="sub-header">图书馆</h4></a>
           </li>
-          <li><a href="book.jsp">查询图书信息</a></li>
-          <li><a href="borrowBook.jsp">借书</a></li>
-          <li><a href="backBook.jsp">还书</a></li>
+          <li><a href="/master/selectBookInfo">查询图书信息</a></li>
+          <li><a href="/master/borrowBook">借书</a></li>
+          <li><a href="/master/backBook">还书</a></li>
         </ul>
       </div>
       <!-- end left nav -->
