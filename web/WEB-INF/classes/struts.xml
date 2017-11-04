@@ -81,6 +81,11 @@
 			<result name="success">/member/application.jsp</result>
 			<result name="login" type="redirect">/login.jsp</result>
 		</action>
+		<!-- CSP成绩分析 -->
+		<action name="analyScoreAction" class="cn.goldlone.action.member.AnalyScoreAction" method="execute" >
+			<result name="success">/member/analyScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
 	</package>
 
 	<!-- 管理员权限拥有者 -->
@@ -92,7 +97,7 @@
 		<!-- 查询会员信息 -->
 		<action name="selectMemberInfo" class="cn.goldlone.action.master.SelectMemberInfoAction">
 			<result name="success">/master/main.jsp</result>
-			<result name="login">/login.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
 	</package>
