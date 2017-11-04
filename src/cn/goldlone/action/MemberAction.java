@@ -59,7 +59,7 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 //				response.addCookie(cookie);
 				return SUCCESS;
 			case 10002:
-				this.addFieldError("loginError", "密码错误");
+				this.addFieldError("loginError", "密码错误，初始密码为会员号");
 				break;
 			case 10003:
 				this.addFieldError("loginError", "未注册，请联系CCFSXU学生分会");

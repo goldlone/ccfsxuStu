@@ -18,7 +18,7 @@ public class ApplicationAction extends ActionSupport{
         if(Checks.checkSession(request) && Checks.checkCookie(request)) {
             return SUCCESS;
         }
-        
+
         gotoUrl = "/member/application";
         return LOGIN;
     }

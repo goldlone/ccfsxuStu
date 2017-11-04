@@ -21,17 +21,17 @@
   <title>CCFSXU会员管理系统</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../assets/css/my/dashboard.css" rel="stylesheet">
+  <link href="/assets/css/my/dashboard.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+  <!--[if lt IE 9]><script src="/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="/assets/js/ie-emulation-modes-warning.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
 </head>
 
 <body>
-  <jsp:include page="../all/header.jsp"></jsp:include>
+  <jsp:include page="/all/header.jsp"></jsp:include>
 
   <div class="container-fluid">
     <div class="row">
@@ -92,7 +92,7 @@
         <br>
         <h4 class="sub-header">添加CSP认证考试</h4>
         <div class="table-responsive">
-          <form class="form-horizontal" id="addCertForm" role="form">
+          <form class="form-horizontal col-md-12" id="addCertForm" role="form">
             <div class="form-group">
               <label class="col-md-2 control-label" style="text-align: center">认证名称</label>
               <div class="col-md-4">
@@ -138,14 +138,14 @@
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  <script type="text/javascript" src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
   <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-  <script src="../dist/js/bootstrap.min.js"></script>
+  <script src="/dist/js/bootstrap.min.js"></script>
   <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-  <script src="../assets/js/vendor/holder.min.js"></script>
+  <script src="/assets/js/vendor/holder.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script src="../assets/js/bootbox.min.js"></script>
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="/assets/js/bootbox.min.js"></script>
 
   <script type="text/javascript">
     // 获取考试集合

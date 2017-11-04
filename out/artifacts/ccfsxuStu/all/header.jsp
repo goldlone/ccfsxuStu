@@ -32,7 +32,7 @@
         <li><a href="/member/analyScore">CSP成绩分析</a></li>
       </ul>
       <!-- <form class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Search...">
+          <input type="text" class="form-control" placeholder="Search...">
       </form> -->
     </div>
   </div>

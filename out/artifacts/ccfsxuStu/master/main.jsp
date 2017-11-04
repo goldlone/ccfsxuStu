@@ -39,19 +39,18 @@
 	
   	<div class="container-fluid">
       <div class="row">
-		
-		<!-- start left nav -->
+        <!-- start left nav -->
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="#" style="color: #000;cursor: default;">
-            	<h4 class="sub-header">会员信息</h4></a>
+              <h4 class="sub-header">会员信息</h4></a>
             </li>
             <li class="active"><a href="main.jsp" >查询会员信息</a></li>
             <li><a href="insertMember.jsp">录入会员信息</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="#" style="color: #000;cursor:default;">
-            	<h4 class="sub-header">CSP管理</h4></a>
+              <h4 class="sub-header">CSP管理</h4></a>
             </li>
             <li><a href="csp.jsp">查询CSP成绩</a></li>
             <li><a href="insertScore.jsp">录入CSP成绩</a></li>
@@ -60,21 +59,20 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="#" style="color: #000;cursor:default;">
-            	<h4 class="sub-header">图书馆</h4></a>
+              <h4 class="sub-header">图书馆</h4></a>
             </li>
             <li><a href="book.jsp">查询图书信息</a></li>
             <li><a href="borrowBook.jsp">借书</a></li>
             <li><a href="backBook.jsp">还书</a></li>
           </ul>
         </div>
-		<!-- end left nav -->
+        <!-- end left nav -->
         
         <!-- start content -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
           <h1 class="page-header">会员信息</h1>
-         	<div id="memberDetail">
-            </div>
+         	<div id="memberDetail"></div>
 
           <h4 class="sub-header">查询会员信息</h4>
           <div class="table-responsive">
