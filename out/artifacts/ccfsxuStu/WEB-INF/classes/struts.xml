@@ -82,7 +82,7 @@
 			<result name="login" type="redirect">/login.jsp</result>
 		</action>
 		<!-- CSP成绩分析 -->
-		<action name="analyScoreAction" class="cn.goldlone.action.member.AnalyScoreAction" method="execute" >
+		<action name="analyScore" class="cn.goldlone.action.member.AnalyScoreAction" method="execute" >
 			<result name="success">/member/analyScore.jsp</result>
 			<result name="login" type="redirect">/login.jsp</result>
 		</action>

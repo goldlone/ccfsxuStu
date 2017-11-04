@@ -14,7 +14,13 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout">注销</a></li>
+        <li><a href="/logout"><%
+          if(request.getSession().getAttribute("memberNo") == null) {
+              out.print("登录");
+          } else {
+            out.print("注销");
+          }
+        %></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/master/selectMemberInfo">管理端</a></li>
@@ -23,7 +29,7 @@
         <li><a href="/member/application">CSP预报名</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">CSP成绩分析</a></li>
+        <li><a href="/member/analyScore">CSP成绩分析</a></li>
       </ul>
       <!-- <form class="navbar-form navbar-right">
         <input type="text" class="form-control" placeholder="Search...">
