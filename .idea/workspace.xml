@@ -7,14 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="修改API地址">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/photos/me.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/e37acfc1-a925-4bb8-8ae0-bc049ff8312c.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/photos/会员已过期，请先续费.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/DBDao.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/DBDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/Checks.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/Checks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/DBDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/DBDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/Checks.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/Checks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/all/header.jsp" afterPath="$PROJECT_DIR$/web/all/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/main.jsp" afterPath="$PROJECT_DIR$/web/master/main.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +51,7 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu@118.89.199.103" />
+        <option name="myItemId" value="ccfsxu@123.207.159.214" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -48,54 +61,71 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu@118.89.199.103" />
+        <option name="myItemId" value="ccfsxu@123.207.159.214" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="ccfsxu" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu@118.89.199.103" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Member" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu@118.89.199.103" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ccfsxu" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Certification" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="application.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="198" column="37" lean-forward="true" selection-start-line="198" selection-start-column="37" selection-end-line="198" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="100" column="45" lean-forward="true" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+              <folding>
+                <marker date="1509725491057" expanded="true" signature="6236:6261" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectMemberInfoAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/struts.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="89" column="43" lean-forward="true" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Checks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="65" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/org/json/Cookie.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/SSOChecks.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationCSPAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
         <option value="$PROJECT_DIR$/web/all/power.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/model/LoginInfo.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ExportApplicationExcel.java" />
@@ -151,12 +180,15 @@
         <option value="$PROJECT_DIR$/web/master/managerApplication.jsp" />
         <option value="$PROJECT_DIR$/web/member/application.jsp" />
         <option value="$PROJECT_DIR$/web/all/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
-        <option value="$PROJECT_DIR$/web/all/header.jsp" />
         <option value="$PROJECT_DIR$/web/master/main.jsp" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" />
+        <option value="$PROJECT_DIR$/web/all/header.jsp" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
         <option value="$PROJECT_DIR$/src/struts.xml" />
       </list>
     </option>
@@ -273,24 +305,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -332,28 +346,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="goldlone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goldlone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,119 +415,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goldlone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccfsxuStu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1132,7 +1020,9 @@
       <workItem from="1509594908703" duration="13102000" />
       <workItem from="1509610056689" duration="5813000" />
       <workItem from="1509629360252" duration="7128000" />
-      <workItem from="1509693173977" duration="23020000" />
+      <workItem from="1509693173977" duration="25439000" />
+      <workItem from="1509733299781" duration="1335000" />
+      <workItem from="1509778588686" duration="2114000" />
     </task>
     <task id="LOCAL-00001" summary="修改API地址">
       <created>1509722737907</created>
@@ -1152,10 +1042,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67635000" />
+    <option name="totallyTimeSpent" value="73503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1177,10 +1068,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5370968" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3983871" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.4935484" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.4935484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22239032" sideWeight="0.5064516" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1189,6 +1079,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1213,35 +1104,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/out/artifacts/ccfsxuStu_war_exploded/photos/1509596183710.jpg" />
-    <entry file="file://$PROJECT_DIR$/out/artifacts/ccfsxuStu_war_exploded/photos/65535G.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/entity/ApplicationInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="method#toString#0;class#ApplicationInfo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Application">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/ImportMemberInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-275">
           <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1296,23 +1161,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Certification">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Certification" />
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/CSPAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-318">
           <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,17 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="1216" column="22" lean-forward="false" selection-start-line="1216" selection-start-column="22" selection-end-line="1216" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1353,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1369,7 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1377,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,7 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,32 +1230,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Member">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/7fff1ba5/e37acfc1-a925-4bb8-8ae0-bc049ff8312c/ccfsxu.Member" />
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="177" column="41" lean-forward="true" selection-start-line="177" selection-start-column="41" selection-end-line="177" selection-end-column="41" />
-          <folding>
-            <element signature="e#2665#2666#0" expanded="true" />
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="method#toString#0;class#UserInfo#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1426,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1434,7 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,7 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,7 +1267,7 @@
         <state relative-caret-position="167">
           <caret line="174" column="29" lean-forward="false" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="29" />
           <folding>
-            <element signature="e#622#630#0" expanded="true" />
+            <element signature="e#622#630#0" expanded="false" />
             <marker date="1509717644587" expanded="true" signature="789:866" ph="select M_pas... Member" />
             <marker date="1509717644587" expanded="true" signature="1531:1572" ph="SELECT * FRO... Member" />
             <marker date="1509717644587" expanded="true" signature="1861:1934" ph="INSERT INTO Member... " />
@@ -1468,21 +1284,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/all/power.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1550,19 +1355,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3868">
-          <caret line="207" column="42" lean-forward="true" selection-start-line="207" selection-start-column="42" selection-end-line="207" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="4277" column="18" lean-forward="true" selection-start-line="4277" selection-start-column="18" selection-end-line="4277" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1570,7 +1366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1578,18 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1598,29 +1381,65 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
+    <entry file="file://$PROJECT_DIR$/web/all/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="130" column="64" lean-forward="false" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="64" />
+        <state relative-caret-position="275">
+          <caret line="11" column="79" lean-forward="false" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/photos/me.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3592ccbd-4f5a-4483-a911-553db5a74767/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
           <folding>
-            <marker date="1509725491057" expanded="true" signature="6236:6261" ph="..." />
+            <element signature="e#3205#3215#0" expanded="false" />
+            <element signature="e#3991#4001#0" expanded="false" />
+            <element signature="e#4789#4799#0" expanded="false" />
+            <element signature="e#5901#5911#0" expanded="false" />
+            <element signature="e#6250#6251#0" expanded="false" />
+            <element signature="e#6268#6269#0" expanded="false" />
+            <element signature="e#6299#6300#0" expanded="false" />
+            <element signature="e#6320#6321#0" expanded="false" />
+            <element signature="e#6363#6364#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="41" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="40" column="21" lean-forward="false" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="449">
           <caret line="157" column="14" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="14" />
           <folding>
             <element signature="method#applicate#0;class#ApplicationCSPAction#0" expanded="false" />
@@ -1630,34 +1449,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="275">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.Member">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/DBDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/member/application.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="198" column="37" lean-forward="true" selection-start-line="198" selection-start-column="37" selection-end-line="198" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="182">
+          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="65" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        <state relative-caret-position="385">
+          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="49" column="97" lean-forward="false" selection-start-line="49" selection-start-column="87" selection-end-line="49" selection-end-column="97" />
+        <state relative-caret-position="25">
+          <caret line="100" column="45" lean-forward="true" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+          <folding>
+            <marker date="1509725491057" expanded="true" signature="6236:6261" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="89" column="43" lean-forward="true" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
           <folding />
         </state>
       </provider>

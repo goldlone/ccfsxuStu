@@ -15,9 +15,10 @@ public class ApplicationAction extends ActionSupport{
     @Override
     public String execute() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
-        if(Checks.checkCookie(request)) {
+        if(Checks.checkSession(request) && Checks.checkCookie(request)) {
             return SUCCESS;
         }
+        
         gotoUrl = "/member/application";
         return LOGIN;
     }

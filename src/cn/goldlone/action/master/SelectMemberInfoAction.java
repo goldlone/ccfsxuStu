@@ -15,8 +15,8 @@ public class SelectMemberInfoAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
-        if(Checks.checkCookie(request)) {
-            if(Checks.checkPower("", 2))
+        if(Checks.checkCookie(request) && Checks.checkSession(request)) {
+            if(Checks.checkPower(request.getSession().getAttribute("memberNo").toString(), 2))
                 return SUCCESS;
             else
                 return "power";

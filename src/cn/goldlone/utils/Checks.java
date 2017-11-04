@@ -62,7 +62,20 @@ public class Checks {
      * @return
      */
     public static boolean checkPower(String memeberNo, int power) {
+        System.out.println(memeberNo);
+        System.out.println((new MemberDao()).selectPower(memeberNo));
         if(power <= (new MemberDao()).selectPower(memeberNo))
+            return true;
+        return false;
+    }
+
+    /**
+     * 检查Session是否合格
+     * @param request
+     * @return
+     */
+    public static boolean checkSession(HttpServletRequest request) {
+        if(request.getSession().getAttribute("memberNo") != null)
             return true;
         return false;
     }

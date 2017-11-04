@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class DBDao {
 	private static final String USER = "cn";
     private static final String PASSWORD = "cheng521";
-    private static final String URL = "jdbc:mysql://118.89.199.103:3306/ccfsxu?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false";
+    private static final String URL = "jdbc:mysql://123.207.159.214:3306/ccfsxu?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false";
 //    private static final String URL = "jdbc:mysql://127.0.0.1:3306/ccfsxu?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     
