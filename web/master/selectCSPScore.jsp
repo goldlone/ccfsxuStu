@@ -45,7 +45,7 @@
             <li><a href="#" style="color: #000;cursor: default;">
               <h4 class="sub-header">会员信息</h4></a>
             </li>
-            <li class="active"><a href="/master/selectMemberInfo" >查询会员信息</a></li>
+            <li><a href="/master/selectMemberInfo" >查询会员信息</a></li>
             <li><a href="/master/insertMemberInfo">录入会员信息</a></li>
           </ul>
           <ul class="nav nav-sidebar">

@@ -7,79 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="修改API地址">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/excel/templateScore.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/excel/第十一次CCF计算机软件能力认证.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/utils/ImportCSPScore.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/BookAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/CSPAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/cspJsp/applicateFail.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/cspJsp/applicateSuccess.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/ApplicationCSPAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/BookAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/CSPAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/MemberAction.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/AnalysisCSPScoreAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/AnalysisCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/BackBookAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/BackBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/BorrowBookAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/BorrowBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/InsertCSPScoreAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/InsertCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/InsertMemberInfoAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/InsertMemberInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/ManagerCSPApplicationAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/ManagerCSPApplicationAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectBookInfoAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectBookInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectCSPScoreAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/AnalyScoreAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/AnalyScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/CSPDao.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/CSPDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Score.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/Score.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/ImportMemberInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/utils/ImportMemberInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/AnalysisCSPScoreAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/AnalysisCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/BackBookAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/BackBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/BorrowBookAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/BorrowBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/InsertCSPScoreAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/InsertCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/InsertMemberInfoAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/InsertMemberInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/ManagerCSPApplicationAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/ManagerCSPApplicationAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectBookInfoAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectBookInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectCSPScoreAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectCSPScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/master/SelectMemberInfoAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/AnalyScoreAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/AnalyScoreAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/member/ApplicationAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/CSPDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/CSPDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/MemberDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/entity/Score.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/entity/Score.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/ImportMemberInfo.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/utils/ImportMemberInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/3592ccbd-4f5a-4483-a911-553db5a74767.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/3592ccbd-4f5a-4483-a911-553db5a74767.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccfsxu.sql" afterPath="$PROJECT_DIR$/ccfsxu.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertCSPScore.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/insertCSPScore.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/AnalysisCSPScoreAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/AnalysisCSPScoreAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/BackBookAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/BackBookAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/BorrowBookAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/BorrowBookAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertMemberInfoAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertMemberInfoAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/ManagerCSPApplicationAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/ManagerCSPApplicationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectBookInfoAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectBookInfoAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPScoreAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectCSPScoreAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/SelectMemberInfoAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/member/AnalyScoreAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/member/AnalyScoreAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/member/ApplicationAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/dao/CSPDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/entity/Score.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/entity/Score.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/utils/ImportMemberInfo.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/utils/ImportMemberInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sql" afterPath="$PROJECT_DIR$/test.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/ApplicationCSPAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/ApplicationCSPAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/BookAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/CSPAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/CSPAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/MemberAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -147,11 +78,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertCSPScore.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="insertCSPScore.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="943">
-              <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+            <state relative-caret-position="550">
+              <caret line="127" column="106" lean-forward="false" selection-start-line="127" selection-start-column="106" selection-end-line="127" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectCSPScore.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -263,7 +204,6 @@
         <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
         <option value="$PROJECT_DIR$/web/master/main.jsp" />
         <option value="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
-        <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
         <option value="$PROJECT_DIR$/web/master/insertMember.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
@@ -292,6 +232,7 @@
         <option value="$PROJECT_DIR$/test.sql" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ImportCSPScore.java" />
         <option value="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
       </list>
     </option>
   </component>
@@ -1263,7 +1204,7 @@
       <workItem from="1510232443536" duration="642000" />
       <workItem from="1510803347281" duration="1475000" />
       <workItem from="1510998128919" duration="7876000" />
-      <workItem from="1511522019766" duration="10052000" />
+      <workItem from="1511522019766" duration="10255000" />
     </task>
     <task id="LOCAL-00001" summary="修改API地址">
       <created>1509722737907</created>
@@ -1283,7 +1224,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104760000" />
+    <option name="totallyTimeSpent" value="104963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1716,14 +1657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="136" column="18" lean-forward="true" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -1795,8 +1728,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+        <state relative-caret-position="550">
+          <caret line="127" column="106" lean-forward="false" selection-start-line="127" selection-start-column="106" selection-end-line="127" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding />
         </state>
       </provider>

@@ -126,7 +126,6 @@
             console.log(res);
             for(var i=0; i<res.data.length; i++)
               $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
-
           },
           error: function (res) {
             console.log(res);
