@@ -1,8 +1,9 @@
-package cn.goldlone.action;
+package cn.goldlone.action.api;
 
 import cn.goldlone.dao.CSPDao;
 import cn.goldlone.entity.Certification;
 import cn.goldlone.model.ScoreInfo;
+import cn.goldlone.utils.ImportCSPScore;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
@@ -11,8 +12,7 @@ import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +24,13 @@ public class CSPAction  extends ActionSupport implements ModelDriven<Certificati
 
     // 会员号
     private String no;
+    // 认证编号
     private int certNo;
+    // 成绩区间
     private int lowScore;
     private int highScore;
+    // 成绩单excel
+    private File scoreFile;
 
     private Certification cert = new Certification();
     private CSPDao dao = new CSPDao();
@@ -130,6 +134,30 @@ public class CSPAction  extends ActionSupport implements ModelDriven<Certificati
         return null;
     }
 
+    /**
+     * 接收CSP成绩excel文件
+     * @return
+     */
+    public String receiveCSPScoreFile() throws IOException {
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+        System.out.println(certNo);
+        if(certNo == 0)
+            res.put("ret", false);
+        else {
+            boolean ret = ImportCSPScore.importInfo(scoreFile, certNo);
+            res.put("ret", ret);
+        }
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
 
     public String getNo() {
         return no;
@@ -161,6 +189,14 @@ public class CSPAction  extends ActionSupport implements ModelDriven<Certificati
 
     public void setHighScore(int highScore) {
         this.highScore = highScore;
+    }
+
+    public File getScoreFile() {
+        return scoreFile;
+    }
+
+    public void setScoreFile(File scoreFile) {
+        this.scoreFile = scoreFile;
     }
 
     @Override

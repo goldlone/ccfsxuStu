@@ -19,9 +19,9 @@ import jxl.write.WritableWorkbook;
 public class ImportMemberInfo {
 	
 	public static void main(String[] args) {
-//		createTemplate();
+		createTemplate();
 
-		importInfo();
+//		importInfo();
 	}
 	
 	/**

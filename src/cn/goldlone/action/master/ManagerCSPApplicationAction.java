@@ -15,16 +15,17 @@ public class ManagerCSPApplicationAction extends ActionSupport {
     private String gotoUrl;
     @Override
     public String execute() throws Exception {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        if(Checks.checkCookie(request) && Checks.checkSession(request)) {
-            if(Checks.checkPower(request.getSession().getAttribute("memberNo").toString(), 2))
-                return SUCCESS;
-            else
-                return "power";
-        }
-        gotoUrl = "/master/managerCSPApplication";
-
-        return LOGIN;
+        return SUCCESS;
+//        HttpServletRequest request = ServletActionContext.getRequest();
+//        if(Checks.checkCookie(request) && Checks.checkSession(request)) {
+//            if(Checks.checkPower(request.getSession().getAttribute("memberNo").toString(), 2))
+//                return SUCCESS;
+//            else
+//                return "power";
+//        }
+//        gotoUrl = "/master/managerCSPApplication";
+//
+//        return LOGIN;
     }
 
 

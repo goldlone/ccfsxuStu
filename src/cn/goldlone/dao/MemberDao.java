@@ -377,7 +377,12 @@ public class MemberDao {
 			
 		return list;
 	}
-	
+
+	/**
+	 * 筛选查询会员信息
+	 * @param member
+	 * @return
+	 */
 	public ArrayList<UserInfo> queryMember(Member member) {
 		ArrayList<UserInfo> list = new ArrayList<UserInfo>();
 		Connection conn = null;
@@ -479,9 +484,72 @@ public class MemberDao {
 
 		return power;
 	}
-	
+
+    /**
+     * 根据邮箱查询会员号
+     * @param email
+     * @return
+     */
+	public String selectNoByEmail(String email) {
+	    String no = null;
+	    Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "select M_memberNo from Member WHERE M_email = ?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, email);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                no = rs.getString(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+            DBDao.closeResultSet(rs);
+        }
+
+	    return no;
+    }
+
+    /**
+     * 根据会员号修改手机号
+     * @param no
+     * @param phone
+     * @return
+     */
+    public boolean updatePhoneByNo(String no, String phone) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "UPDATE Member SET M_phone = ?  WHERE M_memberNo = ?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, phone);
+            pstmt.setString(2, no);
+
+            int  rs = pstmt.executeUpdate();
+            if(rs == 0)
+                return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+        }
+	    return true;
+    }
+
+
 	
 	public static void main(String[] args) {
+//        System.out.println(new MemberDao().selectNoByEmail("857353825@qq.com"));
+
 //		ArrayList<UserInfo> list = (new MemberDao()).selectAllMember();
 //		for(int i=0; i<list.size(); i++){
 //			UserInfo user = list.get(i);

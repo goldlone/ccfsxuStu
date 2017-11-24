@@ -1,4 +1,4 @@
-package cn.goldlone.action;
+package cn.goldlone.action.api;
 
 import cn.goldlone.dao.CSPDao;
 import cn.goldlone.dao.MemberDao;

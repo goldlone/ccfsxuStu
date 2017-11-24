@@ -53,7 +53,7 @@ public class CSPDao {
 		String sql = null;
 		try {
 			conn = DBDao.getConnection();
-			sql = "insert into Score values(?, ?, ?, ?, ?, ?, ?, ?);";
+			sql = "insert into Score values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, score.getCertNo());
 			pstmt.setString(2, score.getMemberNo());
@@ -63,6 +63,7 @@ public class CSPDao {
 			pstmt.setInt(6, score.getThird());
 			pstmt.setInt(7, score.getForth());
 			pstmt.setInt(8, score.getFifth());
+			pstmt.setString(9, score.getLanguage());
 			pstmt.execute();
 			return true;
 		} catch (SQLException e) {
@@ -308,6 +309,36 @@ public class CSPDao {
 
 		return list;
 	}
+
+    /**
+     * 根据认证名查询认证编号
+     * @param certName
+     * @return
+     */
+	public int selectCertNoByName(String certName) {
+	    int certNo = 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        ResultSet rs = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "SELECT  C_no FROM Certification WHERE C_name = ?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, certName);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                certNo = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+            DBDao.closeResultSet(rs);
+        }
+        return certNo;
+    }
 
 	/**
 	 * 获取未开始的认证集合

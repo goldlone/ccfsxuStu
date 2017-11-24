@@ -28,46 +28,49 @@
 		</action>
 		
 		<!-- 登录 -->
-		<action name="login" class="cn.goldlone.action.MemberAction" method="login">
+		<action name="login" class="cn.goldlone.action.api.MemberAction" method="login">
 			<result name="success" type="redirect">${gotoUrl}</result>
 			<result name="input">/login.jsp</result>
 		</action>
-		<action name="logout" class="cn.goldlone.action.MemberAction" method="logout">
+		<action name="logout" class="cn.goldlone.action.api.MemberAction" method="logout">
 			<result name="login" type="redirect">/login.jsp</result>
 		</action>
 		<!-- 获取年级集合 -->
-		<action name="getGradeSet" class="cn.goldlone.action.MemberAction" method="getGradeSet"></action>
+		<action name="getGradeSet" class="cn.goldlone.action.api.MemberAction" method="getGradeSet"></action>
 		<!-- 查询会员信息 -->
-		<action name="queryMember" class="cn.goldlone.action.MemberAction" method="queryMember"></action>
+		<action name="queryMember" class="cn.goldlone.action.api.MemberAction" method="queryMember"></action>
 
 		<!-- 获取认证名集合 -->
-		<action name="getCertSet" class="cn.goldlone.action.CSPAction" method="getCertSet"></action>
+		<action name="getCertSet" class="cn.goldlone.action.api.CSPAction" method="getCertSet"></action>
 		<!-- 根据会员号查询成绩 -->
-		<action name="getScoreByNo" class="cn.goldlone.action.CSPAction" method="getScoreByNo"></action>
+		<action name="getScoreByNo" class="cn.goldlone.action.api.CSPAction" method="getScoreByNo"></action>
 		<!-- 查询成绩 -->
-		<action name="queryScore" class="cn.goldlone.action.CSPAction" method="queryScore"></action>
+		<action name="queryScore" class="cn.goldlone.action.api.CSPAction" method="queryScore"></action>
 		<!-- 添加CSP认证考试 -->
-		<action name="addCertification" class="cn.goldlone.action.CSPAction" method="addCertification"></action>
+		<action name="addCertification" class="cn.goldlone.action.api.CSPAction" method="addCertification"></action>
+		<!-- 上传CSP成绩Excel -->
+		<action name="receiveCSPScoreFile" class="cn.goldlone.action.api.CSPAction" method="receiveCSPScoreFile"></action>
 
 		<!-- 报名CSP -->
-		<action name="applicate" class="cn.goldlone.action.ApplicationCSPAction" method="applicate"></action>
-		<action name="getCertSetNotStart" class="cn.goldlone.action.ApplicationCSPAction" method="getCertSetNotStart"></action>
+		<action name="applicate" class="cn.goldlone.action.api.ApplicationCSPAction" method="applicate"></action>
+		<action name="getCertSetNotStart" class="cn.goldlone.action.api.ApplicationCSPAction" method="getCertSetNotStart"></action>
 		<!-- 上传照片 -->
-		<action name="uploadPhoto" class="cn.goldlone.action.ApplicationCSPAction" method="uploadPhoto"></action>
-		<action name="getApplication" class="cn.goldlone.action.ApplicationCSPAction" method="getApplication"></action>
-		<action name="getMemberInfo" class="cn.goldlone.action.ApplicationCSPAction" method="getMemberInfo"></action>
+		<action name="uploadPhoto" class="cn.goldlone.action.api.ApplicationCSPAction" method="uploadPhoto"></action>
+		<action name="getApplication" class="cn.goldlone.action.api.ApplicationCSPAction" method="getApplication"></action>
+		<action name="getMemberInfo" class="cn.goldlone.action.api.ApplicationCSPAction" method="getMemberInfo"></action>
 
 
 
 		<!-- 获取图书类别 -->
-		<action name="getBookType" class="cn.goldlone.action.BookAction" method="getBookType"></action>
+		<action name="getBookType" class="cn.goldlone.action.api.BookAction" method="getBookType"></action>
 
 		<!-- 获取全部会员信息 -->
-		<action name="selectAllMember" class="cn.goldlone.action.MemberAction" method="selectAllMember"></action>
+		<action name="selectAllMember" class="cn.goldlone.action.api.MemberAction" method="selectAllMember"></action>
 		<!-- 获取过期或未过期会员信息 -->
-		<action name="selectExpiredMember" class="cn.goldlone.action.MemberAction" method="selectExpiredMember"></action>
+		<action name="selectExpiredMember" class="cn.goldlone.action.api.MemberAction" method="selectExpiredMember"></action>
 		<!-- 根据会员号查询会员信息 -->
-		<action name="selectMemberByNo" class="cn.goldlone.action.MemberAction" method="selectMemberByNo"></action>
+		<action name="selectMemberByNo" class="cn.goldlone.action.api.MemberAction" method="selectMemberByNo"></action>
+
 	</package>
 
 	<!-- 会员权限拥有者 -->

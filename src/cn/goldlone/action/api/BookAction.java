@@ -1,4 +1,4 @@
-package cn.goldlone.action;
+package cn.goldlone.action.api;
 
 import cn.goldlone.dao.BookDao;
 import cn.goldlone.entity.BookType;

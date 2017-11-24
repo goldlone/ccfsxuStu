@@ -367,62 +367,60 @@ A_memberNo</ColNames>
       <ColNames>M_typeNo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="95" parent="15" name="S_no">
+    <column id="95" parent="15" name="S_certNo">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="96" parent="15" name="S_certNo">
+    <column id="96" parent="15" name="S_memberNo">
       <Position>2</Position>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="97" parent="15" name="S_all">
+      <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="97" parent="15" name="S_memberNo">
-      <Position>3</Position>
-      <DataType>varchar(8)|0</DataType>
-    </column>
-    <column id="98" parent="15" name="S_all">
+    <column id="98" parent="15" name="S_first">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="99" parent="15" name="S_first">
+    <column id="99" parent="15" name="S_second">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="100" parent="15" name="S_second">
+    <column id="100" parent="15" name="S_third">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="101" parent="15" name="S_third">
+    <column id="101" parent="15" name="S_forth">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="102" parent="15" name="S_forth">
+    <column id="102" parent="15" name="S_fifth">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="103" parent="15" name="S_fifth">
+    <column id="103" parent="15" name="S_language">
       <Position>9</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <index id="104" parent="15" name="S_certNo">
-      <ColNames>S_certNo</ColNames>
-    </index>
-    <index id="105" parent="15" name="S_memberNo">
+    <index id="104" parent="15" name="S_memberNo">
       <ColNames>S_memberNo</ColNames>
     </index>
-    <key id="106" parent="15" name="PRIMARY">
+    <key id="105" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>S_no</ColNames>
+      <ColNames>S_certNo
+S_memberNo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="107" parent="15" name="Score_ibfk_1">
+    <foreign-key id="106" parent="15" name="Score_ibfk_1">
       <ColNames>S_certNo</ColNames>
       <RefSchemaName>ccfsxu</RefSchemaName>
       <RefTableName>Certification</RefTableName>
       <RefColNames>C_no</RefColNames>
     </foreign-key>
-    <foreign-key id="108" parent="15" name="Score_ibfk_2">
+    <foreign-key id="107" parent="15" name="Score_ibfk_2">
       <ColNames>S_memberNo</ColNames>
       <RefSchemaName>ccfsxu</RefSchemaName>
       <RefTableName>Member</RefTableName>

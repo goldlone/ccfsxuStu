@@ -60,16 +60,16 @@ insert into Certification values(11, '第十一次CCF计算机软件能力认证
 -- 会员CSP（CCSP）成绩信息表
 drop table if exists Score;
 create table Score(
-	S_no int not null AUTO_INCREMENT,
-	S_certNo int,
-	S_memberNo varchar(8),
+	S_certNo int NOT NULL ,
+	S_memberNo varchar(8) NOT NULL ,
 	S_all int,
 	S_first int,
 	S_second int,
 	S_third int,
 	S_forth int,
 	S_fifth int,
-	primary key(S_no),
+	S_language VARCHAR(20),
+	primary key(S_certNo, S_memberNo),
 	foreign key(S_certNo) references Certification(C_no),
 	foreign key(S_memberNo) references Member(M_memberNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

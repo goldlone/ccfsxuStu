@@ -79,3 +79,6 @@ create table Application(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SELECT * from Application;
+
+DELETE FROM Score WHERE 1;
+

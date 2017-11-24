@@ -17,6 +17,8 @@ public class Score {
 	private int forth;
 	// 第五题
 	private int fifth;
+    // 语言
+    private String language;
 
 	public int getCertNo() {
 		return certNo;
@@ -82,4 +84,11 @@ public class Score {
 		this.fifth = fifth;
 	}
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
 }

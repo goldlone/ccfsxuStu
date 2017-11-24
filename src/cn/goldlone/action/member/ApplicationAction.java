@@ -14,13 +14,14 @@ public class ApplicationAction extends ActionSupport{
     private String gotoUrl;
     @Override
     public String execute() throws Exception {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        if(Checks.checkSession(request) && Checks.checkCookie(request)) {
-            return SUCCESS;
-        }
-
-        gotoUrl = "/member/application";
-        return LOGIN;
+        return SUCCESS;
+//        HttpServletRequest request = ServletActionContext.getRequest();
+//        if(Checks.checkSession(request) && Checks.checkCookie(request)) {
+//            return SUCCESS;
+//        }
+//
+//        gotoUrl = "/member/application";
+//        return LOGIN;
     }
 
 

@@ -15,13 +15,14 @@ public class AnalyScoreAction extends ActionSupport {
     private String gotoUrl;
     @Override
     public String execute() throws Exception {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        if(Checks.checkCookie(request) && Checks.checkSession(request)) {
-            return SUCCESS;
-        }
-        gotoUrl = "/member/analyScoreAction";
-
-        return LOGIN;
+        return SUCCESS;
+//        HttpServletRequest request = ServletActionContext.getRequest();
+//        if(Checks.checkCookie(request) && Checks.checkSession(request)) {
+//            return SUCCESS;
+//        }
+//        gotoUrl = "/member/analyScoreAction";
+//
+//        return LOGIN;
     }
 
     public String getGotoUrl() {
