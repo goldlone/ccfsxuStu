@@ -2,9 +2,7 @@ package cn.goldlone.utils;
 
 import cn.goldlone.dao.CSPDao;
 import cn.goldlone.dao.MemberDao;
-import cn.goldlone.entity.Member;
 import cn.goldlone.entity.Score;
-import cn.goldlone.model.RegistInfo;
 import cn.goldlone.model.UserInfo;
 import jxl.Cell;
 import jxl.Sheet;
@@ -14,7 +12,6 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * Created by CN on 2017/11/18.
@@ -22,7 +19,7 @@ import java.util.ArrayList;
 public class ImportCSPScore {
     public static void main(String[] args) {
 //        createTemplate();
-        importInfo(new File("./web/excel/第十一次CCF计算机软件能力认证.xls"), 11);
+//        importInfo(new File("./web/excel/第十一次CCF计算机软件能力认证.xls"), 11);
     }
 
     /**
