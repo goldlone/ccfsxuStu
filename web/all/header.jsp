@@ -40,7 +40,7 @@
         <li><a href="/member/analyScore">CSP成绩分析</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/master/book.jsp">图书馆</a></li>
+        <li><a href="/member/book.jsp">图书馆</a></li>
       </ul>
 
       <!-- <form class="navbar-form navbar-right">

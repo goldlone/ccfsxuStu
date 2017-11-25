@@ -76,6 +76,9 @@
 
 		<!-- 获取图书类别 -->
 		<action name="getBookType" class="cn.goldlone.action.api.BookAction" method="getBookType"></action>
+		<action name="selectBookByType" class="cn.goldlone.action.api.BookAction" method="selectBookByType"></action>
+		<action name="selectBookByName" class="cn.goldlone.action.api.BookAction" method="selectBookByName"></action>
+		<action name="selectBookByISBN" class="cn.goldlone.action.api.BookAction" method="selectBookByISBN"></action>
 
 	</package>
 
@@ -93,8 +96,14 @@
 		<!-- CSP成绩分析 -->
 		<action name="analyScore" class="cn.goldlone.action.member.AnalyScoreAction" method="execute" >
 			<result name="success">/member/analyScore.jsp</result>
-			<result name="login" type="redirect">/login.jsp</result>
+		<result name="login" type="redirect">/login.jsp</result>
 		</action>
+        <!-- 查询图书信息 -->
+        <action name="selectBookInfo" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+            <result name="success">/member/book.jsp</result>
+            <result name="login" type="redirect">/login.jsp</result>
+            <result name="power" type="redirect">/all/power.jsp</result>
+        </action>
 	</package>
 
 	<!-- 管理员权限拥有者 -->
@@ -142,12 +151,6 @@
 		<!-- 分析CSP成绩 -->
 		<action name="analysisCSPScore" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
 			<result name="success">/master/analysisCSPScore.jsp</result>
-			<result name="login" type="redirect">/login.jsp</result>
-			<result name="power" type="redirect">/all/power.jsp</result>
-		</action>
-		<!-- 查询图书信息 -->
-		<action name="selectBookInfo" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
-			<result name="success">/master/book.jsp</result>
 			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>

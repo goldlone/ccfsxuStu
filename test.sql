@@ -85,3 +85,9 @@ DELETE FROM Application WHERE 1;
 DELETE FROM Member WHERE 1;
 
 UPDATE Member SET M_stuNo = '201502401086' ,M_phone = '18435187057' ,M_startTime = '2016-09-01' ,M_endTime = '2020-12-31' , WHERE M_memberNo = '62151G';
+
+# 添加书名
+INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory)
+VALUES('9787040406641', '数据库系统概述（第五版）', 5, '王珊、萨师煊', '高等教育出版社', 39.60, 1);
+
+SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory FROM BookInfo WHERE 1;
