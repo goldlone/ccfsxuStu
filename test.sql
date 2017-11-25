@@ -83,3 +83,5 @@ SELECT * from Application;
 DELETE FROM Score WHERE 1;
 DELETE FROM Application WHERE 1;
 DELETE FROM Member WHERE 1;
+
+UPDATE Member SET M_stuNo = '201502401086' ,M_phone = '18435187057' ,M_startTime = '2016-09-01' ,M_endTime = '2020-12-31' , WHERE M_memberNo = '62151G';

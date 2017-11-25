@@ -45,6 +45,7 @@
             </li>
             <li><a href="/master/selectMemberInfo" >查询会员信息</a></li>
             <li><a href="/master/insertMemberInfo">录入会员信息</a></li>
+            <li><a href="/master/updateMemberInfo">修改会员信息</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="#" style="color: #000;cursor:default;">
@@ -59,7 +60,6 @@
             <li><a href="#" style="color: #000;cursor:default;">
               <h4 class="sub-header">图书馆</h4></a>
             </li>
-            <li><a href="/master/selectBookInfo">查询图书信息</a></li>
             <li><a href="/master/borrowBook">借书</a></li>
             <li><a href="/master/backBook">还书</a></li>
           </ul>

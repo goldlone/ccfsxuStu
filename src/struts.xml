@@ -115,6 +115,12 @@
 			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
+		<!-- 修改会员信息 -->
+		<action name="updateMemberInfo" class="cn.goldlone.action.master.UpdateMemberInfo">
+			<result name="success">/master/updateMemberInfo.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
 		<!-- 查询CSP成绩信息 -->
 		<action name="selectCSPScore" class="cn.goldlone.action.master.SelectCSPScoreAction">
 			<result name="success">/master/selectCSPScore.jsp</result>

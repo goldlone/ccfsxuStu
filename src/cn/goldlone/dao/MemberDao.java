@@ -575,6 +575,57 @@ public class MemberDao {
     }
 
     /**
+     * 修改会员信息
+     * @param user
+     * @return
+     */
+    public boolean updateMemeberInfo(Member user) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = DBDao.getConnection();
+            StringBuilder sb = new StringBuilder();
+            sb.append("UPDATE Member SET ");
+            if(null!=user.getStuNo() && !"".equals(user.getStuNo()))
+                sb.append("M_stuNo = '"+user.getStuNo()+"' ,");
+            if(null!=user.getPhone() && !"".equals(user.getPhone()))
+                sb.append("M_phone = '"+user.getPhone()+"' ,");
+            if(null!=user.getDiscipline() && !"".equals(user.getDiscipline()))
+                sb.append("M_discipline = '"+user.getDiscipline()+"' ,");
+            if(user.getDegreeNo() != 0)
+                sb.append("M_degreeNo = "+user.getDegreeNo()+" ,");
+            if(user.getGrade() != 0)
+                sb.append("M_grade = "+user.getGrade()+" ,");
+            if(user.getClassNum() != 0)
+                sb.append("M_class = "+user.getClassNum()+" ,");
+            if(null!=user.getId() && !"".equals(user.getId()))
+                sb.append("M_id = '"+user.getId()+"' ,");
+            if(null!=user.getStartTime() && !"".equals(user.getStartTime()))
+                sb.append("M_startTime = '"+user.getStartTime()+"' ,");
+            if(null!=user.getEndTime() && !"".equals(user.getEndTime()))
+                sb.append("M_endTime = '"+user.getEndTime()+"' ,");
+            if(user.getAddSocre() != 0)
+                sb.append("M_addScore = "+user.getAddSocre()+" ,");
+            sb.append("M_power = "+user.getPower());
+            sb.append(" WHERE M_memberNo = '");
+            sb.append(user.getNo()+"';");
+
+            System.out.println(sb.toString());
+            pstmt = conn.prepareStatement(sb.toString());
+            int  rs = pstmt.executeUpdate();
+            if(rs == 0)
+                return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+        }
+        return true;
+    }
+
+    /**
      * 查询学历编号
      * @param degree
      * @return

@@ -1,4 +1,4 @@
-package cn.goldlone.action.master;
+package cn.goldlone.action.member;
 
 import cn.goldlone.utils.Checks;
 import com.opensymphony.xwork2.ActionSupport;
