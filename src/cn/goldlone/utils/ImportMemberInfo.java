@@ -70,6 +70,10 @@ public class ImportMemberInfo {
                     member.setClassNum(classNum);
                     member.setDegreeNo(degreeNo);
                     member.setId(id);
+                    member.setPasswd(no);
+                    member.setMemberTypeNo(0);
+                    member.setAddSocre(0);
+                    member.setPower(0);
                     memberDao.addMember(member);
 //                    System.out.println(member.toString());
                     System.out.println("添加" + i);

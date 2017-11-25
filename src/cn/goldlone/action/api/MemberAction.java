@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.goldlone.model.RegistInfo;
 import cn.goldlone.utils.Checks;
 import cn.goldlone.utils.ImportMemberInfo;
 import org.apache.struts2.ServletActionContext;
@@ -252,6 +253,51 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 		out.close();
 		return null;
 	}
+
+    /**
+     * 新增会员信息
+     * @return
+     */
+	public String addMember() throws IOException {
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+        user.setPasswd(user.getNo());
+        boolean ret = false;
+        RegistInfo info = dao.addMember(user);
+        if(info.getCode() == 10001)
+            ret = true;
+        res.put("code", info.getCode());
+        res.put("mes", info.getInfo());
+        res.put("ret", ret);
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
+    /**
+     * 修改会员信息
+     * @return
+     */
+    public String updateMember() throws IOException {
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+
+
+        boolean ret = true;
+        res.put("ret", ret);
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
 
 	@Override
 	public Member getModel() {

@@ -47,6 +47,10 @@
         <action name="selectMemberByNo" class="cn.goldlone.action.api.MemberAction" method="selectMemberByNo"></action>
         <!-- 导入录入会员名录文件 -->
         <action name="receiveMemberFile" class="cn.goldlone.action.api.MemberAction" method="receiveMemberFile"></action>
+        <!-- 添加会员信息 -->
+        <action name="addMember" class="cn.goldlone.action.api.MemberAction" method="addMember"></action>
+        <!-- 修改会员信息 -->
+        <action name="updateMember" class="cn.goldlone.action.api.MemberAction" method="updateMember"></action>
 
 
         <!-- 获取认证名集合 -->

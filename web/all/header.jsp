@@ -14,6 +14,13 @@
       <a class="navbar-brand" href="/" style="cursor: default;">CCFSXU会员管理系统</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right" <%
+        if(request.getSession().getAttribute("memberNo") == null || "".equals(request.getSession().getAttribute("memberNo"))) {
+          out.print("hidden");
+        }
+      %>>
+        <li><a href="#">修改密码</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/logout"><%
           if(request.getSession().getAttribute("memberNo") == null) {

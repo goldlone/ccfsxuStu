@@ -73,70 +73,99 @@
           <h1 class="page-header">会员信息</h1>
           <h4 class="sub-header">录入会员信息</h4>
 
+          <div class="nav nav-tabs">
+            <li role="presentation" class="active" id="hand-li"><a onclick="showHand()" href="#">手动录入</a></li>
+            <li role="presentation" id="file-li"><a onclick="showFile()" href="#">文件导入</a></li>
+          </div>
           <div class="row">
-            <div class="col-md-6">
-              <h5 class="sub-header">详细录入</h5>
-              <form>
-                <div class="form-group col-md-8">
-                  <label class="form-group">姓名</label>
-                  <input class="form-control" type="text" name="name" required/>
+            <div id="handImport" class="col-md-12">
+              <br>
+              <form class="form-horizontal col-md-12" id="form-import">
+                <div class="form-group">
+                  <label class="control-label col-md-1">姓名</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="name" placeholder="必填" required/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">会员号</label>
-                  <input class="form-control" type="text" name="no" required/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">会员号</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="no" placeholder="必填"  required/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">邮箱</label>
-                  <input class="form-control" type="text" name="email" required/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">邮箱</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="email"  placeholder="必填" required/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">学号</label>
-                  <input class="form-control" type="number" name="stuNo"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">学号</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="stuNo" />
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">电话</label>
-                  <input class="form-control" type="text" name="phone"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">电话</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="phone" placeholder="必填"  required/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">专业</label>
-                  <input class="form-control" type="text" name="discipline"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">专业</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="discipline" />
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">学历</label>
-                  <select class="form-control" name="degreeNo" required>
-                    <option value="0">本科</option>
-                    <option value="1">硕士</option>
-                    <option value="2">博士</option>
-                  </select>
+                <div class="form-group">
+                  <label class="control-label col-md-1">学历</label>
+                  <div class="col-md-4">
+                    <select class="form-control" name="degreeNo" required>
+                      <option value="0">本科</option>
+                      <option value="1">硕士</option>
+                      <option value="2">博士</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">年级</label>
-                  <input class="form-control" type="text" name="grade"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">年级</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="number" name="grade"/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">班级</label>
-                  <input class="form-control" type="number" name="classNum"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">班级</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="number" name="classNum"/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">身份证号</label>
-                  <input class="form-control" type="text" name="id"/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">身份证号</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="id" />
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">生效时间</label>
-                  <input class="form-control" type="date" name="startTime" required/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">生效时间</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="date" name="startTime" placeholder="必填"  required/>
+                  </div>
                 </div>
-                <div class="form-group col-md-8">
-                  <label class="form-group">失效时间</label>
-                  <input class="form-control" type="date" name="endTime" required/>
+                <div class="form-group">
+                  <label class="control-label col-md-1">失效时间</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="date" name="endTime" placeholder="必填"  required/>
+                  </div>
                 </div>
 
-                <div class="form-group col-md-8">
-                  <button class="form-control btn-primary" type="submit">提交</button>
+                <div class="form-group col-md-4">
+                  <div class="col-md-8" style="float: right;">
+                    <button class="form-control btn-primary" type="button" onclick="handForm()">提交</button>
+                  </div>
                 </div>
               </form>
             </div>
-            <div class="col-md-6">
-              <h5 class="sub-header">文件导入</h5>
+            <div id="fileImport" class="col-md-12" hidden>
               <div>
                 <b>注意事项：</b><br>
                 1、导入时，请按照模板文件格式导入，否则无法导入。<a href="/excel/templateMember.xls">下载模板</a><br>
@@ -148,8 +177,10 @@
                 <input type="file" id="exampleInputFile">
               </div>
               <br>
-              <div class="col-md-6">
+              <div class="col-md-4">
+                <div class="col-md-6" style="float: right">
                 <button id="fileInput" class="btn btn-lg btn-primary btn-block" type="button" onclick="uploadMember()">确认上传</button>
+                </div>
               </div>
             </div>
           </div>
@@ -174,6 +205,19 @@
     <script src="/assets/js/bootbox.min.js"></script>
     
     <script type="text/javascript">
+      showHand();
+      function showHand() {
+        $("#hand-li").addClass("active");
+        $("#file-li").removeClass("active");
+        $("#fileImport").hide();
+        $("#handImport").show();
+      }
+      function showFile() {
+        $("#hand-li").removeClass("active");
+        $("#file-li").addClass("active");
+        $("#handImport").hide();
+        $("#fileImport").show();
+      }
       // 上传会员名录信息
       var xhr = new XMLHttpRequest();
       function uploadMember() {
@@ -198,22 +242,71 @@
         if(xhr.readyState == 4 && xhr.status == 200) {
           var obj = jQuery.parseJSON(xhr.responseText);
           console.log(obj);
-          if(obj.ret) {
-            bootbox.alert({
+          bootbox.alert({
               size: "small",
               title: "提示信息",
-              message: "录入成功!",
+              message: "录入完毕!",
               callback: function(){  }
-            });
-          } else {
-            bootbox.alert({
-              size: "small",
-              title: "提交失败",
-              message: "录入失败!",
-              callback: function(){  }
-            });
-          }
+          });
+//          if(obj.ret) {
+//            bootbox.alert({
+//              size: "small",
+//              title: "提示信息",
+//              message: "录入成功!",
+//              callback: function(){  }
+//            });
+//          } else {
+//            bootbox.alert({
+//              size: "small",
+//              title: "提交失败",
+//              message: "录入失败!",
+//              callback: function(){  }
+//            });
+//          }
         }
+      }
+      function handForm() {
+        var forms = $("#form-import")[0];
+        if(forms[0].value=="" || forms[1].value==""
+          || forms[2].value=="" || forms[4].value==""
+          || forms[10].value=="" || forms[11].value=="") {
+          bootbox.alert({
+            size: "small",
+              title: "提示信息",
+              message: "有必填信息没有填写!",
+              callback: function(){  }
+          });
+          return;
+        }
+        $.ajax({
+          url:"/addMember",
+          data: $("#form-import").serialize(),
+          type: "post",
+          success: function (res) {
+            console.log(res);
+            switch (res.code) {
+              case 10001:
+                bootbox.alert({
+                  size: "small",
+                  title: "提示信息",
+                  message: "录入成功!",
+                  callback: function(){  }
+                });
+                break;
+              default:
+                bootbox.alert({
+                  size: "small",
+                  title: "提示信息",
+                  message: res.mes,
+                  callback: function(){  }
+                });
+            }
+          },
+          fail: function (res) {
+            console.log(res);
+          }
+        });
+
       }
     </script>
   </body>
