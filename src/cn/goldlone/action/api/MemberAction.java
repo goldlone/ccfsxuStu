@@ -1,6 +1,7 @@
 package cn.goldlone.action.api;
 
 import java.io.IOException;
+import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cn.goldlone.utils.Checks;
+import cn.goldlone.utils.ImportMemberInfo;
 import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,6 +33,7 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 	private Member user = new Member();
 	private MemberDao dao = new MemberDao();
 	private String gotoUrl;
+	private File memberFile;
 	
 	/**
 	 * 会员登录
@@ -230,6 +233,26 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 		return null;
 	}
 
+    /**
+     * 接收会员目录文件信息
+     * @return
+     * @throws IOException
+     */
+	public String receiveMemberFile() throws IOException {
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		JSONObject res = new JSONObject();
+        ImportMemberInfo importMemberInfo = new ImportMemberInfo();
+        boolean ret = importMemberInfo.importMemberInfo(memberFile);
+        res.put("ret", ret);
+		out.print(res.toString());
+		out.flush();
+		out.close();
+		return null;
+	}
+
 	@Override
 	public Member getModel() {
 		return user;
@@ -241,5 +264,13 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 
 	public void setGotoUrl(String gotoUrl) {
 		this.gotoUrl = gotoUrl;
+	}
+
+	public File getMemberFile() {
+		return memberFile;
+	}
+
+	public void setMemberFile(File memberFile) {
+		this.memberFile = memberFile;
 	}
 }

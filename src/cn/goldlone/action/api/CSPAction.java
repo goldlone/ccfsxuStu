@@ -145,7 +145,6 @@ public class CSPAction  extends ActionSupport implements ModelDriven<Certificati
         PrintWriter out = response.getWriter();
         JSONObject res = new JSONObject();
 
-        System.out.println(certNo);
         if(certNo == 0)
             res.put("ret", false);
         else {

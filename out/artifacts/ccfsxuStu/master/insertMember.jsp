@@ -69,6 +69,92 @@
         <!-- end left nav -->
         
         <!-- start content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">会员信息</h1>
+          <h4 class="sub-header">录入会员信息</h4>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="sub-header">详细录入</h5>
+              <form>
+                <div class="form-group col-md-8">
+                  <label class="form-group">姓名</label>
+                  <input class="form-control" type="text" name="name" required/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">会员号</label>
+                  <input class="form-control" type="text" name="no" required/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">邮箱</label>
+                  <input class="form-control" type="text" name="email" required/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">学号</label>
+                  <input class="form-control" type="number" name="stuNo"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">电话</label>
+                  <input class="form-control" type="text" name="phone"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">专业</label>
+                  <input class="form-control" type="text" name="discipline"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">学历</label>
+                  <select class="form-control" name="degreeNo" required>
+                    <option value="0">本科</option>
+                    <option value="1">硕士</option>
+                    <option value="2">博士</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">年级</label>
+                  <input class="form-control" type="text" name="grade"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">班级</label>
+                  <input class="form-control" type="number" name="classNum"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">身份证号</label>
+                  <input class="form-control" type="text" name="id"/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">生效时间</label>
+                  <input class="form-control" type="date" name="startTime" required/>
+                </div>
+                <div class="form-group col-md-8">
+                  <label class="form-group">失效时间</label>
+                  <input class="form-control" type="date" name="endTime" required/>
+                </div>
+
+                <div class="form-group col-md-8">
+                  <button class="form-control btn-primary" type="submit">提交</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <h5 class="sub-header">文件导入</h5>
+              <div>
+                <b>注意事项：</b><br>
+                1、导入时，请按照模板文件格式导入，否则无法导入。<a href="/excel/templateMember.xls">下载模板</a><br>
+                2、上传结束后会弹窗提醒录入结果，请耐心等待。上传过程真的很慢，不要刷新页面。
+              </div>
+              <br>
+              <label for="exampleInputFile" class="control-label">上传导入xls文件：</label>
+              <div class="control-label">
+                <input type="file" id="exampleInputFile">
+              </div>
+              <br>
+              <div class="col-md-6">
+                <button id="fileInput" class="btn btn-lg btn-primary btn-block" type="button" onclick="uploadMember()">确认上传</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
         <!-- end content -->
         
       </div>
@@ -85,6 +171,50 @@
     <script src="/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/assets/js/bootbox.min.js"></script>
     
+    <script type="text/javascript">
+      // 上传会员名录信息
+      var xhr = new XMLHttpRequest();
+      function uploadMember() {
+        bootbox.alert({
+          size: "small",
+          title: "提示信息",
+          message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)",
+          callback: function(){  }
+        });
+        var fileObj = $("#exampleInputFile")[0].files[0];
+        var FileController = "/receiveMemberFile";
+        var form = new FormData();
+        form.append("memberFile", fileObj);
+        xhr.open("post", FileController, true);
+        xhr.onload = function () {
+//           alert("上传完成!");
+        };
+        xhr.send(form);
+        xhr.onreadystatechange = callbackUpload;
+      }
+      function callbackUpload() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+          var obj = jQuery.parseJSON(xhr.responseText);
+          console.log(obj);
+          if(obj.ret) {
+            bootbox.alert({
+              size: "small",
+              title: "提示信息",
+              message: "录入成功!",
+              callback: function(){  }
+            });
+          } else {
+            bootbox.alert({
+              size: "small",
+              title: "提交失败",
+              message: "录入失败!",
+              callback: function(){  }
+            });
+          }
+        }
+      }
+    </script>
   </body>
 </html>

@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
       <img style="float: left;height: 50px;width:70px;padding: 5px 15px;" src="/assets/img/ccfsxu.png" alt="" class="img-circle" width="40" height="40">
       <a class="navbar-brand" href="/" style="cursor: default;">CCFSXU会员管理系统</a>
@@ -31,6 +32,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/member/analyScore">CSP成绩分析</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/master/book.jsp">图书馆</a></li>
+      </ul>
+
       <!-- <form class="navbar-form navbar-right">
           <input type="text" class="form-control" placeholder="Search...">
       </form> -->

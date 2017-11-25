@@ -39,8 +39,17 @@
 		<action name="getGradeSet" class="cn.goldlone.action.api.MemberAction" method="getGradeSet"></action>
 		<!-- 查询会员信息 -->
 		<action name="queryMember" class="cn.goldlone.action.api.MemberAction" method="queryMember"></action>
+        <!-- 获取全部会员信息 -->
+        <action name="selectAllMember" class="cn.goldlone.action.api.MemberAction" method="selectAllMember"></action>
+        <!-- 获取过期或未过期会员信息 -->
+        <action name="selectExpiredMember" class="cn.goldlone.action.api.MemberAction" method="selectExpiredMember"></action>
+        <!-- 根据会员号查询会员信息 -->
+        <action name="selectMemberByNo" class="cn.goldlone.action.api.MemberAction" method="selectMemberByNo"></action>
+        <!-- 导入录入会员名录文件 -->
+        <action name="receiveMemberFile" class="cn.goldlone.action.api.MemberAction" method="receiveMemberFile"></action>
 
-		<!-- 获取认证名集合 -->
+
+        <!-- 获取认证名集合 -->
 		<action name="getCertSet" class="cn.goldlone.action.api.CSPAction" method="getCertSet"></action>
 		<!-- 根据会员号查询成绩 -->
 		<action name="getScoreByNo" class="cn.goldlone.action.api.CSPAction" method="getScoreByNo"></action>
@@ -63,13 +72,6 @@
 
 		<!-- 获取图书类别 -->
 		<action name="getBookType" class="cn.goldlone.action.api.BookAction" method="getBookType"></action>
-
-		<!-- 获取全部会员信息 -->
-		<action name="selectAllMember" class="cn.goldlone.action.api.MemberAction" method="selectAllMember"></action>
-		<!-- 获取过期或未过期会员信息 -->
-		<action name="selectExpiredMember" class="cn.goldlone.action.api.MemberAction" method="selectExpiredMember"></action>
-		<!-- 根据会员号查询会员信息 -->
-		<action name="selectMemberByNo" class="cn.goldlone.action.api.MemberAction" method="selectMemberByNo"></action>
 
 	</package>
 

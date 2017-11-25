@@ -545,10 +545,68 @@ public class MemberDao {
 	    return true;
     }
 
+    /**
+     * 更新失效日期
+     * @param no
+     * @param endTime
+     * @return
+     */
+    public boolean updateEndTimeByNo(String no, String endTime) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "UPDATE Member SET M_endTime = ?  WHERE M_memberNo = ?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, endTime);
+            pstmt.setString(2, no);
+
+            int  rs = pstmt.executeUpdate();
+            if(rs == 0)
+                return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+        }
+        return true;
+    }
+
+    /**
+     * 查询学历编号
+     * @param degree
+     * @return
+     */
+    public int selectDegreeNo(String degree) {
+        int degreeNo = 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        ResultSet rs = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "SELECT D_degreeNo FROM DegreeInfo WHERE D_degreeName=?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, degree);
+            rs = pstmt.executeQuery();
+            if(rs.next())
+                degreeNo = rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+            DBDao.closeResultSet(rs);
+        }
+
+        return degreeNo;
+    }
 
 	
 	public static void main(String[] args) {
-//        System.out.println(new MemberDao().selectNoByEmail("857353825@qq.com"));
+//        System.out.println(new MemberDao().selectDegreeNo("本科"));
 
 //		ArrayList<UserInfo> list = (new MemberDao()).selectAllMember();
 //		for(int i=0; i<list.size(); i++){

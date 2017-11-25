@@ -81,4 +81,5 @@ create table Application(
 SELECT * from Application;
 
 DELETE FROM Score WHERE 1;
-
+DELETE FROM Application WHERE 1;
+DELETE FROM Member WHERE 1;

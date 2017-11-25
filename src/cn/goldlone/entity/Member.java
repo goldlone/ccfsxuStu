@@ -4,7 +4,6 @@ package cn.goldlone.entity;
  * 会员信息表映射
  * 
  * @ClassName: Member
- * @Description: TODO
  * @author: CN 创建时间: 2017年9月28日 下午4:19:46
  */
 public class Member {
