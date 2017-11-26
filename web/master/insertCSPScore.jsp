@@ -81,7 +81,13 @@
           <br>
           <form>
             <label>考试名称</label>
-            <select id="certName" name="certNo" class="form-control"></select>
+            <div class="row">
+              <div class="col-md-4">
+                <select id="certName" name="certNo" class="form-control"></select>
+              </div>
+              <div class="col-md-4"></div>
+              <div class="col-md-4"></div>
+            </div>
             <br>
             <label for="exampleInputFile" class="control-label">上传导入xls文件：</label>
             <div class="control-label">
