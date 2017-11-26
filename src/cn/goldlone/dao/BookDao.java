@@ -159,8 +159,49 @@ public class BookDao {
         return list;
     }
 
+    /**
+     * 根据部分书名查询数目信息
+     * @param name
+     * @return
+     */
+    public ArrayList<BookInfo> selectBookByName(String name) {
+        ArrayList<BookInfo> list = new ArrayList<BookInfo>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        ResultSet rs = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory " +
+                    "FROM BookInfo " +
+                    "WHERE B_name LIKE ?;";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "%"+name+"%");
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                BookInfo info = new BookInfo();
+                info.setNo(rs.getString(1));
+                info.setName(rs.getString(2));
+                info.setType(this.selectTypeName(rs.getInt(3)));
+                info.setAuthor(rs.getString(4));
+                info.setPublicer(rs.getString(5));
+                info.setPrice(rs.getDouble(6));
+                info.setInventory(rs.getInt(7));
+                list.add(info);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+            DBDao.closeResultSet(rs);
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new BookDao().selectBookByType(0).get(0));
+//        System.out.println(new BookDao().selectBookByType(0).get(0));
+        System.out.println(new BookDao().selectBookByName("数据库").get(0));
     }
 
 

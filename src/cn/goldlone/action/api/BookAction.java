@@ -83,10 +83,10 @@ public class BookAction extends ActionSupport {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         JSONObject res = new JSONObject();
-//        ArrayList<BookInfo> list = dao.selectBookByType(typeNo);
-//        res.put("ret", true);
-//        res.put("len", list.size());
-//        res.put("data", new JSONArray(list));
+        ArrayList<BookInfo> list = dao.selectBookByName(bookName);
+        res.put("ret", true);
+        res.put("len", list.size());
+        res.put("data", new JSONArray(list));
 
         out.print(res.toString());
         out.flush();

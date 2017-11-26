@@ -91,3 +91,6 @@ INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, 
 VALUES('9787040406641', '数据库系统概述（第五版）', 5, '王珊、萨师煊', '高等教育出版社', 39.60, 1);
 
 SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory FROM BookInfo WHERE 1;
+SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory
+FROM BookInfo
+WHERE B_name LIKE '%数据库%';

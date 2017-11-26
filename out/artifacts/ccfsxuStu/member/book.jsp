@@ -59,7 +59,7 @@
             <div class="col-md-3"></div>
             <div class="col-md-6">
               <div class="col-md-4" style="text-align: right">
-                <label class="control-label">按书名检索：</label>
+                <label class="control-label">按部分书名检索：</label>
               </div>
               <div class="col-md-8">
                 <div class="input-group" >
@@ -129,7 +129,7 @@
               url: "/getBookType",
               type: "POST",
               success: function (res) {
-                  console.log(res);
+//                  console.log(res);
                   for(var i=0; i<res.data.length; i++) {
                     $("#bookType").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
                   }
@@ -193,10 +193,11 @@
           url: "/selectBookByName",
           type: "post",
           data: {
-//            bookName: $("#bookType")[0].value
+            bookName: name
           },
           success: function (res) {
-            console.log(res);
+//            console.log(res);
+            showBook(res.data);
           }
         });
       }
@@ -219,7 +220,7 @@
             isbn: isbn
           },
           success: function (res) {
-            console.log(res);
+//            console.log(res);
             $("#memberContent").empty();
             $("#memberContent").append("<tr>" +
               "<td>"+res.data.no+"</td>" +
