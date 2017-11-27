@@ -7,26 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="修改API地址">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/api/BookAction.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/action/api/BookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/BookDao.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/dao/BookDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/BorrowBook.class" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/cn/goldlone/entity/BorrowBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/api/BookAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/action/api/BookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/BookDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/dao/BookDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/entity/BorrowBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/goldlone/entity/BorrowBook.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertBookAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/master/insertBook.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/backBook.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/backBook.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/borrowBook.jsp" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/master/borrowBook.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/goldlone/entity/BorrowBook.java" afterPath="$PROJECT_DIR$/src/cn/goldlone/entity/BorrowBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sql" afterPath="$PROJECT_DIR$/test.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/backBook.jsp" afterPath="$PROJECT_DIR$/web/master/backBook.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/borrowBook.jsp" afterPath="$PROJECT_DIR$/web/master/borrowBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertMember.jsp" afterPath="$PROJECT_DIR$/web/master/insertMember.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/main.jsp" afterPath="$PROJECT_DIR$/web/master/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" afterPath="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" afterPath="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,43 +103,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="318" column="53" lean-forward="false" selection-start-line="318" selection-start-column="49" selection-end-line="318" selection-end-column="53" />
-              <folding>
-                <marker date="1511708667025" expanded="true" signature="719:760" ph="SELECT B_typ... BookType" />
-                <marker date="1511708667025" expanded="true" signature="1635:1666" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="1635:1685" ph="SELECT B_typ... BookType" />
-                <marker date="1511708667025" expanded="true" signature="2508:2614" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="2508:2658" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="3935:4041" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="3935:4043" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="5382:5543" ph="SELECT B_boo... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="6716:6782" ph="UPDATE BookI... " />
-                <marker date="1511708667025" expanded="true" signature="6974:7032" ph="INSERT INTO BorrowBook... " />
-                <marker date="1511708667025" expanded="true" signature="6974:7078" ph="INSERT INTO BorrowBook... " />
-                <marker date="1511708667025" expanded="true" signature="7805:7921" ph="UPDATE BookI... " />
-                <marker date="1511708667025" expanded="true" signature="8135:8246" ph="UPDATE Borro... " />
-                <marker date="1511708667025" expanded="true" signature="8937:9038" ph="SELECT B_inv... BookInfo" />
-                <marker date="1511708667025" expanded="true" signature="9957:9992" ph="SELECT B_bor... BorrowBook" />
-                <marker date="1511708667025" expanded="true" signature="9957:10067" ph="SELECT B_bor... BorrowBook" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2525">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BookAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,41 +113,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <file leaf-file-name="analysisCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="46" column="103" lean-forward="false" selection-start-line="46" selection-start-column="103" selection-end-line="46" selection-end-column="103" />
+            <state relative-caret-position="418">
+              <caret line="64" column="58" lean-forward="false" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java">
+      <file leaf-file-name="insertCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="225" column="46" lean-forward="false" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="46" />
+            <state relative-caret-position="393">
+              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="borrowBook.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
+      <file leaf-file-name="insertMember.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1165">
-              <caret line="171" column="18" lean-forward="false" selection-start-line="171" selection-start-column="18" selection-end-line="171" selection-end-column="18" />
+            <state relative-caret-position="450">
+              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backBook.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="201" column="30" lean-forward="true" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
+            <state relative-caret-position="468">
+              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+              <folding>
+                <marker date="1511792156855" expanded="true" signature="6534:6559" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managerCSPApplication.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectCSPScore.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateMemberInfo.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/master/updateMemberInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/master/insertBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-25">
+              <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -230,8 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/master/book.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertCSPScoreAction.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/api/ApplicationCSPAction.java" />
@@ -254,33 +252,35 @@
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/api/CSPAction.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ImportMemberInfo.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/UpdateMemberInfo.java" />
-        <option value="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
-        <option value="$PROJECT_DIR$/web/master/insertMember.jsp" />
-        <option value="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
-        <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/Member.java" />
         <option value="dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.Member" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/MemberDao.java" />
-        <option value="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/member/SelectBookInfoAction.java" />
         <option value="$PROJECT_DIR$/web/all/header.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/utils/ImportBookInfo.java" />
         <option value="dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BookType" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/model/BookInfo.java" />
         <option value="$PROJECT_DIR$/web/member/book.jsp" />
-        <option value="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
         <option value="dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BookInfo" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/entity/BorrowBook.java" />
         <option value="dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BorrowBook" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java" />
         <option value="dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.Certification" />
         <option value="$PROJECT_DIR$/test.sql" />
-        <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java" />
-        <option value="$PROJECT_DIR$/web/master/main.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertBookAction.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
+        <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
+        <option value="$PROJECT_DIR$/web/master/insertBook.jsp" />
+        <option value="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/insertMember.jsp" />
+        <option value="$PROJECT_DIR$/web/master/main.jsp" />
+        <option value="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
+        <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
+        <option value="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" />
       </list>
     </option>
   </component>
@@ -509,6 +509,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ccfsxuStu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ccfsxuStu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goldlone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -529,18 +555,18 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ideaWorkspace\ccfsxuStu\web\member" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.goldlone.action.master" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\master" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\excel" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\all" />
       <recent name="E:\ideaWorkspace\ccfsxuStu" />
       <recent name="E:\ideaWorkspace\ccfsxuStu\web\assets\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.goldlone.action.master" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ideaWorkspace\ccfsxuStu\web\member" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1180,7 +1206,7 @@
       <workItem from="1511689330194" duration="913000" />
       <workItem from="1511694310311" duration="1645000" />
       <workItem from="1511702078301" duration="6952000" />
-      <workItem from="1511785040687" duration="5052000" />
+      <workItem from="1511785040687" duration="6876000" />
     </task>
     <task id="LOCAL-00001" summary="修改API地址">
       <created>1509722737907</created>
@@ -1200,7 +1226,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168469000" />
+    <option name="totallyTimeSpent" value="170293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1271,14 +1297,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/Checks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/model/ImportMemberScore.java" />
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/entity/Score.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1380,14 +1398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/utils/ImportMemberInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -1418,14 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6200">
           <caret line="608" column="48" lean-forward="false" selection-start-line="608" selection-start-column="40" selection-end-line="608" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/updateMemberInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6000">
-          <caret line="240" column="17" lean-forward="false" selection-start-line="240" selection-start-column="17" selection-end-line="240" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,22 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="275" column="11" lean-forward="false" selection-start-line="275" selection-start-column="11" selection-end-line="275" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="156" column="52" lean-forward="false" selection-start-line="156" selection-start-column="48" selection-end-line="156" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1567,14 +1553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="155" column="31" lean-forward="false" selection-start-line="155" selection-start-column="21" selection-end-line="155" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/member/book.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1595,38 +1573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2525">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="133" column="104" lean-forward="false" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="156" column="23" lean-forward="true" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="46" column="103" lean-forward="false" selection-start-line="46" selection-start-column="103" selection-end-line="46" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/js/vendor/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -1635,36 +1581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1165">
-          <caret line="171" column="18" lean-forward="false" selection-start-line="171" selection-start-column="18" selection-end-line="171" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
-          <folding>
-            <marker date="1511789162877" expanded="true" signature="6475:6500" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="225" column="46" lean-forward="false" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="318" column="53" lean-forward="false" selection-start-line="318" selection-start-column="49" selection-end-line="318" selection-end-column="53" />
+        <state relative-caret-position="127">
+          <caret line="321" column="37" lean-forward="true" selection-start-line="321" selection-start-column="37" selection-end-line="321" selection-end-column="37" />
           <folding>
             <marker date="1511708667025" expanded="true" signature="719:760" ph="SELECT B_typ... BookType" />
             <marker date="1511708667025" expanded="true" signature="1635:1666" ph="SELECT B_boo... BookInfo" />
@@ -1686,10 +1606,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="201" column="30" lean-forward="true" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
+        <state relative-caret-position="343">
+          <caret line="64" column="67" lean-forward="true" selection-start-line="64" selection-start-column="67" selection-end-line="65" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/borrowBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="54" selection-end-line="65" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/MemberAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="225" column="46" lean-forward="false" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="162" column="59" lean-forward="false" selection-start-line="162" selection-start-column="56" selection-end-line="162" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/master/InsertBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/insertBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="156" column="23" lean-forward="true" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" column="58" lean-forward="false" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/insertCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/insertMember.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding>
+            <marker date="1511792156855" expanded="true" signature="6534:6559" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/selectCSPScore.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/updateMemberInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
           <folding />
         </state>
       </provider>

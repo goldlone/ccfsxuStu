@@ -62,6 +62,7 @@
             </li>
             <li><a href="/master/borrowBook">借书</a></li>
             <li><a href="/master/backBook">还书</a></li>
+            <li><a href="/master/insertBook">导入图书</a></li>
           </ul>
         </div>
         <!-- end left nav -->

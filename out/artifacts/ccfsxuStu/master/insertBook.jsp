@@ -62,8 +62,8 @@
             <h4 class="sub-header">图书馆</h4></a>
           </li>
           <li><a href="/master/borrowBook">借书</a></li>
-          <li class="active"><a href="/master/backBook">还书</a></li>
-          <li><a href="/master/insertBook">导入图书</a></li>
+          <li><a href="/master/backBook">还书</a></li>
+          <li class="active"><a href="/master/insertBook">导入图书</a></li>
         </ul>
       </div>
       <!-- end left nav -->
@@ -71,34 +71,7 @@
       <!-- start content -->
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">图书馆管理</h1>
-        <h4 class="sub-header">归还管理</h4>
-        <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <form class="form-horizontal col-md-12" onkeydown="if(event.keyCode==13)return false;">
-                <div class="form-group">
-                  <div class="col-md-2"><label class="control-label">ISBN编号</label></div>
-                  <div class="col-md-4"><input class="form-control" name="isbn" type="number" id="isbn" /></div>
-                  <div class="col-md-2"><button class="btn btn-block btn-primary" type="button" onclick="searchOrder()">查询借阅记录</button></div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-2"><label class="control-label">选择归还</label></div>
-                  <div class="col-md-4"><select class="form-control" name="no" id="no"></select></div>
-                </div>
-              </form>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"><button class="btn btn-primary btn-block" onclick="submitBorrow()" type="button">提交信息</button></div>
-                <div class="col-md-4"></div>
-              </div>
-              <div class="col-md-6"></div>
-            </div>
-          </div>
-          <div class="col-md-3"></div>
-        </div>
-
+        <h4 class="sub-header">录入图书信息</h4>
       </div>
       <!-- end content -->
 

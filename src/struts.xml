@@ -158,14 +158,20 @@
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
 		<!-- 借书 -->
-		<action name="borrowBook" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+		<action name="borrowBook" class="cn.goldlone.action.master.BorrowBookAction">
 			<result name="success">/master/borrowBook.jsp</result>
 			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
 		<!-- 还书 -->
-		<action name="backBook" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+		<action name="backBook" class="cn.goldlone.action.master.BackBookAction">
 			<result name="success">/master/backBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 录入图书信息 -->
+		<action name="insertBook" class="cn.goldlone.action.master.InsertBookAction">
+			<result name="success">/master/insertBook.jsp</result>
 			<result name="login" type="redirect">/login.jsp</result>
 			<result name="power" type="redirect">/all/power.jsp</result>
 		</action>
