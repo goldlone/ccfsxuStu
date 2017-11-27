@@ -7,21 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69b405b-f7eb-40a3-83d1-1caca0bb4cb4" name="Default" comment="修改API地址">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertBookAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/master/insertBook.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/ccfsxuStu/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/backBook.jsp" afterPath="$PROJECT_DIR$/web/master/backBook.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/borrowBook.jsp" afterPath="$PROJECT_DIR$/web/master/borrowBook.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/insertCSPScore.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/insertMember.jsp" afterPath="$PROJECT_DIR$/web/master/insertMember.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/main.jsp" afterPath="$PROJECT_DIR$/web/master/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" afterPath="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" afterPath="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" afterPath="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,16 +89,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/goldlone/action/api/BookAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="156" column="23" lean-forward="true" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="analysisCSPScore.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/master/analysisCSPScore.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,6 +131,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="backBook.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="managerCSPApplication.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/master/managerCSPApplication.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -175,21 +161,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateMemberInfo.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="updateMemberInfo.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/master/updateMemberInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+            <state relative-caret-position="-515">
+              <caret line="86" column="16" lean-forward="false" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertBook.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/master/insertBook.jsp">
+      <file leaf-file-name="book.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/member/book.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+            <state relative-caret-position="277">
+              <caret line="239" column="49" lean-forward="true" selection-start-line="239" selection-start-column="49" selection-end-line="239" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ccfsxu.BookInfo" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BookInfo">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -271,7 +272,6 @@
         <option value="$PROJECT_DIR$/src/cn/goldlone/dao/BookDao.java" />
         <option value="$PROJECT_DIR$/src/cn/goldlone/action/master/InsertBookAction.java" />
         <option value="$PROJECT_DIR$/src/struts.xml" />
-        <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
         <option value="$PROJECT_DIR$/web/master/borrowBook.jsp" />
         <option value="$PROJECT_DIR$/web/master/insertBook.jsp" />
         <option value="$PROJECT_DIR$/web/master/analysisCSPScore.jsp" />
@@ -281,6 +281,7 @@
         <option value="$PROJECT_DIR$/web/master/managerCSPApplication.jsp" />
         <option value="$PROJECT_DIR$/web/master/selectCSPScore.jsp" />
         <option value="$PROJECT_DIR$/web/master/updateMemberInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/master/backBook.jsp" />
       </list>
     </option>
   </component>
@@ -1206,7 +1207,7 @@
       <workItem from="1511689330194" duration="913000" />
       <workItem from="1511694310311" duration="1645000" />
       <workItem from="1511702078301" duration="6952000" />
-      <workItem from="1511785040687" duration="6876000" />
+      <workItem from="1511785040687" duration="7690000" />
     </task>
     <task id="LOCAL-00001" summary="修改API地址">
       <created>1509722737907</created>
@@ -1226,7 +1227,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170293000" />
+    <option name="totallyTimeSpent" value="171107000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1529,18 +1530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BookInfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BorrowBook">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1550,14 +1539,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/member/book.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="237" column="6" lean-forward="false" selection-start-line="237" selection-start-column="6" selection-end-line="240" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1610,14 +1591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="64" column="67" lean-forward="true" selection-start-line="64" selection-start-column="67" selection-end-line="65" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1722,8 +1695,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/master/updateMemberInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+        <state relative-caret-position="-515">
+          <caret line="86" column="16" lean-forward="false" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7fff1ba5/3592ccbd-4f5a-4483-a911-553db5a74767/ccfsxu.BookInfo">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/member/book.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="239" column="49" lean-forward="true" selection-start-line="239" selection-start-column="49" selection-end-line="239" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/master/backBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
           <folding />
         </state>
       </provider>

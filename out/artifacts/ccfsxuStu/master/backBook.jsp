@@ -172,11 +172,19 @@
             }
           });
         }
-        bootbox.alert({
-          size: "small",
-          title: "提示消息",
-          message: "查询成功"
-        });
+        if(len>0) {
+          bootbox.alert({
+            size: "small",
+            title: "提示消息",
+            message: "查询成功"
+          });
+        } else {
+          bootbox.alert({
+            size: "small",
+            title: "提示消息",
+            message: "该书无借阅记录"
+          });
+        }
       }
       
       // 提交还书信息
