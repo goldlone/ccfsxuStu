@@ -68,6 +68,37 @@
         <!-- end left nav -->
         
         <!-- start content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">图书馆管理</h1>
+          <h4 class="sub-header">借阅管理</h4>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="row">
+                <form class="form-horizontal col-md-12">
+                  <div class="form-group">
+                    <div class="col-md-2"><label class="control-label">ISBN编号</label></div>
+                    <div class="col-md-4"><input class="form-control" name="isbn" type="number" id="isbn" /></div>
+                    <div class="col-md-2"><button class="btn btn-block btn-primary" type="button" onclick="searchInventory()">查询库存</button></div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-2"><label class="control-label">会员号</label></div>
+                    <div class="col-md-4"><input class="form-control" name="memberNo" type="text" id="memberNo"/></div>
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4"><button class="btn btn-primary btn-block" onclick="submitBorrow()">提交信息</button></div>
+                  <div class="col-md-4"></div>
+                </div>
+                <div class="col-md-6"></div>
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+
+        </div>
         <!-- end content -->
         
       </div>
@@ -84,6 +115,134 @@
     <script src="/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-    
+    <script src="/assets/js/bootbox.min.js"></script>
+    <script type="text/javascript">
+      var counts = 0;
+//      showNowDate();
+      // 显示当前的日期
+//      function showNowDate() {
+//        var now = new Date();
+//        var day = ("0" + now.getDate()).slice(-2);
+//        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+//        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+//        $('#borrowDate').val(today);
+//      }
+      $("#isbn").change(function () {
+//        console.log(this.value);
+        if(this.value.length>=13) {
+          searchInventory();
+        }
+      });
+      // 提交借书请求
+      function submitBorrow() {
+        if(counts<1) {
+          bootbox.alert({
+            size: "small",
+            title: "提示信息",
+            message: "请先查询图书的库存量"
+          });
+          return;
+        }
+        if(trim($("#memberNo").val()) == "") {
+          bootbox.alert({
+            size: "small",
+            title: "提示信息",
+            message: "会员号不能为空"
+          });
+          return;
+        }
+        bootbox.confirm({
+          title: "提示信息",
+          message: "请确认借阅信息无误?",
+          buttons: {
+            cancel: {
+              label: '<i class="fa fa-times"></i> 取消'
+            },
+            confirm: {
+              label: '<i class="fa fa-check"></i> 确认'
+            }
+          },
+          callback: function (result) {
+            if(result) {
+              $.ajax({
+                url: "/borrowBook",
+                type: "post",
+                data: {
+                  isbn: $("#isbn").val(),
+                  memberNo: $("#memberNo").val()
+                },
+                success: function (res) {
+                  console.log(res);
+                  if(res.ret) {
+                    bootbox.alert({
+                      size: "small",
+                      title: "提示消息",
+                      message: "借阅成功"
+                    });
+                  } else {
+                    bootbox.alert({
+                      size: "small",
+                      title: "提示消息",
+                      message: "借阅失败"
+                    });
+                  }
+                }
+              });
+            }
+          }
+        });
+      }
+
+      // 查询库存
+      function searchInventory() {
+        counts = 0;
+        if($("#isbn").val() == "") {
+          bootbox.alert({
+            size: "small",
+            title: "提示消息",
+            message: "请输入合法的ISBN编号"
+          });
+          return;
+        }
+        $.ajax({
+          url: "/searchInventory",
+          type: "post",
+          data: {
+            isbn: $("#isbn").val()
+          },
+          success: function (res) {
+//            console.log(res);
+            counts = res.num;
+            if(res.ret) {
+              bootbox.alert({
+                size: "size",
+                title: "提示消息",
+                message: "剩余库存量："+res.num
+              });
+            } else {
+              bootbox.alert({
+                size: "size",
+                title: "提示消息",
+                message: "没有这本书。。"
+              });
+            }
+            if(res.num == 0) {
+              $("#memberNo")[0].disabled = true;
+            } else {
+              $("#memberNo")[0].disabled = false;
+            }
+          },
+          error: function (res) {
+            console.log(res);
+          }
+        });
+      }
+
+      // 删除左右两端的空格
+      function trim(str){
+        return str.replace(/(^\s*)|(\s*$)/g, "");
+      }
+
+    </script>
   </body>
 </html>

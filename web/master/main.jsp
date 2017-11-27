@@ -74,7 +74,7 @@
           <h1 class="page-header">会员信息</h1>
          	<div id="memberDetail"></div>
 
-          <h4 class="sub-header">查询会员信息&nbsp;&nbsp;<span class="badge" id="totalNum">当前显示：0</span></h4>
+          <h4 class="sub-header">查询会员信息&nbsp;&nbsp;<span class="label label-success" id="totalNum">当前显示：0</span></h4>
           <div class="table-responsive">
           	<!-- 筛选条件 -->
           	<form class="form-inline" id="queryForm">

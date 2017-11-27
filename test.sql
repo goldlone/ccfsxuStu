@@ -94,3 +94,8 @@ SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory FR
 SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory
 FROM BookInfo
 WHERE B_name LIKE '%数据库%';
+
+UPDATE BookInfo SET B_inventory = B_inventory-1 WHERE B_bookNo = 9787040406641;
+UPDATE BookInfo SET B_inventory = B_inventory+10 WHERE B_bookNo = 9787040406641;
+
+SELECT NOW();

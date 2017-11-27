@@ -221,8 +221,8 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		ArrayList<UserInfo> list = new ArrayList<UserInfo>();
-        System.out.println(request.getParameter("no"));
-        System.out.println(user.getNo());
+//        System.out.println(request.getParameter("no"));
+//        System.out.println(user.getNo());
         list = dao.selectMemberByNo(user.getNo());
 		JSONObject res = new JSONObject();
 		res.put("len", list.size());

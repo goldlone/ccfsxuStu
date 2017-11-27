@@ -73,12 +73,15 @@
 		<action name="getMemberInfo" class="cn.goldlone.action.api.ApplicationCSPAction" method="getMemberInfo"></action>
 
 
-
 		<!-- 获取图书类别 -->
 		<action name="getBookType" class="cn.goldlone.action.api.BookAction" method="getBookType"></action>
 		<action name="selectBookByType" class="cn.goldlone.action.api.BookAction" method="selectBookByType"></action>
 		<action name="selectBookByName" class="cn.goldlone.action.api.BookAction" method="selectBookByName"></action>
 		<action name="selectBookByISBN" class="cn.goldlone.action.api.BookAction" method="selectBookByISBN"></action>
+		<action name="borrowBook" class="cn.goldlone.action.api.BookAction" method="borrowBook"></action>
+		<action name="backBook" class="cn.goldlone.action.api.BookAction" method="backBook"></action>
+		<action name="searchOrder" class="cn.goldlone.action.api.BookAction" method="searchOrder"></action>
+		<action name="searchInventory" class="cn.goldlone.action.api.BookAction" method="searchInventory"></action>
 
 	</package>
 

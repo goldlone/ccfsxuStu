@@ -7,7 +7,7 @@ public class BorrowBook {
     // 借阅编号
     private int no;
     // 图书编号
-    private int bookNo;
+    private String bookNo;
     // 会员号
     private String memberNo;
     // 借阅时间
@@ -23,11 +23,11 @@ public class BorrowBook {
         this.no = no;
     }
 
-    public int getBookNo() {
+    public String getBookNo() {
         return bookNo;
     }
 
-    public void setBookNo(int bookNo) {
+    public void setBookNo(String bookNo) {
         this.bookNo = bookNo;
     }
 
