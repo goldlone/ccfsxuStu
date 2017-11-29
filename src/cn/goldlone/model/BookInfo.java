@@ -15,6 +15,8 @@ public class BookInfo {
     private String author;
     // 出版社
     private String publicer;
+    // 出版时间
+    private String publicDate;
     // 价格
     private double price;
     // 库存量
@@ -76,6 +78,14 @@ public class BookInfo {
         this.inventory = inventory;
     }
 
+    public String getPublicDate() {
+        return publicDate;
+    }
+
+    public void setPublicDate(String publicDate) {
+        this.publicDate = publicDate;
+    }
+
     @Override
     public String toString() {
         return "BookInfo{" +
@@ -84,6 +94,7 @@ public class BookInfo {
                 ", type='" + type + '\'' +
                 ", author='" + author + '\'' +
                 ", publicer='" + publicer + '\'' +
+                ", publicDate='" + publicDate + '\'' +
                 ", price=" + price +
                 ", inventory=" + inventory +
                 '}';

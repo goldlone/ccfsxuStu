@@ -4,8 +4,6 @@ import java.io.File;
 
 import cn.goldlone.dao.MemberDao;
 import cn.goldlone.entity.Member;
-import cn.goldlone.model.RegistInfo;
-import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.write.Label;
@@ -162,7 +160,7 @@ public class ImportMemberInfo {
 //				user.setPasswd(user.getNo());
 //				// 身份权限
 //				user.setPower(0);
-//				RegistInfo info = dao.addMember(user);
+//				ReturnInfo info = dao.addMember(user);
 //				System.out.println(info.getInfo());
 //				System.out.println(user.toString());
 //			}

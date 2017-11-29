@@ -1,8 +1,10 @@
 package cn.goldlone.dao;
 
+import cn.goldlone.entity.Book;
 import cn.goldlone.entity.BookType;
 import cn.goldlone.entity.BorrowBook;
 import cn.goldlone.model.BookInfo;
+import cn.goldlone.model.ReturnInfo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -77,6 +79,114 @@ public class BookDao {
         }
         return "暂未分类";
     }
+
+    /**
+     * 添加图书
+     * @param book
+     * @return
+     */
+    public ReturnInfo addBook(Book book) {
+        ReturnInfo retInfo = new ReturnInfo();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_publiceDate, B_price, B_inventory)" +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, book.getNo());
+            pstmt.setString(2, book.getName());
+            pstmt.setInt(3, book.getTypeNo());
+            pstmt.setString(4, book.getAuthor());
+            pstmt.setString(5, book.getPublicer());
+            pstmt.setString(6, book.getPublicDate());
+            pstmt.setDouble(7, book.getPrice());
+            pstmt.setInt(8, book.getInventory());
+            pstmt.execute();
+            retInfo.setSuccess(true);
+            retInfo.setInfo("添加成功");
+            retInfo.setCode(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            retInfo.setSuccess(false);
+            retInfo.setInfo("添加出现异常");
+            retInfo.setCode(3);
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+        }
+
+        return retInfo;
+    }
+
+    /**
+     * 添加图书
+     * @param book
+     * @return
+     */
+    public ReturnInfo addBook(BookInfo book) {
+        ReturnInfo retInfo = new ReturnInfo();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = null;
+        ResultSet rs = null;
+        try {
+            conn = DBDao.getConnection();
+            sql = "SELECT B_typeNo FROM BookType WHERE B_typeName = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, book.getType());
+            rs = pstmt.executeQuery();
+            if(!rs.next()) {
+//                retInfo.setSuccess(false);
+//                retInfo.setInfo("没有该类别");
+//                retInfo.setCode(2);
+//                return retInfo;
+                sql = "INSERT INTO BookType(B_typeName) VALUES(?);";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, book.getType());
+                pstmt.execute();
+                sql = "SELECT B_typeNo FROM BookType WHERE B_typeName = ?";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, book.getType());
+                rs = pstmt.executeQuery();
+                if(!rs.next()) {
+                    retInfo.setSuccess(false);
+                    retInfo.setInfo("添加未知类别失败");
+                    retInfo.setCode(2);
+                    return retInfo;
+                }
+            }
+            int typeNo = rs.getInt(1);
+            sql = "INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_publiceDate, B_price, B_inventory)" +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, book.getNo());
+            pstmt.setString(2, book.getName());
+            pstmt.setInt(3, typeNo);
+            pstmt.setString(4, book.getAuthor());
+            pstmt.setString(5, book.getPublicer());
+            pstmt.setString(6, book.getPublicDate());
+            pstmt.setDouble(7, book.getPrice());
+            pstmt.setInt(8, book.getInventory());
+            pstmt.execute();
+            retInfo.setSuccess(true);
+            retInfo.setInfo("添加成功");
+            retInfo.setCode(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            retInfo.setSuccess(false);
+            retInfo.setInfo("添加出现异常");
+            retInfo.setCode(3);
+        } finally {
+            DBDao.closeConnection(conn);
+            DBDao.closePreparedStatement(pstmt);
+            DBDao.closeResultSet(rs);
+        }
+
+        return retInfo;
+    }
+
 
     /**
      * 根据ISBN编号查询数目信息

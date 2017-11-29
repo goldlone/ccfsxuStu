@@ -87,8 +87,8 @@ DELETE FROM Member WHERE 1;
 UPDATE Member SET M_stuNo = '201502401086' ,M_phone = '18435187057' ,M_startTime = '2016-09-01' ,M_endTime = '2020-12-31' , WHERE M_memberNo = '62151G';
 
 # 添加书名
-INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory)
-VALUES('9787040406641', '数据库系统概述（第五版）', 5, '王珊、萨师煊', '高等教育出版社', 39.60, 1);
+INSERT INTO BookInfo(B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_publiceDate, B_price, B_inventory)
+VALUES('9787040406641', '数据库系统概述（第五版）', 5, '王珊、萨师煊', '高等教育出版社', '2010-05-01',39.60, 10);
 
 SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory FROM BookInfo WHERE 1;
 SELECT B_bookNo, B_name, B_typeNo, B_author, B_publicer, B_price, B_inventory
@@ -98,4 +98,10 @@ WHERE B_name LIKE '%数据库%';
 UPDATE BookInfo SET B_inventory = B_inventory-1 WHERE B_bookNo = 9787040406641;
 UPDATE BookInfo SET B_inventory = B_inventory+10 WHERE B_bookNo = 9787040406641;
 
-SELECT NOW();
+INSERT INTO BookType(B_typeName) VALUES('Java');
+INSERT INTO BookType(B_typeName) VALUES('Python');
+INSERT INTO BookType(B_typeName) VALUES('机器学习');
+INSERT INTO BookType(B_typeName) VALUES('操作系统');
+INSERT INTO BookType(B_typeName) VALUES('数据库');
+INSERT INTO BookType(B_typeName) VALUES('前端技术');
+

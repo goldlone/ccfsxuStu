@@ -1,19 +1,24 @@
 package cn.goldlone.model;
 
 /**
- * 添加新会员信息时返回的信息
+ * 方法执行后返回的信息
  * 
- * @ClassName: RegistInfo
- * @Description: TODO
+ * @ClassName: ReturnInfo
  * @author: CN 创建时间: 2017年9月29日 下午8:09:13
  */
-public class RegistInfo {
+public class ReturnInfo {
 	// 是否成功
 	private boolean success;
-	// 错误代码
+	// 返回代码
 	private int code;
 	// 提示信息
 	private String info;
+
+	public ReturnInfo() {
+		this.success = false;
+		this.code = 0;
+		this.info = "";
+	}
 
 	public boolean isSuccess() {
 		return success;

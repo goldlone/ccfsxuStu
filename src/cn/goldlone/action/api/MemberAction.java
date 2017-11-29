@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import cn.goldlone.model.RegistInfo;
+import cn.goldlone.model.ReturnInfo;
 import cn.goldlone.utils.Checks;
 import cn.goldlone.utils.ImportMemberInfo;
 import org.apache.struts2.ServletActionContext;
@@ -269,7 +268,7 @@ public class MemberAction extends ActionSupport implements ModelDriven<Member>{
 
         user.setPasswd(user.getNo());
         boolean ret = false;
-        RegistInfo info = dao.addMember(user);
+        ReturnInfo info = dao.addMember(user);
         if(info.getCode() == 10001)
             ret = true;
         res.put("code", info.getCode());

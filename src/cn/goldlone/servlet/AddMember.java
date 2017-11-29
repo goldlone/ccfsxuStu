@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +14,7 @@ import org.json.JSONTokener;
 
 import cn.goldlone.dao.MemberDao;
 import cn.goldlone.entity.Member;
-import cn.goldlone.model.RegistInfo;
+import cn.goldlone.model.ReturnInfo;
 import cn.goldlone.utils.IOUtils;
 
 /**
@@ -46,7 +45,7 @@ public class AddMember extends HttpServlet {
 						res.getInt("memberTypeNo"), res.getString("passwd"), 
 						res.getInt("power"), res.getInt("addScore"));
 				MemberDao dao = new MemberDao();
-				RegistInfo info = dao.addMember(user);
+				ReturnInfo info = dao.addMember(user);
 				json.put("ret", info.isSuccess());
 				json.put("code", info.getCode());
 				json.put("info", info.getInfo());

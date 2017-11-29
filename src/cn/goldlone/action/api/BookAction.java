@@ -210,6 +210,26 @@ public class BookAction extends ActionSupport {
         return null;
     }
 
+    /**
+     * 添加图书
+     * @return
+     */
+    public String addBookInfo() throws IOException {
+        HttpServletResponse response = ServletActionContext.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        JSONObject res = new JSONObject();
+//        res.put("ret", true);
+//        ArrayList<BorrowBook> list = dao.selectOrder(isbn);
+//        res.put("data", new JSONArray(list));
+//        res.put("len", list.size());
+        out.print(res.toString());
+        out.flush();
+        out.close();
+        return null;
+    }
+
     public int getTypeNo() {
         return typeNo;
     }

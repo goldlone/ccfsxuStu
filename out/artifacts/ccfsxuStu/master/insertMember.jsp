@@ -149,13 +149,13 @@
                 <div class="form-group">
                   <label class="control-label col-md-1">生效时间</label>
                   <div class="col-md-4">
-                    <input class="form-control" type="date" name="startTime" placeholder="必填"  required/>
+                    <input class="form-control" type="publicDate" name="startTime" placeholder="必填"  required/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-1">失效时间</label>
                   <div class="col-md-4">
-                    <input class="form-control" type="date" name="endTime" placeholder="必填"  required/>
+                    <input class="form-control" type="publicDate" name="endTime" placeholder="必填"  required/>
                   </div>
                 </div>
 
@@ -249,21 +249,6 @@
               message: "录入完毕!",
               callback: function(){  }
           });
-//          if(obj.ret) {
-//            bootbox.alert({
-//              size: "small",
-//              title: "提示信息",
-//              message: "录入成功!",
-//              callback: function(){  }
-//            });
-//          } else {
-//            bootbox.alert({
-//              size: "small",
-//              title: "提交失败",
-//              message: "录入失败!",
-//              callback: function(){  }
-//            });
-//          }
         }
       }
       function handForm() {

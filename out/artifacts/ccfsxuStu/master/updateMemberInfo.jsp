@@ -152,13 +152,13 @@
                   <div class="form-group">
                     <label class="control-label col-md-2">生效时间</label>
                     <div class="col-md-6">
-                      <input class="form-control" type="date" name="startTime" />
+                      <input class="form-control" type="publicDate" name="startTime" />
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-md-2">失效时间</label>
                     <div class="col-md-6">
-                      <input class="form-control" type="date" name="endTime" />
+                      <input class="form-control" type="publicDate" name="endTime" />
                     </div>
                   </div>
                   <div class="form-group">

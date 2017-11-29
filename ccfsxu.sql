@@ -32,8 +32,8 @@ CREATE TABLE Member(
 	M_class int,
 	M_degreeNo tinyint,
 	M_id varchar(20),
-	M_startTime date,
-	M_endTime date,
+	M_startTime Date,
+	M_endTime Date,
 	M_typeNo tinyint,
 	M_passwd varchar(20),
 	M_power tinyint,
@@ -95,8 +95,8 @@ create table Application(
 -- 图书类别表
 drop table if exists BookType;
 create table BookType(
-	B_typeNo int,
-	B_typeName varchar(20),
+	B_typeNo int AUTO_INCREMENT,
+	B_typeName varchar(20) UNIQUE,
 	primary key(B_typeNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- insert into BookType values(1, 'Java');
@@ -109,6 +109,7 @@ create table BookInfo(
 	B_typeNo int,
 	B_author varchar(50),
 	B_publicer varchar(30),
+	B_publiceDate DATE,
 	B_price double,
 	B_inventory int,
 	primary key(B_bookNo),

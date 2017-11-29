@@ -4,12 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import cn.goldlone.entity.Member;
-import cn.goldlone.model.LoginInfo;
-import cn.goldlone.model.RegistInfo;
+import cn.goldlone.model.ReturnInfo;
 import cn.goldlone.model.UserInfo;
 
 /**
@@ -60,11 +58,11 @@ public class MemberDao {
 	 * @param user
 	 * @return
 	 */
-	public RegistInfo addMember(Member user) {
+	public ReturnInfo addMember(Member user) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
-		RegistInfo info = new RegistInfo();
+		ReturnInfo info = new ReturnInfo();
 		try {
 			conn = DBDao.getConnection();
 			// 检查会员信息是否已存在

@@ -72,6 +72,32 @@
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">图书馆管理</h1>
         <h4 class="sub-header">录入图书信息</h4>
+        <div class="nav nav-tabs">
+          <li role="presentation" class="active" id="hand-li"><a onclick="showHand()" href="#">手动录入</a></li>
+          <li role="presentation" id="file-li"><a onclick="showFile()" href="#">文件导入</a></li>
+        </div>
+
+
+        <br>
+        <div id="fileImport" class="col-md-12" hidden>
+          <div>
+            <b>注意事项：</b><br>
+            1、导入时，请按照模板文件格式导入，否则无法导入。<a href="/excel/templateMember.xls">下载模板</a><br>
+            2、上传结束后会弹窗提醒录入结果，请耐心等待。上传过程真的很慢，不要刷新页面。
+          </div>
+          <br>
+          <label for="exampleInputFile" class="control-label">上传导入xls文件：</label>
+          <div class="control-label">
+            <input type="file" id="exampleInputFile">
+          </div>
+          <br>
+          <div class="col-md-4">
+            <div class="col-md-6" style="float: right">
+              <button id="fileInput" class="btn btn-lg btn-primary btn-block" type="button" onclick="uploadBook()">确认上传</button>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       <!-- end content -->
 
@@ -91,99 +117,54 @@
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="/assets/js/bootbox.min.js"></script>
     <script type="text/javascript">
-      var len = 0;
-      var datas;
-      var index = 0;
-//      $("#isbn").change(function () {
-//        if(this.value.length>=13) {
-//          searchOrder();
-//        }
-//      });
-      // 查询借阅情况
-      function searchOrder() {
-        if($("#isbn").val() == "") {
-          bootbox.alert({
-            size: "small",
-            title: "提示消息",
-            message: "请输入合法的ISBN编号"
-          });
-          return;
-        }
-        $.ajax({
-          url: "/searchOrder",
-          type: "post",
-          data: {
-            isbn: $("#isbn").val()
-          },
-          success: function (res) {
-//            console.log(res);
-            len = res.len;
-            datas = res.data;
-            showOlder();
-          },
-          error: function (res) {
-            console.log(res);
-          }
-        });
+      showHand();
+      function showHand() {
+        $("#hand-li").addClass("active");
+        $("#file-li").removeClass("active");
+        $("#fileImport").hide();
+        $("#handImport").show();
       }
-      // 展示订单
-      function showOlder() {
-        $("#no").empty();
-        for(var i=0; i<datas.length; i++) {
-          index = i;
-          $.ajax({
-            url: "/selectMemberByNo",
-            type: "post",
-            data: {
-              no: datas[index].memberNo
-            },
-            success: function (res) {
-              $("#no").append("<option value=\""+datas[index].no+"\">"+datas[index].memberNo+" - "+res.data[0].name+"</option>");
-            },
-            error: function (res) {
-              console.log(res);
-            }
-          });
-        }
+      function showFile() {
+        $("#hand-li").removeClass("active");
+        $("#file-li").addClass("active");
+        $("#handImport").hide();
+        $("#fileImport").show();
+      }
+
+      // 上传会员名录信息
+      var xhr = new XMLHttpRequest();
+      function uploadBook() {
         bootbox.alert({
           size: "small",
-          title: "提示消息",
-          message: "查询成功"
+          title: "提示信息",
+          message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)",
+          callback: function(){  }
         });
+        var fileObj = $("#exampleInputFile")[0].files[0];
+        var FileController = "/receiveBookFile";
+        var form = new FormData();
+        form.append("bookFile", fileObj);
+        xhr.open("post", FileController, true);
+        xhr.onload = function () {
+//           alert("上传完成!");
+        };
+        xhr.send(form);
+        xhr.onreadystatechange = callbackUpload;
       }
-      
-      // 提交还书信息
-      function submitBorrow () {
-        if(len<1) {
+      function callbackUpload() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var obj = jQuery.parseJSON(xhr.responseText);
+          console.log(obj);
           bootbox.alert({
             size: "small",
-            title: "提示消息",
-            message: "请先查询借书记录"
-          });
-          return;
-        }
-        $.ajax({
-          url: "/backBook",
-          type: "post",
-          data: {
-            isbn: $("#isbn").val(),
-            no: $("#no").val()
-          },
-          success: function (res) {
-//            console.log(res);
-            if(res.ret) {
-              bootbox.alert({
-                size: "small",
-                title: "提示消息",
-                message: "还书成功"
-              });
+            title: "提示信息",
+            message: "录入完毕!",
+            callback: function () {
             }
-          },
-          error: function (res) {
-            console.log(res);
-          }
-        });
+          });
+        }
       }
+
 
     </script>
     
