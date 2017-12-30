@@ -69,6 +69,7 @@ public class BookAction extends ActionSupport {
         res.put("len", list.size());
         res.put("data", new JSONArray(list));
 
+
         out.print(res.toString());
         out.flush();
         out.close();

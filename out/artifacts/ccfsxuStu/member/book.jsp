@@ -166,7 +166,7 @@
             typeNo: $("#bookType")[0].value
           },
           success: function (res) {
-//            console.log(res);
+            console.log(res);
             showBook(res.data);
           }
         });

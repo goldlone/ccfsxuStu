@@ -65,20 +65,19 @@
 //          login();
 //        }
 //      }
-//      $("#warnInfo").hide();
-//      function login() {
-//          if(isEmail($("#inputEmail").val())) {
-//              $.ajax({
-//                  type: "post",
-//                  url: "login",
-//                  data: $('#loginForm').serialize(),
-//                  error: function (res) {
-//                      console.log(res);
-//                  },
-//                  success: function (res) {
-//                      console.log(res);
-//                      if(res.ret) {
-//                          // 登录成功，跳转
+      $("#warnInfo").hide();
+      function login() {
+          if(isEmail($("#inputEmail").val())) {
+              $.ajax({
+                  type: "post",
+                  url: "login",
+                  data: $('#loginForm').serialize(),
+                  error: function (res) {
+                      console.log(res);
+                  },
+                  success: function (res) {
+                      console.log(res);
+//                      if(res.ret) {    // 登录成功，跳转
 //                          window.location.href='master/main.jsp';
 //                      }else {
 //                          switch (res.code) {
@@ -104,21 +103,21 @@
 //                                  break;
 //                          }
 //                      }
-//                  }
-//              });
-//          } else {
-//              $("#warnInfo").empty();
-//              $("#warnInfo").append("<strong>请填入正确的邮箱</strong>");
-//              $("#warnInfo").show();
-//          }
 //
-//      }
+                  }
+              });
+          } else {
+              $("#warnInfo").empty();
+              $("#warnInfo").append("<strong>请填入正确的邮箱</strong>");
+              $("#warnInfo").show();
+          }
+      }
 
        // 校验邮箱合法性
-//       function isEmail(str){
-//         var reg = /^([a-zA-Z0-9])+@([a-zA-Z0-9])+(.[a-zA-Z0-9])+/;
-//         return reg.test(str);
-//       }
+       function isEmail(str){
+         var reg = /^([a-zA-Z0-9])+@([a-zA-Z0-9])+(.[a-zA-Z0-9])+/;
+         return reg.test(str);
+       }
     </script>
   </body>
 </html>
