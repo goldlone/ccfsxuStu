@@ -87,7 +87,6 @@ public class ExcelUtils {
         String[] title = {"姓名（必）", "会员号（必）", "任职单位", "手机", "邮箱（必）", "生效日期（必）",
                 "失效日期（必）", "学号", "年级", "班级", "专业", "性别", "学历", "身份证号"};
         //创建Excel文件
-//        File file = new File("./web/excel/templateMember.xls");
         File file = new File("./web/excel/templateMember.xls");
         System.out.println(file.getAbsolutePath());
         try {
