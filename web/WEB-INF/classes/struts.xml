@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- 指定默认编码集 ,对于请求参数带有中文的的情况应该设置为GBK或者GB2312,默认为UTF-8-->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- 是否每次HTTP请求到达时，都重新加载国际化资源，默认值为false -->
+	<constant name="struts.i18n.reload" value="true"></constant>
+	<!-- struts.xml修改后，是否重新加载改文件。在开发阶段建议将此属性设置为false，提高开发效率 -->
+	<constant name="struts.configuartion.xml.reload" value="false"></constant>
+	<!-- 是否使用struts2的开发模式，可以获得更多的报错信息，便于调试。开发阶段设置为true -->
+	<constant name="devMode" value="true"></constant>
+	<!-- 设置浏览器是否缓存静态页面，开发阶段设置为false，以获得服务器最新响应，默认值true -->
+	<constant name="struts.serve.static.browserCache" value="fasle"></constant>
+	<!-- （没啥用）配置服务器运行时的端口，一般情况下该属性不修改，如果端口号占用则重新分配端口号。默认值为 -->
+	<constant name="struts.url.http.port" value="8080"></constant>
+	<!-- 指定后缀名 -->
+	<constant name="struts.action.extension" value=",html,action"></constant>
+	
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 默认action,没有找到action时 -->
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/all/error.jsp</result>
+		</action>
+	</package>
+
+	<package name="api" namespace="/api" extends="struts-default">
+		<!-- 登录 -->
+		<action name="login" class="cn.goldlone.service.MemberAction" method="login">
+			<result name="success" type="redirect">${gotoUrl}</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="logout" class="cn.goldlone.service.MemberAction" method="logout">
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
+		<!-- 获取年级集合 -->
+		<action name="getGradeSet" class="cn.goldlone.service.MemberAction" method="getGradeSet"></action>
+		<!-- 查询会员信息 -->
+		<action name="queryMember" class="cn.goldlone.service.MemberAction" method="queryMember"></action>
+		<!-- 获取全部会员信息 -->
+		<action name="selectAllMember" class="cn.goldlone.service.MemberAction" method="selectAllMember"></action>
+		<!-- 获取过期或未过期会员信息 -->
+		<action name="selectExpiredMember" class="cn.goldlone.service.MemberAction" method="selectExpiredMember"></action>
+		<!-- 根据会员号查询会员信息 -->
+		<action name="selectMemberByNo" class="cn.goldlone.service.MemberAction" method="selectMemberByNo"></action>
+		<!-- 导入录入会员名录文件 -->
+		<action name="receiveMemberFile" class="cn.goldlone.service.MemberAction" method="receiveMemberFile"></action>
+		<!-- 添加会员信息 -->
+		<action name="addMember" class="cn.goldlone.service.MemberAction" method="addMember"></action>
+		<!-- 修改会员信息 -->
+		<action name="updateMember" class="cn.goldlone.service.MemberAction" method="updateMember"></action>
+
+
+		<!-- 获取认证名集合 -->
+		<action name="getCertSet" class="cn.goldlone.service.CSPAction" method="getCertSet"></action>
+		<!-- 根据会员号查询成绩 -->
+		<action name="getScoreByNo" class="cn.goldlone.service.CSPAction" method="getScoreByNo"></action>
+		<!-- 查询成绩 -->
+		<action name="queryScore" class="cn.goldlone.service.CSPAction" method="queryScore"></action>
+		<!-- 添加CSP认证考试 -->
+		<action name="addCertification" class="cn.goldlone.service.CSPAction" method="addCertification"></action>
+		<!-- 上传CSP成绩Excel -->
+		<action name="receiveCSPScoreFile" class="cn.goldlone.service.CSPAction" method="receiveCSPScoreFile"></action>
+
+		<!-- 报名CSP -->
+		<action name="applicate" class="cn.goldlone.service.ApplicationCSPAction" method="applicate"></action>
+		<action name="getCertSetNotStart" class="cn.goldlone.service.ApplicationCSPAction" method="getCertSetNotStart"></action>
+		<!-- 上传照片 -->
+		<action name="uploadPhoto" class="cn.goldlone.service.ApplicationCSPAction" method="uploadPhoto"></action>
+		<action name="getApplication" class="cn.goldlone.service.ApplicationCSPAction" method="getApplication"></action>
+		<action name="getMemberInfo" class="cn.goldlone.service.ApplicationCSPAction" method="getMemberInfo"></action>
+
+
+		<!-- 获取图书类别 -->
+		<action name="getBookType" class="cn.goldlone.service.BookAction" method="getBookType"></action>
+		<action name="selectBookByType" class="cn.goldlone.service.BookAction" method="selectBookByType"></action>
+		<action name="selectBookByName" class="cn.goldlone.service.BookAction" method="selectBookByName"></action>
+		<action name="selectBookByISBN" class="cn.goldlone.service.BookAction" method="selectBookByISBN"></action>
+		<action name="borrowBook" class="cn.goldlone.service.BookAction" method="borrowBook"></action>
+		<action name="backBook" class="cn.goldlone.service.BookAction" method="backBook"></action>
+		<action name="searchOrder" class="cn.goldlone.service.BookAction" method="searchOrder"></action>
+		<action name="searchInventory" class="cn.goldlone.service.BookAction" method="searchInventory"></action>
+	</package>
+
+
+	<!-- 会员权限拥有者 -->
+	<package name="member" namespace="/member" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/all/error.jsp</result>
+		</action>
+		<!-- CSP预报名 -->
+		<action name="application" class="cn.goldlone.action.member.ApplicationAction" method="execute" >
+			<result name="success">/member/application.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
+		<!-- CSP成绩分析 -->
+		<action name="analyScore" class="cn.goldlone.action.member.AnalyScoreAction" method="execute" >
+			<result name="success">/member/analyScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
+		<!-- 查询图书信息 -->
+		<action name="selectBookInfo" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/member/book.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+	</package>
+
+
+	<!-- 管理员权限拥有者 -->
+	<package name="master" namespace="/master" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/all/error.jsp</result>
+		</action>
+		<!-- 查询会员信息 -->
+		<action name="selectMemberInfo" class="cn.goldlone.action.master.SelectMemberInfoAction">
+			<result name="success">/master/main.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 插入会员信息 -->
+		<action name="insertMemberInfo" class="cn.goldlone.action.master.InsertMemberInfoAction">
+			<result name="success">/master/insertMember.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 修改会员信息 -->
+		<action name="updateMemberInfo" class="cn.goldlone.action.master.UpdateMemberInfo">
+			<result name="success">/master/updateMemberInfo.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 查询CSP成绩信息 -->
+		<action name="selectCSPScore" class="cn.goldlone.action.master.SelectCSPScoreAction">
+			<result name="success">/master/selectCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 插入CSP成绩信息 -->
+		<action name="insertCSPScore" class="cn.goldlone.action.master.InsertCSPScoreAction">
+			<result name="success">/master/insertCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 管理CSP报名 -->
+		<action name="managerCSPApplication" class="cn.goldlone.action.master.ManagerCSPApplicationAction">
+			<result name="success">/master/managerCSPApplication.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 分析CSP成绩 -->
+		<action name="analysisCSPScore" class="cn.goldlone.action.master.AnalysisCSPScoreAction">
+			<result name="success">/master/analysisCSPScore.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 借书 -->
+		<action name="borrowBook" class="cn.goldlone.action.master.BorrowBookAction">
+			<result name="success">/master/borrowBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 还书 -->
+		<action name="backBook" class="cn.goldlone.action.master.BackBookAction">
+			<result name="success">/master/backBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+		<!-- 录入图书信息 -->
+		<action name="insertBook" class="cn.goldlone.action.master.InsertBookAction">
+			<result name="success">/master/insertBook.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<result name="power" type="redirect">/all/power.jsp</result>
+		</action>
+	</package>
+	
+</struts>

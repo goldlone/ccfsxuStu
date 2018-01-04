@@ -22,6 +22,7 @@ INSERT INTO DegreeType(DT_name) VALUES('本科');
 INSERT INTO DegreeType(DT_name) VALUES('硕士');
 INSERT INTO DegreeType(DT_name) VALUES('博士');
 
+# 权限信息表
 DROP TABLE IF EXISTS PowerType;
 CREATE TABLE PowerType(
   PT_no tinyint NOT NULL AUTO_INCREMENT,
@@ -43,7 +44,8 @@ CREATE TABLE Member(
   M_stuNo varchar(20) DEFAULT '',
   M_phone varchar(11) DEFAULT '',
   M_email varchar(50) NOT NULL,
-  M_discipline varchar(20) DEFAULT '计算机科学与技术',
+  M_gender VARCHAR(2) DEFAULT '',
+  M_discipline varchar(20) DEFAULT '',
   M_grade int DEFAULT 0,
   M_class int DEFAULT 0,
   M_degreeNo tinyint DEFAULT 2,
@@ -52,8 +54,9 @@ CREATE TABLE Member(
   M_endTime Date NOT NULL,
   M_typeNo tinyint NOT NULL DEFAULT 1,
   M_photo varchar(255),
-  M_passwd varchar(64) NOT NULL,
+  M_password varchar(64) NOT NULL,
   M_power tinyint NOT NULL DEFAULT 5,
+  M_addScore int DEFAULT 0,
   PRIMARY KEY(M_memberNo),
   FOREIGN KEY(M_degreeNo) REFERENCES DegreeType(DT_no),
   FOREIGN KEY(M_typeNo) REFERENCES MemberType(MT_no),
@@ -62,7 +65,7 @@ CREATE TABLE Member(
 ALTER TABLE Member ADD CONSTRAINT uq_email UNIQUE(M_email);
 
 # INSERT INTO Member VALUES('65535G', '程宁', '201502401086', '18435187057', '857353825@qq.com', '计算机科学与技术',
-#                                     '2015', '2', 0, '142***************', '2016-09-01', '2020-12-31', 0, '123123', 0);
+#                                     2015, 2, 2, '142***************', '2016-09-01', '2020-12-31', 1, '/sdad.pg', 'abcd1234', 1);
 
 # CSP（CCSP）认证信息表
 drop table if exists Certification;
@@ -98,13 +101,11 @@ create table Score(
 # 会员CSP报名信息表
 drop table if exists Application;
 create table Application(
-  A_no INT AUTO_INCREMENT,
   A_certNo int NOT NULL,
-  A_isMember TINYINT NOT NULL,
-  A_memberNo varchar(10) DEFAULT NULL,
+  A_memberNo varchar(10) NOT NULL,
   A_language varchar(10),
   A_fee int DEFAULT 0,
-  primary key(A_no),
+  primary key(A_certNo, A_memberNo),
   foreign key(A_CertNo) references Certification(C_no),
   foreign key(A_memberNo) references Member(M_memberNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
