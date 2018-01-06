@@ -3,7 +3,142 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.goldlone.mapper.CSPMapper">
+    <!-- 认证信息 -->
+    <resultMap id="certification" type="cn.goldlone.po.Certification">
+        <result property="no" column="C_no"/>
+        <result property="name" column="C_name"/>
+        <result property="startTime" column="C_startTime"/>
+        <result property="endTime" column="C_endTime"/>
+        <result property="memberFee" column="C_memberFee"/>
+        <result property="notMemberFee" column="C_notMemberFee"/>
+    </resultMap>
+    <!-- 认证报名信息 -->
+    <resultMap id="applicationInfo" type="cn.goldlone.po.Application">
+        <result property="certNo" column="A_certNo" />
+        <result property="name" column="C_name" />
+        <result property="memberNo" column="A_memberNo" />
+        <result property="id" column="M_id" />
+        <result property="phone" column="M_phone" />
+        <result property="email" column="M_email" />
+        <result property="language" column="A_language" />
+        <result property="degree" column="DT_name" />
+        <result property="purpose" column="A_purpose" />
+        <result property="school" column="A_purposeUniversity" />
+        <result property="username" column="A_username" />
+        <result property="password" column="A_password" />
+        <result property="photo" column="M_photo" />
+    </resultMap>
+    <!-- 成绩信息 -->
+    <resultMap id="scoreInfo" type="cn.goldlone.model.ScoreInfo">
+        <result property="certName" column="C_name" />
+        <result property="memberName" column="M_name" />
+        <result property="memberNo" column="S_memberNo" />
+        <result property="all" column="S_all" />
+        <result property="first" column="S_first" />
+        <result property="second" column="S_second" />
+        <result property="third" column="S_third" />
+        <result property="forth" column="S_forth" />
+        <result property="fifth" column="S_fifth" />
+    </resultMap>
 
-
+    <!-- 添加CSP认证 -->
+    <insert id="addCert" parameterType="cn.goldlone.po.Certification">
+        INSERT
+        INTO Certification(C_name, C_startTime, C_endTime, C_memberFee, C_notMemberFee)
+        VALUES(#{name}, #{startTime}, #{endTime}, #{memberFee}, #{notMemberFee});
+    </insert>
+    <!-- 获取认证名集合 -->
+    <select id="getCertSet" resultMap="certification">
+        SELECT C_no, C_name, C_startTime, C_endTime, C_memberFee, C_notMemberFee
+        FROM Certification;
+    </select>
+    <!-- 根据认证名查询认证编号 -->
+    <select id="selectCertNoByName" parameterType="String" resultType="int">
+        SELECT C_no FROM Certification WHERE C_name = #{certName};
+    </select>
+    <!-- 获取未开始的认证集合 -->
+    <select id="getCertSetNotStart" resultMap="certification">
+        SELECT C_no, C_name, C_startTime, C_endTime, C_memberFee, C_notMemberFee
+        FROM Certification
+        WHERE now() &lt; C_startTime;
+    </select>
+    <!-- 插入报名信息 -->
+    <insert id="addApplication" parameterType="cn.goldlone.po.Application">
+        INSERT
+        INTO Application(A_certNo, A_memberNo, A_language, A_purpose,
+                         A_purposeUniversity, A_username, A_password)
+        VALUES(#{certNo}, #{memberNo}, #{language}, #{purpose},
+               #{school}, #{username}, #{password});
+    </insert>
+    <!-- 修改照片名 -->
+    <update id="updatePhotoFile">
+        UPDATE Member
+        SET M_photo = #{memberNo}
+        WHERE M_memberNo = #{filename};
+    </update>
+    <!-- 查询某次认证的报名信息 -->
+    <select id="selectApplicationInfo" parameterType="int" resultMap="applicationInfo">
+        SELECT a.A_certNo,c.C_name,a.A_memberNo,m.M_id,m.M_phone,
+        m.M_email,a.A_language,d.DT_name,a.A_purpose,
+        a.A_purposeUniversity,a.A_username,a.A_password,m.M_photo
+        FROM Application a,Certification c,Member m,DegreeType d
+        WHERE a.A_certNo=#{certNo} AND
+        a.A_certNo=c.C_no AND
+        a.A_memberNo=m.M_memberNo AND
+        m.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 添加成绩 -->
+    <insert id="addScore" parameterType="cn.goldlone.po.Score">
+        INSERT
+        INTO Score(S_certNo, S_memberNo, S_all, S_first,
+                   S_second, S_third, S_forth, S_fifth)
+        VALUES (#{certNo}, #{memberNo}, #{all}, #{first},
+                #{second}, #{third}, #{forth}, #{fifth});
+    </insert>
+    <!-- 查询所有成绩 -->
+    <select id="selectAllScore" resultMap="scoreInfo">
+        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+                s.S_second,s.S_third,s.S_forth,s.S_fifth
+        FROM Score s,Certification c,Member m
+        WHERE s.S_certNo=c.C_no AND
+              s.S_memberNo=m.M_memberNo
+    </select>
+    <!-- 按认证编号查询查询所有人的成绩 -->
+    <select id="selectScoreByNo" parameterType="int" resultMap="scoreInfo">
+        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+                s.S_second,s.S_third,s.S_forth,s.S_fifth
+        FROM Score s,Certification c,Member m
+        WHERE s.S_certNo = #{certNo} AND
+              s.S_certNo=c.C_no AND
+              s.S_memberNo=m.M_memberNo
+    </select>
+    <!-- 按会员号查询查询所有认证的成绩 -->
+    <select id="selectScoreByMemberNo" parameterType="String" resultMap="scoreInfo">
+        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+            s.S_second,s.S_third,s.S_forth,s.S_fifth
+        FROM Score s,Certification c,Member m
+        WHERE s.S_memberNo = #{memberNo} AND
+              s.S_certNo=c.C_no AND
+              s.S_memberNo=m.M_memberNo
+    </select>
+    <!-- 综合筛选成绩信息(编号，最低，最高) -->
+    <select id="queryScore" resultMap="scoreInfo">
+        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+            s.S_second,s.S_third,s.S_forth,s.S_fifth
+        FROM Score s,Certification c,Member m
+        WHERE <if test="certNo!=0">s.S_certNo = #{certNo} AND</if>
+              S_all BETWEEN #{low} AND #{high} AND
+              s.S_certNo=c.C_no AND
+              s.S_memberNo=m.M_memberNo
+    </select>
+    <!-- 查询加分了的人 -->
+    <select id="selectAddScore" resultMap="scoreInfo">
+        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+            s.S_second,s.S_third,s.S_forth,s.S_fifth
+        FROM Member m,Certification c,Score s
+        WHERE m.M_addScore>0 AND
+              m.M_addScore=c.C_no AND
+              m.M_memberNo=s.S_memberNo;
+    </select>
 
 </mapper>

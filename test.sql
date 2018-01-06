@@ -38,3 +38,55 @@ WHERE now()<m1.M_endTime AND
       m1.M_power=p.PT_no AND
       m1.M_degreeNo=d.DT_no;
 
+SELECT a.A_certNo,c.C_name,a.A_memberNo,m.M_id,m.M_phone,
+      m.M_email,a.A_language,d.DT_name,a.A_purpose,
+      a.A_purposeUniversity,a.A_username,a.A_password,m.M_photo
+FROM Application a,Certification c,Member m,DegreeType d
+WHERE a.A_certNo=1 AND
+      a.A_certNo=c.C_no AND
+      a.A_memberNo=m.M_memberNo AND
+      m.M_degreeNo=d.DT_name;
+
+SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+        s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_memberNo = '' AND
+      s.S_certNo=c.C_name AND
+      s.S_memberNo=m.M_memberNo;
+
+SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_certNo = #{certNo} AND
+s.S_certNo=c.C_name AND
+s.S_memberNo=m.M_memberNo;
+
+SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+        s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Member m,Certification c,Score s
+WHERE m.M_addScore>0 AND
+      m.M_addScore=c.C_no AND
+      m.M_memberNo=s.S_memberNo;
+
+SELECT now();
+
+SELECT a.A_certNo,c.C_name,a.A_memberNo,m.M_id,m.M_phone,
+  m.M_email,a.A_language,d.DT_name,a.A_purpose,
+  a.A_purposeUniversity,a.A_username,a.A_password,m.M_photo
+FROM Application a,Certification c,Member m,DegreeType d
+WHERE a.A_certNo=1 AND
+      a.A_certNo=c.C_no AND
+      a.A_memberNo=m.M_memberNo AND
+      m.M_degreeNo=d.DT_no;
+
+SELECT *
+FROM Application a,Certification c,Member m
+WHERE A_certNo = 1 AND
+      a.A_certNo=c.C_no AND
+      a.A_memberNo=m.M_memberNo;
+
+SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+  s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_certNo=c.C_no AND
+      s.S_memberNo=m.M_memberNo;

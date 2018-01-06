@@ -10,7 +10,7 @@ public class Score {
 	// 第一题
 	private int first;
 	// 第二题
-	private int sencond;
+	private int second;
 	// 第三题
 	private int third;
 	// 第四题
@@ -18,7 +18,22 @@ public class Score {
 	// 第五题
 	private int fifth;
 
-	public int getCertNo() {
+    public Score() {
+    }
+
+    public Score(int certNo, String memberNo, int all, int first,
+                 int second, int third, int forth, int fifth) {
+        this.certNo = certNo;
+        this.memberNo = memberNo;
+        this.all = all;
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.forth = forth;
+        this.fifth = fifth;
+    }
+
+    public int getCertNo() {
 		return certNo;
 	}
 
@@ -50,12 +65,12 @@ public class Score {
 		this.first = first;
 	}
 
-	public int getSencond() {
-		return sencond;
+	public int getSecond() {
+		return second;
 	}
 
-	public void setSencond(int sencond) {
-		this.sencond = sencond;
+	public void setSecond(int second) {
+		this.second = second;
 	}
 
 	public int getThird() {
@@ -82,4 +97,17 @@ public class Score {
 		this.fifth = fifth;
 	}
 
+	@Override
+	public String toString() {
+		return "Score{" +
+				"certNo=" + certNo +
+				", memberNo='" + memberNo + '\'' +
+				", all=" + all +
+				", first=" + first +
+				", second=" + second +
+				", third=" + third +
+				", forth=" + forth +
+				", fifth=" + fifth +
+				'}';
+	}
 }

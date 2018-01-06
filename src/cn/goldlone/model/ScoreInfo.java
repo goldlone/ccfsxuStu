@@ -12,7 +12,7 @@ public class ScoreInfo {
 	// 第一题
 	private int first;
 	// 第二题
-	private int sencond;
+	private int second;
 	// 第三题
 	private int third;
 	// 第四题
@@ -20,83 +20,90 @@ public class ScoreInfo {
 	// 第五题
 	private int fifth;
 
-	public String getCertName() {
-		return certName;
-	}
+    public String getCertName() {
+        return certName;
+    }
 
-	public void setCertName(String certName) {
-		this.certName = certName;
-	}
+    public void setCertName(String certName) {
+        this.certName = certName;
+    }
 
-	public String getMemberName() {
-		return memberName;
-	}
+    public String getMemberName() {
+        return memberName;
+    }
 
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
 
-	public String getMemberNo() {
-		return memberNo;
-	}
+    public String getMemberNo() {
+        return memberNo;
+    }
 
-	public void setMemberNo(String memberNo) {
-		this.memberNo = memberNo;
-	}
+    public void setMemberNo(String memberNo) {
+        this.memberNo = memberNo;
+    }
 
-	public int getAll() {
-		return all;
-	}
+    public int getAll() {
+        return all;
+    }
 
-	public void setAll(int all) {
-		this.all = all;
-	}
+    public void setAll(int all) {
+        this.all = all;
+    }
 
-	public int getFirst() {
-		return first;
-	}
+    public int getFirst() {
+        return first;
+    }
 
-	public void setFirst(int first) {
-		this.first = first;
-	}
+    public void setFirst(int first) {
+        this.first = first;
+    }
 
-	public int getSencond() {
-		return sencond;
-	}
+    public int getSecond() {
+        return second;
+    }
 
-	public void setSencond(int sencond) {
-		this.sencond = sencond;
-	}
+    public void setSecond(int second) {
+        this.second = second;
+    }
 
-	public int getThird() {
-		return third;
-	}
+    public int getThird() {
+        return third;
+    }
 
-	public void setThird(int third) {
-		this.third = third;
-	}
+    public void setThird(int third) {
+        this.third = third;
+    }
 
-	public int getForth() {
-		return forth;
-	}
+    public int getForth() {
+        return forth;
+    }
 
-	public void setForth(int forth) {
-		this.forth = forth;
-	}
+    public void setForth(int forth) {
+        this.forth = forth;
+    }
 
-	public int getFifth() {
-		return fifth;
-	}
+    public int getFifth() {
+        return fifth;
+    }
 
-	public void setFifth(int fifth) {
-		this.fifth = fifth;
-	}
+    public void setFifth(int fifth) {
+        this.fifth = fifth;
+    }
 
-	@Override
-	public String toString() {
-		return "ScoreInfo [certName=" + certName + ", memberName=" + memberName + ", memberNo=" + memberNo + ", all="
-				+ all + ", first=" + first + ", sencond=" + sencond + ", third=" + third + ", forth=" + forth
-				+ ", fifth=" + fifth + "]";
-	}
-
+    @Override
+    public String toString() {
+        return "ScoreInfo{" +
+                "certName='" + certName + '\'' +
+                ", memberName='" + memberName + '\'' +
+                ", memberNo='" + memberNo + '\'' +
+                ", all=" + all +
+                ", first=" + first +
+                ", second=" + second +
+                ", third=" + third +
+                ", forth=" + forth +
+                ", fifth=" + fifth +
+                '}';
+    }
 }

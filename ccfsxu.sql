@@ -53,7 +53,7 @@ CREATE TABLE Member(
   M_startTime Date NOT NULL,
   M_endTime Date NOT NULL,
   M_typeNo tinyint NOT NULL DEFAULT 1,
-  M_photo varchar(255),
+  M_photo varchar(255) DEFAULT '无',
   M_password varchar(64) NOT NULL,
   M_power tinyint NOT NULL DEFAULT 5,
   M_addScore int DEFAULT 0,
@@ -63,9 +63,6 @@ CREATE TABLE Member(
   FOREIGN KEY(M_power) REFERENCES PowerType(PT_no)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE Member ADD CONSTRAINT uq_email UNIQUE(M_email);
-
-# INSERT INTO Member VALUES('65535G', '程宁', '201502401086', '18435187057', '857353825@qq.com', '计算机科学与技术',
-#                                     2015, 2, 2, '142***************', '2016-09-01', '2020-12-31', 1, '/sdad.pg', 'abcd1234', 1);
 
 # CSP（CCSP）认证信息表
 drop table if exists Certification;
@@ -103,8 +100,12 @@ drop table if exists Application;
 create table Application(
   A_certNo int NOT NULL,
   A_memberNo varchar(10) NOT NULL,
-  A_language varchar(10),
+  A_language varchar(10) NOT NULL,
+  A_purpose VARCHAR(20) DEFAULT '',
+  A_purposeUniversity VARCHAR(30) DEFAULT '',
   A_fee int DEFAULT 0,
+  A_username VARCHAR(50) NOT NULL,
+  A_password VARCHAR(50) NOT NULL,
   primary key(A_certNo, A_memberNo),
   foreign key(A_CertNo) references Certification(C_no),
   foreign key(A_memberNo) references Member(M_memberNo)

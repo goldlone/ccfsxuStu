@@ -1,13 +1,19 @@
 package cn.goldlone.service;
 
+import cn.goldlone.mapper.CSPMapper;
 import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.LoginInfo;
+import cn.goldlone.model.ScoreInfo;
 import cn.goldlone.model.UserInfo;
+import cn.goldlone.po.Application;
+import cn.goldlone.po.Certification;
 import cn.goldlone.po.Member;
+import cn.goldlone.po.Score;
 import cn.goldlone.utils.MybatisUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.session.SqlSession;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -79,6 +85,75 @@ public class Test {
 //        member.setName("王五");
 //        System.out.println(mm.updateMemberInfo(member));
 //        sqlSession.commit();
+
+        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
+
+        // 添加CSP认证
+//        Certification cert = new Certification("第一次CCF计算机软件能力认证",
+//                Timestamp.valueOf("2014-03-15 13:30:00"),
+//                Timestamp.valueOf("2014-03-15 17:30:00"),
+//                180, 300);
+//        Certification cert2 = new Certification("第二次CCF计算机软件能力认证",
+//                Timestamp.valueOf("2014-09-15 13:30:00"),
+//                Timestamp.valueOf("2014-09-15 17:30:00"),
+//                180, 300);
+//        Certification cert3 = new Certification("第三次CCF计算机软件能力认证",
+//                Timestamp.valueOf("2014-12-15 13:30:00"),
+//                Timestamp.valueOf("2014-12-15 17:30:00"),
+//                180, 300);
+//        cm.addCert(cert);
+//        cm.addCert(cert2);
+//        cm.addCert(cert3);
+//        sqlSession.commit();
+        // 获取认证名集合
+//        List<Certification> list = cm.getCertSet();
+//        for(Certification cert: list)
+//            System.out.println(cert);
+        // 根据认证名查询认证编号
+//        System.out.println(cm.selectCertNoByName(""));
+        // 获取未开始的认证集合
+//        List<Certification> list = cm.getCertSetNotStart();
+//        for(Certification cert: list)
+//            System.out.println(cert);
+        // 插入报名信息
+//        Application app = new Application();
+//        app.setCertNo(1);
+//        app.setLanguage("Java");
+//        app.setMemberNo("62151G");
+//        app.setPurpose("其他");
+//        app.setUsername("cheng123");
+//        app.setPassword("qwerzxcv");
+//        cm.addApplication(app);
+//        sqlSession.commit();
+        // 查询某次认证的报名信息
+//        List<Application> list = cm.selectApplicationInfo(1);
+//        for(Application app: list)
+//            System.out.println(app);
+        // 添加成绩
+//        Score score = new Score(1, "62151G", 200, 100,
+//                100, 0, 0, 0);
+//        cm.addScore(score);
+//        sqlSession.commit();
+        // 查询所有成绩
+//        List<ScoreInfo> list = cm.selectAllScore();
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
+        // 按认证编号查询查询所有人的成绩
+//        List<ScoreInfo> list = cm.selectScoreByNo(1);
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
+        // 按会员号查询查询所有认证的成绩
+//        List<ScoreInfo> list = cm.selectScoreByMemberNo("62151G");
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
+        // 综合筛选成绩信息(编号，最低，最高)
+//        List<ScoreInfo> list = cm.queryScore(1, 0, 200);
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
+        // 查询加分了的人
+//        List<ScoreInfo> list = cm.selectAddScore();
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
 
 
 

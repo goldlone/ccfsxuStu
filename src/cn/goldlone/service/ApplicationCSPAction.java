@@ -25,7 +25,7 @@
 // */
 //public class ApplicationCSPAction extends ActionSupport implements ModelDriven<ApplicationInfo>{
 //
-//    private ApplicationInfo info = new ApplicationInfo();
+//    private Application info = new Application();
 //    private CSPDao dao = new CSPDao();
 //    private File photo;
 //

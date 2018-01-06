@@ -1,16 +1,36 @@
 package cn.goldlone.po;
 
+import java.sql.Timestamp;
+
 /**
  * 认证实体类
  * Created by CN on 2017/10/17.
  */
 public class Certification {
+    // 认证编号
     private int no;
+    // 认证名称
     private String name;
-    private String startTime;
-    private String endTime;
+    // 认证开始时间
+    private Timestamp startTime;
+    // 认证结束时间
+    private Timestamp endTime;
+    // 会员报名费用
     private int memberFee;
+    // 非会员报名费用
     private int notMemberFee;
+
+    public Certification() {
+    }
+
+    public Certification(String name, Timestamp startTime, Timestamp endTime,
+                         int memberFee, int notMemberFee) {
+        this.name = name;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.memberFee = memberFee;
+        this.notMemberFee = notMemberFee;
+    }
 
     public int getNo() {
         return no;
@@ -28,19 +48,19 @@ public class Certification {
         this.name = name;
     }
 
-    public String getStartTime() {
+    public Timestamp getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Timestamp startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public Timestamp getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
 
