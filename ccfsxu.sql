@@ -126,15 +126,15 @@ ALTER TABLE BookType ADD CONSTRAINT uq_book_type_name UNIQUE(BT_name);
 # 图书信息表
 drop table if exists BookInfo;
 create table BookInfo(
-  B_bookNo varchar(13),
-  B_name varchar(30),
+  B_no varchar(13),
+  B_name varchar(50),
   B_typeNo int,
   B_author varchar(50),
   B_publicer varchar(30),
   B_publiceDate DATE,
   B_price double,
   B_inventory int,
-  primary key(B_bookNo),
+  primary key(B_no),
   foreign key(B_typeNo) references BookType(BT_no)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 # insert into BookInfo values('1234567891231', 'Java从入门到精通（第3版）', 1, '某个少年', '清华大学出版社', 69.9, 1);
@@ -148,7 +148,7 @@ create table BorrowBook(
   BB_borrowTime datetime,
   BB_backTime datetime,
   primary key(BB_no),
-  foreign key(BB_bookNo) references BookInfo(B_bookNo),
+  foreign key(BB_bookNo) references BookInfo(B_no),
   foreign key(BB_memberNo) references Member(M_memberNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 # insert into BorrowBook values(1, '1234567891231', '65535G', '2017-09-28 16:09:00', '2017-10-28 16:09:00');

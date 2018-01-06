@@ -1,14 +1,10 @@
 package cn.goldlone.service;
 
+import cn.goldlone.mapper.BookMapper;
 import cn.goldlone.mapper.CSPMapper;
 import cn.goldlone.mapper.MemberMapper;
-import cn.goldlone.model.LoginInfo;
-import cn.goldlone.model.ScoreInfo;
-import cn.goldlone.model.UserInfo;
-import cn.goldlone.po.Application;
-import cn.goldlone.po.Certification;
-import cn.goldlone.po.Member;
-import cn.goldlone.po.Score;
+import cn.goldlone.model.*;
+import cn.goldlone.po.*;
 import cn.goldlone.utils.MybatisUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -86,8 +82,9 @@ public class Test {
 //        System.out.println(mm.updateMemberInfo(member));
 //        sqlSession.commit();
 
-        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
 
+
+//        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
         // 添加CSP认证
 //        Certification cert = new Certification("第一次CCF计算机软件能力认证",
 //                Timestamp.valueOf("2014-03-15 13:30:00"),
@@ -154,6 +151,91 @@ public class Test {
 //        List<ScoreInfo> list = cm.selectAddScore();
 //        for(ScoreInfo info: list)
 //            System.out.println(info);
+
+
+        BookMapper bm = sqlSession.getMapper(BookMapper.class);
+        // 添加图书类别
+//        BookType bt1 = new BookType("操作系统");
+//        bm.addBookType("Java");
+//        bm.addBookType("Python");
+//        bm.addBookType("机器学习");
+//        bm.addBookType("数据库");
+//        bm.addBookType("前端技术");
+//        bm.addBookType(bt1);
+//        sqlSession.commit();
+//        System.out.println(bt1.getNo());
+        // 获取图书类别
+//        List<BookType> list = bm.getBookType();
+//        for(BookType bt: list)
+//            System.out.println(bt.toString());
+        // 获取类别名
+//        System.out.println(bm.selectTypeName(1));
+        // 查询图书类别编号
+//        Integer num = null;
+//        if((num=bm.selectTypeNoByName("qaqqa")) == null)
+//            System.out.println("无该类别");
+//        else
+//            System.out.println(num);
+        // 添加图书信息
+//        Book book = new Book("9787115373991",
+//                "Flask Web开发，基于Python的Web应用开发实战",
+//                2, "Miguel Grinberg", "人民邮电出版社",
+//                "2015-01-00", 59.00, 1);
+//        bm.addBook(book);
+//        sqlSession.commit();
+        // 使用BookInfo添加图书信息
+//        BookInfo book = new BookInfo("9787040207705",
+//                "编译程序设计原理",
+//                "编译原理", "金成植，金英", "高等教育出版社",
+//                "2000-07-00", 40.00, 1);
+//        Integer num = null;
+//        BookType bt = new BookType(book.getType());
+//        Book b = null;
+//        if((num=bm.selectTypeNoByName(book.getType())) == null) {
+//            bm.addBookType(bt);
+//            b = new Book(book, bt.getNo());
+//        } else {
+//            b = new Book(book, num);
+//        }
+//        bm.addBook(b);
+//        sqlSession.commit();
+        // 根据ISBN编号查询数目信息
+//        BookInfo info1 = bm.selectBookByISBN("9787040207705");
+//        System.out.println(info1);
+        // 根据类别编号查询数目信息
+//        List<BookInfo> list1 = bm.selectBookByType(2);
+//        for(BookInfo info2: list1)
+//            System.out.println(info2);
+        // 根据部分书名查询数目信息
+//        List<BookInfo> list2 = bm.selectBookByName("原理");
+//        for(BookInfo info3: list2)
+//            System.out.println(info3);
+        // 借书
+//        Integer num = null;
+//        BorrowBook book = new BorrowBook("9787040207705",
+//                "62151G", new Timestamp(System.currentTimeMillis()));
+//        num = bm.selectInventory(book.getBookNo());
+//        if(num!=null && num>0) {
+//            bm.borrowBook(book);
+//            bm.updateInventoryByBorrow(book.getBookNo());
+//            sqlSession.commit();
+//        } else {
+//            System.out.println("该书籍不存在或库存不足");
+//        }
+        // 还书
+//        List<BorrowInfo> list = bm.selectNotBackBook("9787040207705");
+//        if(list!=null && list.size()>0) {
+//            // 假设此处选选中第一个
+//            BorrowBook book = new BorrowBook(list.get(0));
+//            System.out.println(list.get(0));
+//            book.setBackTime(new Timestamp(System.currentTimeMillis()));
+//            bm.backBook(book);
+//            bm.updateInventoryByBorrow(book.getBookNo());
+//            sqlSession.commit();
+//            System.out.println("还书成功");
+//        } else {
+//            System.out.println("该书籍无外借记录");
+//        }
 
 
 

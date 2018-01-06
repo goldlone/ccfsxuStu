@@ -22,6 +22,22 @@ public class BookInfo {
     // 库存量
     private int inventory;
 
+    public BookInfo() {
+    }
+
+    public BookInfo(String no, String name, String type,
+                    String author, String publicer, String publicDate,
+                    double price, int inventory) {
+        this.no = no;
+        this.name = name;
+        this.type = type;
+        this.author = author;
+        this.publicer = publicer;
+        this.publicDate = publicDate;
+        this.price = price;
+        this.inventory = inventory;
+    }
+
     public String getNo() {
         return no;
     }

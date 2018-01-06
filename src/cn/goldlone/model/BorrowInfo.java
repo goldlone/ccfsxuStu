@@ -1,38 +1,36 @@
-package cn.goldlone.po;
-
-import cn.goldlone.model.BorrowInfo;
+package cn.goldlone.model;
 
 import java.sql.Timestamp;
 
 /**
- * Created by CN on 2017/10/17.
+ * 借阅图书信息
+ * Created by CN on 2018/1/6.
  */
-public class BorrowBook {
+public class BorrowInfo {
     // 借阅编号
     private int no;
     // 图书编号
     private String bookNo;
     // 会员号
     private String memberNo;
+    // 姓名
+    private String memberName;
     // 借阅时间
     private Timestamp borrowTime;
     // 归还时间
     private Timestamp backTime;
 
-    public BorrowBook() {
+    public BorrowInfo() {
     }
 
-    public BorrowBook(String bookNo, String memberNo, Timestamp borrowTime) {
+    public BorrowInfo(int no, String bookNo, String memberNo, String memberName,
+                      Timestamp borrowTime, Timestamp backTime) {
+        this.no = no;
         this.bookNo = bookNo;
         this.memberNo = memberNo;
+        this.memberName = memberName;
         this.borrowTime = borrowTime;
-    }
-
-    public BorrowBook(BorrowInfo info) {
-        this.no = info.getNo();
-        this.bookNo = info.getBookNo();
-        this.memberNo = info.getMemberNo();
-        this.borrowTime = info.getBorrowTime();
+        this.backTime = backTime;
     }
 
     public int getNo() {
@@ -59,6 +57,14 @@ public class BorrowBook {
         this.memberNo = memberNo;
     }
 
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
     public Timestamp getBorrowTime() {
         return borrowTime;
     }
@@ -73,5 +79,17 @@ public class BorrowBook {
 
     public void setBackTime(Timestamp backTime) {
         this.backTime = backTime;
+    }
+
+    @Override
+    public String toString() {
+        return "BorrowInfo{" +
+                "no=" + no +
+                ", bookNo='" + bookNo + '\'' +
+                ", memberNo='" + memberNo + '\'' +
+                ", memberName='" + memberName + '\'' +
+                ", borrowTime=" + borrowTime +
+                ", backTime=" + backTime +
+                '}';
     }
 }

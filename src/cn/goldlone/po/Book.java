@@ -1,5 +1,7 @@
 package cn.goldlone.po;
 
+import cn.goldlone.model.BookInfo;
+
 /**
  * Created by CN on 2017/10/17.
  */
@@ -20,6 +22,33 @@ public class Book {
     private double price;
     // 库存量
     private int inventory;
+
+    public Book() {
+    }
+
+    public Book(String no, String name, int typeNo,
+                String author, String publicer, String publicDate,
+                double price, int inventory) {
+        this.no = no;
+        this.name = name;
+        this.typeNo = typeNo;
+        this.author = author;
+        this.publicer = publicer;
+        this.publicDate = publicDate;
+        this.price = price;
+        this.inventory = inventory;
+    }
+
+    public Book(BookInfo info, int typeNo) {
+        this.no = info.getNo();
+        this.name = info.getName();
+        this.typeNo = typeNo;
+        this.author = info.getAuthor();
+        this.publicer = info.getPublicer();
+        this.publicDate = info.getPublicDate();
+        this.price = info.getPrice();
+        this.inventory = info.getInventory();
+    }
 
     public String getNo() {
         return no;

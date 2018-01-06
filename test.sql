@@ -90,3 +90,24 @@ SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
 FROM Score s,Certification c,Member m
 WHERE s.S_certNo=c.C_no AND
       s.S_memberNo=m.M_memberNo;
+
+SELECT b1.B_no,b1.B_name,b2.BT_name,b1.B_author,b1.B_publicer,
+        b1.B_publiceDate,b1.B_price,b1.B_inventory
+FROM BookInfo b1,BookType b2
+WHERE b1.B_no='' AND b1.B_typeNo=b2.BT_no;
+
+
+SELECT b1.B_no,b1.B_name,b2.BT_name,b1.B_author,b1.B_publicer,
+        b1.B_publiceDate,b1.B_price,b1.B_inventory
+FROM BookInfo b1,BookType b2
+WHERE b1.B_typeNo=0 AND b1.B_typeNo=b2.BT_no;
+
+INSERT
+INTO BorrowBook(BB_bookNo,BB_memberNo,BB_borrowTime)
+VALUES('', '', '');
+
+
+SELECT b.BB_no,b.BB_bookNo,b.BB_memberNo,m.M_name,b.BB_borrowTime
+FROM BorrowBook b,Member m
+WHERE BB_backTime IS NULL AND
+      b.BB_memberNo=m.M_memberNo;

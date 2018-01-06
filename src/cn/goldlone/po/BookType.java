@@ -9,6 +9,10 @@ public class BookType {
     // 类别名
     private String name;
 
+    public BookType(String name) {
+        this.name = name;
+    }
+
     public int getNo() {
         return no;
     }
@@ -23,5 +27,13 @@ public class BookType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "BookType{" +
+                "no=" + no +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
