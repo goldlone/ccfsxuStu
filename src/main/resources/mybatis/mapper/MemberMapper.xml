@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.goldlone.mapper.MemberMapper">
+    <!-- 登录返回结果对象 -->
+    <resultMap id="loginInfo" type="cn.goldlone.model.LoginInfo">
+        <result column="M_password" property="password" />
+        <result column="M_memberNo" property="memberNo" />
+        <result column="M_power" property="power" />
+    </resultMap>
+    <!-- 会员实体信息返回对象 -->
+    <resultMap id="userInfo" type="cn.goldlone.model.UserInfo">
+        <result property="no" column="M_memberNo"/>
+        <result property="name" column="M_name"/>
+        <result property="stuNo" column="M_stuNo"/>
+        <result property="phone" column="M_phone"/>
+        <result property="email" column="M_email"/>
+        <result property="gender" column="M_gender"/>
+        <result property="discipline" column="M_discipline"/>
+        <result property="grade" column="M_grade"/>
+        <result property="classNum" column="M_class"/>
+        <result property="degree" column="DT_name"/>
+        <result property="id" column="M_id"/>
+        <result property="startTime" column="M_startTime"/>
+        <result property="endTime" column="M_endTime"/>
+        <result property="memberType" column="MT_name"/>
+        <result property="power" column="M_power"/>
+        <result property="powerName" column="PT_name"/>
+        <result property="addScore" column="M_addScore"/>
+        <result property="expired" column="expired"/>
+    </resultMap>
+
+    <!-- 查询登录密码 -->
+    <select id="login" parameterType="string" resultMap="loginInfo">
+        SELECT M_password, M_memberNo, M_power
+        FROM Member
+        WHERE M_email=#{email};
+    </select>
+    <!-- 获取年级集合 -->
+    <select id="selectGradeSet" resultType="Integer">
+        SELECT DISTINCT M_grade
+        FROM Member;
+    </select>
+    <!-- 查询权限 -->
+    <select id="selectPower" parameterType="String" resultType="int">
+        SELECT M_power
+        FROM Member
+        WHERE M_memberNo = #{memberNo};
+    </select>
+    <!-- 查询学历编号 -->
+    <select id="selectDegreeNo" parameterType="String" resultType="int">
+        SELECT DT_no
+        FROM DegreeType
+        WHERE DT_name=#{degree};
+    </select>
+    <!-- 添加会员信息 -->
+    <insert id="addMember" parameterType="cn.goldlone.po.Member" keyProperty="M_memberNo">
+        INSERT
+        INTO Member(M_memberNo, M_name, M_stuNo, M_phone, M_email, M_gender,
+                    M_discipline, M_grade, M_class, M_degreeNo, M_id, M_startTime,
+                    M_endTime, M_typeNo, M_password, M_power)
+        VALUES(#{no}, #{name}, #{stuNo}, #{phone}, #{email}, #{gender}, #{discipline},
+                      #{grade}, #{classNum}, #{degreeNo}, #{id}, #{startTime}, #{endTime},
+                      #{memberTypeNo}, #{password}, #{power});
+    </insert>
+    <!-- 查询所有会员信息 -->
+    <select id="selectAllMember" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE m1.M_typeNo=m2.MT_no AND
+              m1.M_power=p.PT_no AND
+              m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 根据会员号查询会员信息 -->
+    <select id="selectMemberByNo" parameterType="String" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE m1.M_memberNo=#{memberNo} AND
+              m1.M_typeNo=m2.MT_no AND
+              m1.M_power=p.PT_no AND
+              m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 根据邮箱获取会员信息 -->
+    <select id="selectMemberByEmail" parameterType="String" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE m1.M_email=#{email} AND
+              m1.M_typeNo=m2.MT_no AND
+              m1.M_power=p.PT_no AND
+              m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 查询所有过期的会员 -->
+    <select id="selectExpiredMember" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE now()>m1.M_endTime AND
+              m1.M_typeNo=m2.MT_no AND
+              m1.M_power=p.PT_no AND
+              m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 查询所有未过期的会员 -->
+    <select id="selectNotExpiredMember" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE now()&lt;m1.M_endTime AND
+              m1.M_typeNo=m2.MT_no AND
+              m1.M_power=p.PT_no AND
+              m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 根据会员姓名查询会员信息 -->
+    <select id="selectMemberByName" parameterType="String" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE m1.M_name LIKE concat('%',#{name},'%') AND
+            m1.M_typeNo=m2.MT_no AND
+            m1.M_power=p.PT_no AND
+            m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 综合信息查询会员信息 -->
+    <select id="queryMember" parameterType="cn.goldlone.po.Member" resultMap="userInfo">
+        SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+            m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+            m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+            m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+            now()>m1.M_endTime as expired
+        FROM Member m1, MemberType m2, PowerType p, DegreeType d
+        WHERE
+            <if test="grade != 0">m1.M_grade=#{grade} AND </if>
+            <if test="endTime == 0">now()&lt;m1.M_endTime AND </if>
+            <if test="endTime == 1">now()&gt;m1.M_endTime AND </if>
+            <if test="no != null">m1.M_memberNo=#{no} AND </if>
+            <if test="name != null">m1.M_name LIKE concat('%',#{name},'%') AND </if>
+            m1.M_typeNo=m2.MT_no AND
+            m1.M_power=p.PT_no AND
+            m1.M_degreeNo=d.DT_no;
+    </select>
+    <!-- 更新失效日期 -->
+    <update id="updateEndTimeByNo">
+        UPDATE Member
+        SET M_endTime = #{endTime}
+        WHERE M_memberNo = #{no};
+    </update>
+    <!-- 修改会员信息 -->
+    <update id="updateMemberInfo" parameterType="cn.goldlone.po.Member">
+        UPDATE Member
+        <set>
+            <if test="stuNo!=null and stuNo!=''">M_stuNo = #{stuNo},</if>
+            <if test="name!=null and name!=''">M_name = #{name},</if>
+            <if test="phone!=null and phone!=''">M_phone = #{phone},</if>
+            <if test="email!=null and email!=''">M_email = #{email},</if>
+            <if test="gender!=null and gender!=''">M_gender = #{gender}</if>
+            <if test="discipline!=null and discipline!=''">M_discipline = #{discipline},</if>
+            <if test="grade!=0">M_grade = #{grade},</if>
+            <if test="classNum!=0">M_class = #{classNum},</if>
+            <if test="degreeNo!=0">M_degreeNo = #{degreeNo},</if>
+            <if test="id!=null and id!=''">M_id = #{id},</if>
+            <if test="memberTypeNo!=0">M_typeNo = #{memberTypeNo},</if>
+            <if test="power!=0">M_power = #{power},</if>
+            <if test="addScore!=0">M_addScore = #{addScore},</if>
+        </set>
+        WHERE M_memberNo = #{no};
+    </update>
+
+</mapper>
