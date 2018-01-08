@@ -9,6 +9,14 @@ public class BookType {
     // 类别名
     private String name;
 
+    public BookType() {
+    }
+
+    public BookType(int no, String name) {
+        this.no = no;
+        this.name = name;
+    }
+
     public BookType(String name) {
         this.name = name;
     }

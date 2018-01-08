@@ -19,19 +19,17 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-//        File file = new File(".");
-//        System.out.println(file.getAbsolutePath());
 
         SqlSession sqlSession = MybatisUtils.openSqlSession();
 
-        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
+//        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
         // 登录
-//        LoginInfo info = mm.login("857353825@qq.com");
+//        LoginInfo info = mm.login("qqq@qq.com");
 //        System.out.println(info);
         // 获取年级集合
-        List<Integer> list = mm.selectGradeSet();
-        for(Integer i: list)
-            System.out.println(i);
+//        List<Integer> list = mm.selectGradeSet();
+//        for(Integer i: list)
+//            System.out.println(i);
         // 添加会员信息
 //        Member member = new Member("68888G", "张三", "201502401011", "18435187011",
 //                "2013525296@qq.com", "男", "计科", 2015, 2, 1, "1420151515151", "2015-09-01",
@@ -91,7 +89,7 @@ public class Test {
 
 //        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
         // 添加CSP认证
-//        Certification cert = new Certification("第一次CCF计算机软件能力认证",
+//        Certification cert1 = new Certification("第一次CCF计算机软件能力认证",
 //                Timestamp.valueOf("2014-03-15 13:30:00"),
 //                Timestamp.valueOf("2014-03-15 17:30:00"),
 //                180, 300);
@@ -139,7 +137,7 @@ public class Test {
 //                Timestamp.valueOf("2017-12-21 13:30:00"),
 //                Timestamp.valueOf("2017-12-21 17:30:00"),
 //                180, 300);
-//        cm.addCert(cert);
+//        cm.addCert(cert1);
 //        cm.addCert(cert2);
 //        cm.addCert(cert3);
 //        cm.addCert(cert4);
@@ -203,15 +201,20 @@ public class Test {
 //            System.out.println(info);
 
 
-//        BookMapper bm = sqlSession.getMapper(BookMapper.class);
+        BookMapper bm = sqlSession.getMapper(BookMapper.class);
         // 添加图书类别
-//        BookType bt1 = new BookType("操作系统");
-//        bm.addBookType("Java");
-//        bm.addBookType("Python");
-//        bm.addBookType("机器学习");
-//        bm.addBookType("数据库");
-//        bm.addBookType("前端技术");
+//        BookType bt1 = new BookType("Java");
+//        BookType bt2 = new BookType("Python");
+//        BookType bt3 = new BookType("操作系统");
+//        BookType bt4 = new BookType("机器学习");
+//        BookType bt5 = new BookType("数据库");
+//        BookType bt6 = new BookType("前端技术");
 //        bm.addBookType(bt1);
+//        bm.addBookType(bt2);
+//        bm.addBookType(bt3);
+//        bm.addBookType(bt4);
+//        bm.addBookType(bt5);
+//        bm.addBookType(bt6);
 //        sqlSession.commit();
 //        System.out.println(bt1.getNo());
         // 获取图书类别
@@ -234,26 +237,30 @@ public class Test {
 //        bm.addBook(book);
 //        sqlSession.commit();
         // 使用BookInfo添加图书信息
-//        BookInfo book = new BookInfo("9787040207705",
+//        BookInfo book1 = new BookInfo("9787040207705",
 //                "编译程序设计原理",
 //                "编译原理", "金成植，金英", "高等教育出版社",
 //                "2000-07-00", 40.00, 1);
 //        Integer num = null;
-//        BookType bt = new BookType(book.getType());
+//        BookType bt = new BookType(book1.getType());
 //        Book b = null;
-//        if((num=bm.selectTypeNoByName(book.getType())) == null) {
+//        if((num=bm.selectTypeNoByName(book1.getType())) == null) {
 //            bm.addBookType(bt);
-//            b = new Book(book, bt.getNo());
+//            b = new Book(book1, bt.getNo());
 //        } else {
-//            b = new Book(book, num);
+//            b = new Book(book1, num);
 //        }
 //        bm.addBook(b);
 //        sqlSession.commit();
+        //
+//        List<BookInfo> list = bm.selectAllBook();
+//        for(BookInfo info2: list)
+//            System.out.println(info2);
         // 根据ISBN编号查询数目信息
 //        BookInfo info1 = bm.selectBookByISBN("9787040207705");
 //        System.out.println(info1);
         // 根据类别编号查询数目信息
-//        List<BookInfo> list1 = bm.selectBookByType(2);
+//        List<BookInfo> list1 = bm.selectBookByType(0);
 //        for(BookInfo info2: list1)
 //            System.out.println(info2);
         // 根据部分书名查询数目信息

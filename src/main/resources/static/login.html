@@ -35,85 +35,35 @@
 
     <div class="container">
       <h1 align="center">登录CCFSXU会员管理系统</h1><br><br><br>
-      <form action="/login" method="POST" class="form-signin" id="loginForm">
+      <form class="form-signin" id="loginForm">
       
         <label for="inputEmail" class="sr-only">邮箱</label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
         
         <label for="inputPassword" class="sr-only">密码</label>
-        <input name="passwd" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
 
         <div id="warnInfo" class="alert alert-danger" role="alert"></div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-        <!--<%&#45;&#45;<a class="btn btn-lg btn-primary btn-block" onclick="login()">登录</a>&#45;&#45;%>-->
+        <!--<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>-->
+        <a class="btn btn-lg btn-primary btn-block" onclick="login()">登录</a>
       </form>
     </div>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script type="text/javascript" src="assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/ccfsxu.js"></script>
 
     <script type="text/javascript">
-
-//      document.onkeydown = function (e) {
-//        if(e.which == 13){
-//          login();
-//        }
-//      }
       $("#warnInfo").hide();
-      function login() {
-          if(isEmail($("#inputEmail").val())) {
-              $.ajax({
-                  type: "post",
-                  url: "login",
-                  data: $('#loginForm').serialize(),
-                  error: function (res) {
-                      console.log(res);
-                  },
-                  success: function (res) {
-                      console.log(res);
-//                      if(res.ret) {    // 登录成功，跳转
-//                          window.location.href='master/main.html';
-//                      }else {
-//                          switch (res.code) {
-//                              case 10002:// 密码错误
-//                                  $("#warnInfo").empty();
-//                                  $("#warnInfo").append("<strong>密码错误</strong>");
-//                                  $("#warnInfo").show();
-//                                  break;
-//                              case 10003:// 未注册
-//                                  $("#warnInfo").empty();
-//                                  $("#warnInfo").append("<strong>未注册</strong>");
-//                                  $("#warnInfo").show();
-//                                  break;
-//                              case 10004:// 邮箱为空
-//                                  $("#warnInfo").empty();
-//                                  $("#warnInfo").append("<strong>邮箱不能为空</strong>");
-//                                  $("#warnInfo").show();
-//                                  break;
-//                              case 10005:// 密码为空
-//                                  $("#warnInfo").empty();
-//                                  $("#warnInfo").append("<strong>密码不能为空</strong>");
-//                                  $("#warnInfo").show();
-//                                  break;
-//                          }
-//                      }
-//
-                  }
-              });
-          } else {
-              $("#warnInfo").empty();
-              $("#warnInfo").append("<strong>请填入正确的邮箱</strong>");
-              $("#warnInfo").show();
-          }
-      }
+      // 键盘监听
+      document.onkeydown = function (e) {
+        if(e.which == 13){
+          login();
+        }
+      };
 
-       // 校验邮箱合法性
-       function isEmail(str){
-         var reg = /^([a-zA-Z0-9])+@([a-zA-Z0-9])+(.[a-zA-Z0-9])+/;
-         return reg.test(str);
-       }
     </script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 package cn.goldlone.service;
 
+import cn.goldlone.model.LoginInfo;
 import cn.goldlone.model.UserInfo;
 import cn.goldlone.po.Member;
 
@@ -9,6 +10,9 @@ import java.util.List;
  * Created by CN on 2018/1/4.
  */
 public interface MemberService {
+
+    // 登录
+    public boolean login(String email);
 
     // 添加会员信息
     public boolean addMember(Member member);

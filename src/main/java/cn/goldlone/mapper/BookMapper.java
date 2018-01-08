@@ -22,6 +22,7 @@ public interface BookMapper {
     public Integer selectTypeNoByName(String typeName);
     // 添加图书信息
     public int addBook(Book book);
+    public List<BookInfo> selectAllBook();
     // 根据ISBN编号查询数目信息
     public BookInfo selectBookByISBN(String isbn);
     // 根据类别编号查询数目信息

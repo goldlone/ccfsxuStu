@@ -12,10 +12,10 @@ public class ResultUtils {
      * @param data
      * @return
      */
-    public static Result success(Object data) {
+    public static Result success(Object data, String msg) {
         Result result = new Result();
         result.setCode(0);
-        result.setMsg("成功");
+        result.setMsg(msg);
         result.setData(data);
         return result;
     }
@@ -25,7 +25,7 @@ public class ResultUtils {
      * @return
      */
     public static Result success() {
-        return success(null);
+        return success(null, "请求成功");
     }
 
     /**

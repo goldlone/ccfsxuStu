@@ -1,6 +1,7 @@
 package cn.goldlone.service.impl;
 
 import cn.goldlone.mapper.MemberMapper;
+import cn.goldlone.model.LoginInfo;
 import cn.goldlone.model.UserInfo;
 import cn.goldlone.po.Member;
 import cn.goldlone.service.MemberService;
@@ -22,6 +23,12 @@ public class MemberServiceImpl implements MemberService {
         this.memberMapper = sqlSession.getMapper(MemberMapper.class);
     }
 
+
+    @Override
+    public boolean login(String email) {
+
+        return false;
+    }
 
     /**
      *

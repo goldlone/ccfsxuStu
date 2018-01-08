@@ -2,6 +2,8 @@ package cn.goldlone.controller;
 
 import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.UserInfo;
+import cn.goldlone.service.MemberService;
+import cn.goldlone.service.impl.MemberServiceImpl;
 import cn.goldlone.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +18,12 @@ import java.io.File;
  */
 @RestController
 public class MemberController {
+    private SqlSession sqlSession = MybatisUtils.openSqlSession();
+    private MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
 
-    private MemberMapper mm;
-    private SqlSession sqlSession;
 
-    @GetMapping("/")
+
+    @GetMapping("/list")
     public List<UserInfo> get() {
         sqlSession = MybatisUtils.openSqlSession();
         mm = sqlSession.getMapper(MemberMapper.class);

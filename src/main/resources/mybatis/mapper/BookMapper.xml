@@ -60,6 +60,13 @@
         VALUES(#{no}, #{name}, #{typeNo}, #{author}, #{publicer},
                #{publicDate}, #{price}, #{inventory});
     </insert>
+    <!-- 获取所有图书信息 -->
+    <select id="selectAllBook" resultMap="bookInfo">
+        SELECT b1.B_no,b1.B_name,b2.BT_name,b1.B_author,b1.B_publicer,
+            b1.B_publiceDate,b1.B_price,b1.B_inventory
+        FROM BookInfo b1,BookType b2
+        WHERE b1.B_typeNo=b2.BT_no;
+    </select>
     <!-- 根据ISBN编号查询数目信息 -->
     <select id="selectBookByISBN" parameterType="String" resultMap="bookInfo">
         SELECT b1.B_no,b1.B_name,b2.BT_name,b1.B_author,b1.B_publicer,
