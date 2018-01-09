@@ -44,7 +44,7 @@ CREATE TABLE Member(
   M_stuNo varchar(20) DEFAULT '',
   M_phone varchar(11) DEFAULT '',
   M_email varchar(50) NOT NULL,
-  M_gender VARCHAR(2) DEFAULT '',
+  M_gender varchar(2) DEFAULT '',
   M_discipline varchar(20) DEFAULT '',
   M_grade int DEFAULT 0,
   M_class int DEFAULT 0,
@@ -64,7 +64,7 @@ CREATE TABLE Member(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE Member ADD CONSTRAINT uq_email UNIQUE(M_email);
 
-# CSP（CCSP）认证信息表
+  # CSP（CCSP）认证信息表
 drop table if exists Certification;
 create table Certification(
   C_no int NOT NULL AUTO_INCREMENT,

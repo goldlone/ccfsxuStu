@@ -79,7 +79,7 @@
         <li><a href="#" style="color: #000;cursor: default;">
           <h4 class="sub-header">会员信息</h4></a>
         </li>
-        <li class="active"><a href="./main.html" >查询会员信息</a></li>
+        <li><a href="./main.html" >查询会员信息</a></li>
         <li><a href="./insertMemberInfo.html">录入会员信息</a></li>
         <li><a href="./updateMemberInfo.html">修改会员信息</a></li>
       </ul>
@@ -89,7 +89,7 @@
         </li>
         <li><a href="./selectCSPScore.html">查询CSP成绩</a></li>
         <li><a href="./insertCSPScore.html">录入CSP成绩</a></li>
-        <li><a href="./managerCSPApplication.html">CSP报名管理</a></li>
+        <li class="active"><a href="./managerCSPApplication.html">CSP报名管理</a></li>
         <li><a href="./analysisCSPScore.html">会员进步状况分析</a></li>
       </ul>
       <ul class="nav nav-sidebar">
@@ -112,7 +112,8 @@
           <form class="form-inline" id="downloadForm">
             <label>考试名称</label>
             <select id="certName" name="certNo" class="form-control">
-              <option value="0">所有</option>
+              <option value="0">无</option>
+              <option value="0">第十二次CCF软件能力认证</option>
             </select>
             <a class="btn btn-default" onclick="queryApplication()">下载</a>
           </form>
@@ -167,14 +168,14 @@
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  <script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
   <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-  <script src="/dist/js/bootstrap.min.js"></script>
+  <script src="../dist/js/bootstrap.min.js"></script>
   <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-  <script src="/assets/js/vendor/holder.min.js"></script>
+  <script src="../assets/js/vendor/holder.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script src="/assets/js/bootbox.min.js"></script>
+  <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="../assets/js/bootbox.min.js"></script>
 
   <script type="text/javascript">
     // 获取考试集合

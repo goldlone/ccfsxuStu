@@ -35,8 +35,8 @@ public class BookController {
      * @return
      */
     @PostMapping("/book/selectBookByType")
-    public Result<List<BookInfo>> selectBookByType(int typeNo) {
-        Result<List<BookInfo>> result = null;
+    public Result selectBookByType(int typeNo) {
+        Result result = null;
         if(typeNo==0)
             result =  ResultUtils.success(bm.selectAllBook(), "获取全部图书信息");
         else
@@ -50,8 +50,8 @@ public class BookController {
      * @return
      */
     @PostMapping("/book/selectBookByName")
-    public Result<List<BookInfo>> selectBookByName(String bookName) {
-        Result<List<BookInfo>> result = null;
+    public Result selectBookByName(String bookName) {
+        Result result = null;
         result = ResultUtils.success(bm.selectBookByName(bookName), "按照图书名查询成功");
         return result;
     }
@@ -62,8 +62,8 @@ public class BookController {
      * @return
      */
     @PostMapping("/book/selectBookByISBN")
-    public Result<List<BookInfo>> selectBookByISBN(String isbn) {
-        Result<List<BookInfo>> result = null;
+    public Result selectBookByISBN(String isbn) {
+        Result result = null;
         result = ResultUtils.success(bm.selectBookByISBN(isbn), "按照图书ISBN查询成功");
         return result;
     }

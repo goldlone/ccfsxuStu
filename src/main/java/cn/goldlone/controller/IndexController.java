@@ -23,7 +23,7 @@ public class IndexController /*implements ErrorController*/ {
 
     @GetMapping("/")
     public String index() {
-        return "redirect:/index.html";
+        return "hello";
     }
 
     /*
@@ -53,7 +53,7 @@ public class IndexController /*implements ErrorController*/ {
      * @param password
      * @return
      */
-    @PostMapping("/login")
+    @PostMapping("/loginSystem")
     public Result login(HttpServletRequest request, String email, String password) {
         SqlSession sqlSession = MybatisUtils.openSqlSession();
         MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
@@ -73,6 +73,20 @@ public class IndexController /*implements ErrorController*/ {
                 result = ResultUtils.error(2, "登录密码错误");
         }
         return result;
+    }
+
+    /**
+     * 获取权限
+     * @param request
+     * @return
+     */
+    @PostMapping("/power")
+    public Integer getPower(HttpServletRequest request) {
+        Integer power = null;
+        if((power = (Integer)request.getSession().getAttribute("power"))!=null) {
+            return power;
+        }
+        return -1;
     }
 
     @PostMapping("/logout")

@@ -29,7 +29,7 @@ public class ResultUtils {
     }
 
     /**
-     * 出现啊错误
+     * 出现错误
      * @param code
      * @param msg
      * @return

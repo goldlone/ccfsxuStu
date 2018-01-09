@@ -112,7 +112,65 @@
           <li role="presentation" id="file-li"><a onclick="showFile()" href="#">文件导入</a></li>
         </div>
 
+        <div id="handImport" class="col-md-12">
+          <br>
+          <form class="form-horizontal col-md-12" id="form-import">
+            <div class="form-group">
+              <label class="control-label col-md-2">ISBN</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">图书名称</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">类别</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">作者</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">出版社</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">出版时间</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">价格</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-2">库存</label>
+              <div class="col-md-4">
+                <input class="form-control" type="text" name="" placeholder="必填" required/>
+              </div>
+            </div>
 
+            <div class="form-group col-md-4">
+              <div class="col-md-8" style="float: right;">
+                <button class="form-control btn-primary" type="button" onclick="handForm()">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
         <br>
         <div id="fileImport" class="col-md-12" hidden>
           <div>
@@ -143,14 +201,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/assets/js/bootbox.min.js"></script>
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../assets/js/bootbox.min.js"></script>
     <script type="text/javascript">
       showHand();
       function showHand() {

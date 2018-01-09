@@ -153,8 +153,8 @@
             <if test="grade != 0">m1.M_grade=#{grade} AND </if>
             <if test="endTime == 0">now()&lt;m1.M_endTime AND </if>
             <if test="endTime == 1">now()&gt;m1.M_endTime AND </if>
-            <if test="no != null">m1.M_memberNo=#{no} AND </if>
-            <if test="name != null">m1.M_name LIKE concat('%',#{name},'%') AND </if>
+            <if test="no != null and no!=''">m1.M_memberNo=#{no} AND </if>
+            <if test="name != null and name!=''">m1.M_name LIKE concat('%',#{name},'%') AND </if>
             m1.M_typeNo=m2.MT_no AND
             m1.M_power=p.PT_no AND
             m1.M_degreeNo=d.DT_no;

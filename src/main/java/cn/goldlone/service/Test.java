@@ -22,7 +22,7 @@ public class Test {
 
         SqlSession sqlSession = MybatisUtils.openSqlSession();
 
-//        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
+        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
         // 登录
 //        LoginInfo info = mm.login("qqq@qq.com");
 //        System.out.println(info);
@@ -66,15 +66,17 @@ public class Test {
 //            for(UserInfo u: list)
 //                System.out.println(u.toString());
         // 综合信息查询会员信息
-//        Member member = new Member();
+        Member member = new Member();
+        member.setNo("");
 //        member.setGrade(2015);
-//        member.setEndTime("0");
+//        member.setEndTime("2");
 //        member.setNo("61234G");
 //        member.setName("程");
-//        List<UserInfo> list = mm.queryMember(member);
-//        if(list.size()>0)
-//            for(UserInfo u: list)
-//                System.out.println(u.toString());
+        System.out.println(member);
+        List<UserInfo> list = mm.queryMember(member);
+        if(list.size()>0)
+            for(UserInfo u: list)
+                System.out.println(u.toString());
         // 查询学历编号
 //        System.out.println(mm.selectDegreeNo("本科"));
         // 修改会员信息
@@ -201,7 +203,7 @@ public class Test {
 //            System.out.println(info);
 
 
-        BookMapper bm = sqlSession.getMapper(BookMapper.class);
+//        BookMapper bm = sqlSession.getMapper(BookMapper.class);
         // 添加图书类别
 //        BookType bt1 = new BookType("Java");
 //        BookType bt2 = new BookType("Python");

@@ -54,7 +54,9 @@
     </select>
     <!-- 根据认证名查询认证编号 -->
     <select id="selectCertNoByName" parameterType="String" resultType="int">
-        SELECT C_no FROM Certification WHERE C_name = #{certName};
+        SELECT C_no
+        FROM Certification
+        WHERE C_name = #{certName};
     </select>
     <!-- 获取未开始的认证集合 -->
     <select id="getCertSetNotStart" resultMap="certification">

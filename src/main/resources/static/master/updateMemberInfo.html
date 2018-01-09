@@ -204,14 +204,11 @@
                     </div>
                   </div>
 
-                  <div class="form-group" <%
-                    if(request.getSession().getAttribute("memberNo")!=null){
-                    String no = request.getSession().getAttribute("memberNo").toString();
-                    if(new MemberDao().selectPower(no)<2)out.print("hidden");}else out.print("hidden");%>>
+                  <div class="form-group">
                     <label class="control-label col-md-2">身份权限</label>
                     <div class="col-md-6">
                       <select class="form-control" name="power" >
-                        <option value="0">会员</option>
+                        <option value="1">会员</option>
                         <option value="1">普通管理员</option>
                         <option value="2">高级管理员</option>
                       </select>
@@ -238,131 +235,20 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script type="text/javascript" src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/assets/js/bootbox.min.js"></script>
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../assets/js/bootbox.min.js"></script>
+    <script src="../assets/js/ccfsxu.js"></script>
+    <script type="text/javascript">
+      initHeadView();
+    </script>
 
     <script type="text/javascript">
-      // 获取CSP认证集合数据
-      function getCertSet() {
-        $.ajax({
-          url: "/getCertSet",
-          type: "post",
-          success: function (res) {
-            console.log(res);
-            for(var i=0; i<res.data.length; i++)
-              $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
-          },
-          error: function (res) {
-            console.log(res);
-          }
-        });
-      }
-      getCertSet();
-      // 查询要修改的会员信息
-      function selectMemberInfo() {
-        if($("#memberNo").val() == "") {
-          bootbox.alert({
-            size: "small",
-            title: "提示信息",
-            message: "请输入会员号!",
-            callback: function(){  }
-          });
-          return;
-        }
-        $.ajax({
-          url: "/selectMemberByNo",
-          type: "post",
-          data: "&no="+$("#memberNo").val(),
-          success: function (res) {
-            if(res.len == 0) {
-              bootbox.alert({
-                size: "small",
-                title: "提示消息",
-                message: "会员号有误，无该会员"
-              });
-              return;
-            }
-            $("#updateInfo").show();
-            $("input[name='no']")[1].value = res.data[0].no;
-            $("input[name='name']")[0].value = res.data[0].name;
-            $("input[name='email']")[0].value = res.data[0].email;
-            $("input[name='stuNo']")[0].value = res.data[0].stuNo;
-            $("input[name='phone']")[0].value = res.data[0].phone;
-            $("input[name='discipline']")[0].value = res.data[0].discipline;
-            $("input[name='grade']")[0].value = res.data[0].grade;
-            $("input[name='classNum']")[0].value = res.data[0].classNum;
-            $("input[name='id']")[0].value = res.data[0].id;
-            $("input[name='startTime']")[0].value = res.data[0].startTime;
-            $("input[name='endTime']")[0].value = res.data[0].endTime;
-            switch (res.data[0].degree) {
-              case "本科":
-                $("select[name='degreeNo']")[0].value = 0;
-                break;
-              case "硕士":
-                $("select[name='degreeNo']")[0].value = 1;
-              case "博士":
-                $("select[name='degreeNo']")[0].value = 2;
-            }
-            $("select[name='addSocre']")[0].value = res.data[0].addScore;
-            $("select[name='power']")[0].value = res.data[0].power;
-          },
-          fail: function (res) {
-            console.log(res);
-          }
-        });
-      }
-      // 提交修改
-      function submitUpdate() {
-        bootbox.confirm({
-          title: "提示消息",
-          message: "确认提交修改？",
-          buttons: {
-            cancel: {
-              label: '<i class="fa fa-times"></i> 取消'
-            },
-            confirm: {
-              label: '<i class="fa fa-check"></i> 确认'
-            }
-          },
-          callback: function (result) {
-            if(result) {
-              $.ajax({
-                url: "/updateMember",
-                type: "post",
-                data: $("#form-update").serialize(),
-                success: function (res) {
-                  console.log(res);
-                  if (res.ret) {
-                    bootbox.alert({
-                      size: "small",
-                      title: "提示消息",
-                      message: "修改成功"
-                    });
-                  } else {
-                    bootbox.alert({
-                      size: "small",
-                      title: "提示消息",
-                      message: "修改失败"
-                    });
-                  }
-
-                },
-                fail: function (res) {
-                  console.log(res);
-                }
-              });
-            }
-          }
-        });
-
-      }
-
       
     </script>
     
