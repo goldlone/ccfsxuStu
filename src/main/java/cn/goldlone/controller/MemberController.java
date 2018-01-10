@@ -1,17 +1,23 @@
 package cn.goldlone.controller;
 
+import ch.qos.logback.core.util.FileUtil;
 import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.Result;
 import cn.goldlone.model.UserInfo;
 import cn.goldlone.po.Member;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.FileOutputStream;
 import java.util.List;
+import java.io.File;
+import java.util.Map;
 
 
 /**
@@ -50,15 +56,38 @@ public class MemberController {
         return result;
     }
 
+    /**
+     * 手动录入会员信息
+     * @param member
+     * @return
+     */
+    @PostMapping("/member/add")
+    public Result addMember(Member member) {
+        Result result = null;
+        try {
+            member.setPassword(DigestUtils.sha256Hex(member.getNo()));
+            member.setPower(5);
+            member.setAddScore(0);
+            member.setMemberTypeNo(1);
+            if(mm.addMember(member)>0) {
+                sqlSession.commit();
+                result = ResultUtils.success(null, "录入成功");
+            } else {
+                result =  ResultUtils.error(1, "录入失败：数据有问题，数据库插入失败");
+            }
+        } catch (Exception e) {
+            result = ResultUtils.error(2, "录入失败："+e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 
+    @PostMapping("/member/addByFile")
+    public Result addMemberByFile(@RequestParam("file")MultipartFile file) {
+        Result result = null;
 
-
-
-    @GetMapping("/list")
-    public Result get() {
-        List<UserInfo> list = mm.selectAllMember();
-        return ResultUtils.success(list, "请求成功");
+        return result;
     }
 
 

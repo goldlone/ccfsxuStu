@@ -66,17 +66,17 @@ public class Test {
 //            for(UserInfo u: list)
 //                System.out.println(u.toString());
         // 综合信息查询会员信息
-        Member member = new Member();
-        member.setNo("");
+//        Member member = new Member();
+//        member.setNo("");
 //        member.setGrade(2015);
 //        member.setEndTime("2");
 //        member.setNo("61234G");
 //        member.setName("程");
-        System.out.println(member);
-        List<UserInfo> list = mm.queryMember(member);
-        if(list.size()>0)
-            for(UserInfo u: list)
-                System.out.println(u.toString());
+//        System.out.println(member);
+//        List<UserInfo> list = mm.queryMember(member);
+//        if(list.size()>0)
+//            for(UserInfo u: list)
+//                System.out.println(u.toString());
         // 查询学历编号
 //        System.out.println(mm.selectDegreeNo("本科"));
         // 修改会员信息
@@ -89,7 +89,7 @@ public class Test {
 
 
 
-//        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
+        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
         // 添加CSP认证
 //        Certification cert1 = new Certification("第一次CCF计算机软件能力认证",
 //                Timestamp.valueOf("2014-03-15 13:30:00"),
@@ -193,6 +193,12 @@ public class Test {
 //        List<ScoreInfo> list = cm.selectScoreByMemberNo("62151G");
 //        for(ScoreInfo info: list)
 //            System.out.println(info);
+        SingleScore list1 = cm.selectMaxScoreByCertNo(11);
+        SingleScore list2 = cm.selectAverageScoreByCertNo(11);
+        SingleScore list3 = cm.selectMinScoreByCertNo(11);
+        System.out.println(list1);
+        System.out.println(list2);
+        System.out.println(list3);
         // 综合筛选成绩信息(编号，最低，最高)
 //        List<ScoreInfo> list = cm.queryScore(1, 0, 200);
 //        for(ScoreInfo info: list)

@@ -19,7 +19,14 @@ function isNull(val) {
 function trim(str){
   return str.replace(/(^\s*)|(\s*$)/g, "");
 }
-
+// 显示提示框
+function showAlertMessage(msg) {
+  bootbox.alert({
+    size: "small",
+    title: "提示消息",
+    message: msg
+  });
+}
 
 /***  index.html  ***/
 // 展示登录还是注销
@@ -317,6 +324,79 @@ function showDetail(num) {
   $("#memberDetail").append(str);
 }
 
+/***  insertMemberInfo  ***/
+// 上传会员名录信息
+var xhr = new XMLHttpRequest();
+function uploadMemberInfo() {
+  bootbox.alert({
+    size: "small",
+    title: "提示信息",
+    message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)"
+  });
+  var fileObj = $("#exampleInputFile")[0].files[0];
+  var FileController = "/receiveMemberFile";
+  var form = new FormData();
+  form.append("memberFile", fileObj);
+  xhr.open("post", FileController, true);
+  xhr.onload = function () {
+//           alert("上传完成!");
+  };
+  xhr.send(form);
+  xhr.onreadystatechange = callbackUpload;
+}
+function callbackUpload() {
+  if(xhr.readyState == 4 && xhr.status == 200) {
+    var obj = jQuery.parseJSON(xhr.responseText);
+    console.log(obj);
+    bootbox.alert({
+      size: "small",
+      title: "提示信息",
+      message: "录入完毕!",
+      callback: function(){  }
+    });
+  }
+}
+// 提交手动录入的会员信息
+function submitHandMemberInfo() {
+  var forms = $("#form-import")[0];
+  if(isNull(forms[0].value) || isNull(forms[1].value)
+    || isNull(forms[2].value) || isNull(forms[3].value)
+    || isNull(forms[4].value) || isNull(forms[5].value)
+    || isNull(forms[11].value) || isNull(forms[12].value)) {
+    bootbox.alert({
+      size: "small",
+      title: "提示信息",
+      message: "有必填信息没有填写!"
+    });
+    return;
+  }
+  $.ajax({
+    url: myUrl+"/member/add",
+    data: $("#form-import").serialize(),
+    type: "post",
+    success: function (res) {
+      console.log(res);
+      switch (res.code) {
+        case 0:
+          bootbox.alert({
+            size: "small",
+            title: "提示信息",
+            message: "录入成功!"
+          });
+          break;
+        default:
+          bootbox.alert({
+            size: "small",
+            title: "提示信息",
+            message: res.msg
+          });
+      }
+    },
+    fail: function (res) {
+      console.log(res);
+    }
+  });
+}
 
 
 

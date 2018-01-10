@@ -4,6 +4,17 @@ spring:
     url: jdbc:mysql://123.207.159.214:3306/ccfsxu?useUnicode=true&characterEncoding=utf-8
     username: cn
     password: cheng521
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  thymeleaf:
+    cache: false
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+#    prefix: /templates/
+#    suffix: .html
 #mybatis:
 #  config-location: classpath:mybatis/mybatis-config.xml
 #  mapper-locations: classpath:mybatis/mapper/*.xml

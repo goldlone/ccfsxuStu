@@ -99,9 +99,9 @@ public class MemberServiceImpl implements MemberService {
                     member.setPassword(DigestUtils.sha256Hex(info.getNo()));
                     member.setPower(5);
                     memberMapper.addMember(member);
+                    sqlSession.commit();
                 }
             }
-            sqlSession.commit();
             return true;
         } catch (Exception e){
             e.printStackTrace();

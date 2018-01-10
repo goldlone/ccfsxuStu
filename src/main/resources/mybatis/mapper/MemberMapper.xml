@@ -159,6 +159,12 @@
             m1.M_power=p.PT_no AND
             m1.M_degreeNo=d.DT_no;
     </select>
+    <!-- 根据邮箱获取会员号 -->
+    <select id="selectNoByEmail" parameterType="String" resultType="String">
+        SELECT M_memberNo
+        FROM Member
+        WHERE M_email = #{email};
+    </select>
     <!-- 更新失效日期 -->
     <update id="updateEndTimeByNo">
         UPDATE Member

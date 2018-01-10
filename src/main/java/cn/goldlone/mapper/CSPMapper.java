@@ -1,6 +1,7 @@
 package cn.goldlone.mapper;
 
 import cn.goldlone.model.ScoreInfo;
+import cn.goldlone.model.SingleScore;
 import cn.goldlone.po.Application;
 import cn.goldlone.po.Certification;
 import cn.goldlone.po.Score;
@@ -26,6 +27,12 @@ public interface CSPMapper {
     public int updatePhotoFile(@Param("memberNo") String memberNo, @Param("filename") String filename);
     // 查询某次认证的报名信息
     public List<Application> selectApplicationInfo(int certNo);
+    // 查询某次CSP的最高分
+    public SingleScore selectMaxScoreByCertNo(int certNo);
+    // 查询某次CSP的平均分
+    public SingleScore selectAverageScoreByCertNo(int certNo);
+    // 查询某次CSP的最低分
+    public SingleScore selectMinScoreByCertNo(int certNo);
     // 添加成绩
     public int addScore(Score score);
     // 查询所有成绩

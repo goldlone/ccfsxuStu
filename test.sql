@@ -111,3 +111,29 @@ SELECT b.BB_no,b.BB_bookNo,b.BB_memberNo,m.M_name,b.BB_borrowTime
 FROM BorrowBook b,Member m
 WHERE BB_backTime IS NULL AND
       b.BB_memberNo=m.M_memberNo;
+
+
+SELECT * FROM Score  WHERE 1 ORDER BY S_all DESC ;
+
+
+SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+  s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_memberNo = '62151G' AND
+      s.S_certNo=c.C_no AND
+      s.S_memberNo=m.M_memberNo;
+
+SELECT MAX(S_all) FROM Score WHERE S_certNo=12;
+
+SELECT AVG(S_all), AVG(S_first), AVG(S_second), AVG(S_third), AVG(S_forth), AVG(S_fifth)
+FROM Score
+WHERE S_certNo=11;
+
+SELECT MAX(S_all) S_all,
+       MAX(S_first) S_first,
+       MAX(S_second) S_second,
+       MAX(S_third) S_third,
+       MAX(S_forth) S_forth,
+       MAX(S_fifth) S_fifth
+FROM Score
+WHERE S_certNo=12;

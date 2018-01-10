@@ -30,9 +30,19 @@
     </resultMap>
     <!-- 成绩信息 -->
     <resultMap id="scoreInfo" type="cn.goldlone.model.ScoreInfo">
+        <result property="certNo" column="S_certNo" />
         <result property="certName" column="C_name" />
         <result property="memberName" column="M_name" />
         <result property="memberNo" column="S_memberNo" />
+        <result property="all" column="S_all" />
+        <result property="first" column="S_first" />
+        <result property="second" column="S_second" />
+        <result property="third" column="S_third" />
+        <result property="forth" column="S_forth" />
+        <result property="fifth" column="S_fifth" />
+    </resultMap>
+    <!-- 单成绩信息 -->
+    <resultMap id="singleScore" type="cn.goldlone.model.SingleScore">
         <result property="all" column="S_all" />
         <result property="first" column="S_first" />
         <result property="second" column="S_second" />
@@ -99,29 +109,64 @@
     </insert>
     <!-- 查询所有成绩 -->
     <select id="selectAllScore" resultMap="scoreInfo">
-        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+        SELECT s.S_certNo,c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
                 s.S_second,s.S_third,s.S_forth,s.S_fifth
         FROM Score s,Certification c,Member m
         WHERE s.S_certNo=c.C_no AND
               s.S_memberNo=m.M_memberNo
+        ORDER BY S_all DESC;
     </select>
     <!-- 按认证编号查询查询所有人的成绩 -->
     <select id="selectScoreByNo" parameterType="int" resultMap="scoreInfo">
-        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+        SELECT s.S_certNo,c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
                 s.S_second,s.S_third,s.S_forth,s.S_fifth
         FROM Score s,Certification c,Member m
         WHERE s.S_certNo = #{certNo} AND
               s.S_certNo=c.C_no AND
               s.S_memberNo=m.M_memberNo
+        ORDER BY S_all DESC;
     </select>
     <!-- 按会员号查询查询所有认证的成绩 -->
     <select id="selectScoreByMemberNo" parameterType="String" resultMap="scoreInfo">
-        SELECT c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+        SELECT s.S_certNo,c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
             s.S_second,s.S_third,s.S_forth,s.S_fifth
         FROM Score s,Certification c,Member m
         WHERE s.S_memberNo = #{memberNo} AND
               s.S_certNo=c.C_no AND
-              s.S_memberNo=m.M_memberNo
+              s.S_memberNo=m.M_memberNo;
+    </select>
+    <!-- 最高分 -->
+    <select id="selectMaxScoreByCertNo" parameterType="int" resultMap="singleScore">
+        SELECT MAX(S_all) S_all,
+            MAX(S_first) S_first,
+            MAX(S_second) S_second,
+            MAX(S_third) S_third,
+            MAX(S_forth) S_forth,
+            MAX(S_fifth) S_fifth
+        FROM Score
+        WHERE S_certNo=#{certNo};
+    </select>
+    <!-- 平均分 -->
+    <select id="selectAverageScoreByCertNo" parameterType="int" resultMap="singleScore">
+        SELECT AVG(S_all) S_all,
+            AVG(S_first) S_first,
+            AVG(S_second) S_second,
+            AVG(S_third) S_third,
+            AVG(S_forth) S_forth,
+            AVG(S_fifth) S_fifth
+        FROM Score
+        WHERE S_certNo=#{certNo};
+    </select>
+    <!-- 最低分 -->
+    <select id="selectMinScoreByCertNo" parameterType="int" resultMap="singleScore">
+        SELECT MIN(S_all) S_all,
+            MIN(S_first) S_first,
+            MIN(S_second) S_second,
+            MIN(S_third) S_third,
+            MIN(S_forth) S_forth,
+            MIN(S_fifth) S_fifth
+        FROM Score
+        WHERE S_certNo=#{certNo};
     </select>
     <!-- 综合筛选成绩信息(编号，最低，最高) -->
     <select id="queryScore" resultMap="scoreInfo">
@@ -132,6 +177,7 @@
               S_all BETWEEN #{low} AND #{high} AND
               s.S_certNo=c.C_no AND
               s.S_memberNo=m.M_memberNo
+        ORDER BY S_all DESC
     </select>
     <!-- 查询加分了的人 -->
     <select id="selectAddScore" resultMap="scoreInfo">

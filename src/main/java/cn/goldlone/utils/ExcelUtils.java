@@ -4,8 +4,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.goldlone.mapper.CSPMapper;
+import cn.goldlone.mapper.MemberMapper;
+import cn.goldlone.model.Result;
 import cn.goldlone.model.UserInfo;
 import cn.goldlone.po.Member;
+import cn.goldlone.po.Score;
 import cn.goldlone.service.MemberService;
 import cn.goldlone.service.impl.MemberServiceImpl;
 import jxl.Sheet;
@@ -13,6 +17,7 @@ import jxl.Workbook;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
+import org.apache.ibatis.session.SqlSession;
 
 /**
  * Created by CN on 2018/1/4.
@@ -20,8 +25,18 @@ import jxl.write.WritableWorkbook;
 public class ExcelUtils {
 
     public static void main(String[] args) {
-//        new ExcelUtils().createMemberTemplate();
-//        new ExcelUtils().importMemberInfo(new File("./web/excel/templateMember.xls"));
+//        System.out.println(new File(".").getAbsolutePath());
+//        ExcelUtils.createMemberTemplate();
+//        ExcelUtils.importMemberInfo(new File("./templateMember.xls"));
+//        createScoreTemplate();
+//        Result res1 = ExcelUtils.importScore(new File("./csp11.xls"));
+//        System.out.println("执行完成--------------");
+//        for(String name: (List<String>)res1.getData())
+//            System.out.println(name);
+//        Result res2 = ExcelUtils.importScore(new File("./csp12.xls"));
+//        System.out.println("执行完成--------------");
+//        for(String name: (List<String>)res2.getData())
+//            System.out.println(name);
     }
 
     /**
@@ -29,7 +44,7 @@ public class ExcelUtils {
      * @param file
      * @return
      */
-    public boolean importMemberInfo(File file) {
+    public static boolean importMemberInfo(File file) {
         try {
             Workbook workbook = Workbook.getWorkbook(file);
             Sheet sheet = workbook.getSheet(0);
@@ -85,19 +100,62 @@ public class ExcelUtils {
      * @param file
      * @return
      */
-    public boolean importScore(File file) {
+    public static Result importScore(File file) {
+        List<String> list = new ArrayList<>();
+        SqlSession sqlSession = MybatisUtils.openSqlSession();
+        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
+        CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
+        Score score = null;
         try {
             Workbook workbook = Workbook.getWorkbook(file);
             Sheet sheet = workbook.getSheet(0);
             for (int i = 1; i < sheet.getRows(); i++) {
+                String certName = sheet.getCell(0, i).getContents();
+                String name = sheet.getCell(1, i).getContents();
+                int all = 0;
+                int first = 0;
+                int second = 0;
+                int third = 0;
+                int forth = 0;
+                int fifth = 0;
+                try {
+                    all = (int)Double.parseDouble(sheet.getCell(2, i).getContents());
+                    first = (int)Double.parseDouble(sheet.getCell(3, i).getContents());
+                    second = (int)Double.parseDouble(sheet.getCell(4, i).getContents());
+                    third = (int)Double.parseDouble(sheet.getCell(5, i).getContents());
+                    forth = (int)Double.parseDouble(sheet.getCell(6, i).getContents());
+                    fifth = (int)Double.parseDouble(sheet.getCell(7, i).getContents());
+                } catch (Exception e) {
+                    System.out.println("成绩非数值："+e.getMessage());
+                }
+                String email = sheet.getCell(8, i).getContents();
 
+                score = new Score();
+                score.setCertNo(cm.selectCertNoByName(certName));
+                score.setMemberNo(mm.selectNoByEmail(email));
+                score.setAll(all);
+                score.setFirst(first);
+                score.setSecond(second);
+                score.setThird(third);
+                score.setForth(forth);
+                score.setFifth(fifth);
 
+                System.out.println(score);
+                try{
+                    cm.addScore(score);
+                    sqlSession.commit();
+                } catch (Exception e) {
+                    System.out.println("出现异常："+e.getMessage());
+                    list.add(name);
+                }
             }
-            return true;
+            return ResultUtils.success(list, "录入成功");
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            sqlSession.close();
         }
-        return false;
+        return ResultUtils.error(1, "录入失败，可能是Excel文件问题");
     }
 
 
@@ -106,21 +164,23 @@ public class ExcelUtils {
     /**
      * 创建会员信息导入模板
      */
-    public void createMemberTemplate() {
+    public static void createMemberTemplate() {
         String[] title = {"姓名（必）", "会员号（必）", "任职单位", "手机", "邮箱（必）", "生效日期（必）",
                 "失效日期（必）", "学号", "年级", "班级", "专业", "性别", "学历", "身份证号"};
         //创建Excel文件
-        File file = new File("./web/excel/templateMember.xls");
+//        File file = new File("./web/excel/templateMember.xls");
+        File file = new File("./templateMember.xls");
         createTemplate(file, title);
     }
 
     /**
      * 创建CSP认证成绩导入模板
      */
-    public void createScoreTemplate() {
+    public static void createScoreTemplate() {
         String[] title = {"认证名称", "姓名", "总成绩", "第一题", "第二题",
                 "第三题", "第四题", "第五题", "邮箱"};
-        File file = new File("./web/excel/templateScore.xls");
+//        File file = new File("./web/excel/templateScore.xls");
+        File file = new File("./templateScore.xls");
         createTemplate(file, title);
     }
 
@@ -129,7 +189,7 @@ public class ExcelUtils {
      * @param file
      * @param title
      */
-    public void createTemplate(File file, String[] title) {
+    public static void createTemplate(File file, String[] title) {
         System.out.println(file.getAbsolutePath());
         try {
             file.createNewFile();

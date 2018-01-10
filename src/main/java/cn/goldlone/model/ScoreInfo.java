@@ -1,6 +1,11 @@
 package cn.goldlone.model;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ScoreInfo {
+    // 认证编号
+    private int certNo;
 	// 认证名称
 	private String certName;
 	// 姓名
@@ -19,6 +24,20 @@ public class ScoreInfo {
 	private int forth;
 	// 第五题
 	private int fifth;
+	// 该次最高分
+    private SingleScore max;
+    // 该次平均分
+    private SingleScore average;
+    // 该次最低分
+    private SingleScore min;
+
+    public int getCertNo() {
+        return certNo;
+    }
+
+    public void setCertNo(int certNo) {
+        this.certNo = certNo;
+    }
 
     public String getCertName() {
         return certName;
@@ -92,10 +111,35 @@ public class ScoreInfo {
         this.fifth = fifth;
     }
 
+    public SingleScore getMax() {
+        return max;
+    }
+
+    public void setMax(SingleScore max) {
+        this.max = max;
+    }
+
+    public SingleScore getAverage() {
+        return average;
+    }
+
+    public void setAverage(SingleScore average) {
+        this.average = average;
+    }
+
+    public SingleScore getMin() {
+        return min;
+    }
+
+    public void setMin(SingleScore min) {
+        this.min = min;
+    }
+
     @Override
     public String toString() {
         return "ScoreInfo{" +
-                "certName='" + certName + '\'' +
+                "certNo=" + certNo +
+                ", certName='" + certName + '\'' +
                 ", memberName='" + memberName + '\'' +
                 ", memberNo='" + memberNo + '\'' +
                 ", all=" + all +
@@ -104,6 +148,9 @@ public class ScoreInfo {
                 ", third=" + third +
                 ", forth=" + forth +
                 ", fifth=" + fifth +
+                ", max=" + max +
+                ", average=" + average +
+                ", min=" + min +
                 '}';
     }
 }

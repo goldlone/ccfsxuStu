@@ -1,5 +1,7 @@
 package cn.goldlone.po;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  * 会员信息表映射
  * 
