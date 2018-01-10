@@ -17,7 +17,9 @@ import jxl.Workbook;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by CN on 2018/1/4.
@@ -44,12 +46,15 @@ public class ExcelUtils {
      * @param file
      * @return
      */
-    public static boolean importMemberInfo(File file) {
+    public static Result importMemberInfo(MultipartFile file) {
+        List<String> list = new ArrayList<>();
+        SqlSession sqlSession = MybatisUtils.openSqlSession();
+        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
         try {
-            Workbook workbook = Workbook.getWorkbook(file);
+            Workbook workbook = Workbook.getWorkbook(file.getInputStream());
             Sheet sheet = workbook.getSheet(0);
             MemberService memberService = new MemberServiceImpl();
-            List<UserInfo> list = new ArrayList<UserInfo>();
+            Member member = null;
             for (int i = 1; i < sheet.getRows(); i++) {
                 String name = sheet.getCell(0, i).getContents();
                 String no = sheet.getCell(1, i).getContents();
@@ -69,30 +74,47 @@ public class ExcelUtils {
                 String degree = sheet.getCell(12, i).getContents();
                 String id = sheet.getCell(13, i).getContents();
 
-                UserInfo member = new UserInfo();
-                member.setName(name);
-                member.setNo(no);
-                member.setPhone(phone);
-                member.setEmail(email);
-                member.setStartTime(startTime);
-                member.setEndTime(endTime);
-                member.setStuNo(stuNo);
-                member.setDiscipline(discipline);
-                member.setGender(gender);
-                member.setGrade(grade);
-                member.setClassNum(classNum);
-                member.setDegree(degree);
-                member.setId(id);
-                list.add(member);
+                if(no!=null && !"".equals(no)) {
+                    if(mm.selectMemberByNo(no) != null) {
+                        System.out.println(no+"-"+name+"--已存在，已更新失效日期");
+                        mm.updateEndTimeByNo(no, endTime);
+                    } else {
+                        member = new Member();
+                        member.setNo(no);
+                        member.setName(name);
+                        member.setStuNo(stuNo);
+                        member.setPhone(phone);
+                        member.setEmail(email);
+                        member.setGender(gender);
+                        member.setDiscipline(discipline);
+                        member.setGrade(grade);
+                        member.setClassNum(classNum);
+                        member.setDegreeNo(mm.selectDegreeNo(degree));
+                        member.setId(id);
+                        member.setStartTime(startTime);
+                        member.setEndTime(endTime);
+                        member.setMemberTypeNo(1);
+                        member.setPassword(DigestUtils.sha256Hex(no));
+                        member.setPower(5);
+                        try {
+                            mm.addMember(member);
+                            sqlSession.commit();
+                        } catch (Exception e) {
+                            System.out.println("出现异常："+e.getMessage());
+                            list.add(name);
+                        }
+                    }
+                }
+
             }
-            System.out.println(list.size());
-            System.out.println(memberService.addMemberByUserInfo(list));
-            return true;
+            return ResultUtils.success(list, "录入成功");
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            sqlSession.close();
         }
 
-        return false;
+        return ResultUtils.error(1, "录入失败，可能是Excel文件问题");
     }
 
     /**
@@ -100,14 +122,14 @@ public class ExcelUtils {
      * @param file
      * @return
      */
-    public static Result importScore(File file) {
+    public static Result importScore(MultipartFile file) {
         List<String> list = new ArrayList<>();
         SqlSession sqlSession = MybatisUtils.openSqlSession();
         MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
         CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
         Score score = null;
         try {
-            Workbook workbook = Workbook.getWorkbook(file);
+            Workbook workbook = Workbook.getWorkbook(file.getInputStream());
             Sheet sheet = workbook.getSheet(0);
             for (int i = 1; i < sheet.getRows(); i++) {
                 String certName = sheet.getCell(0, i).getContents();

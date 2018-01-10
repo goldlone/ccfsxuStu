@@ -5,6 +5,7 @@ import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.Result;
 import cn.goldlone.model.UserInfo;
 import cn.goldlone.po.Member;
+import cn.goldlone.utils.ExcelUtils;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -82,13 +83,20 @@ public class MemberController {
         return result;
     }
 
-
+    /**
+     * 接收会员信息文件
+     * @param file
+     * @return
+     */
     @PostMapping("/member/addByFile")
     public Result addMemberByFile(@RequestParam("file")MultipartFile file) {
-        Result result = null;
-
+        Result result = ExcelUtils.importMemberInfo(file);
         return result;
     }
+
+
+
+
 
 
 }

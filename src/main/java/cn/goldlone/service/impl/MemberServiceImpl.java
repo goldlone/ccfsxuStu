@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 /**
+ * Excel文件导入工具类
  * Created by CN on 2018/1/4.
  */
 public class MemberServiceImpl implements MemberService {

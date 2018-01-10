@@ -193,12 +193,12 @@ public class Test {
 //        List<ScoreInfo> list = cm.selectScoreByMemberNo("62151G");
 //        for(ScoreInfo info: list)
 //            System.out.println(info);
-        SingleScore list1 = cm.selectMaxScoreByCertNo(11);
-        SingleScore list2 = cm.selectAverageScoreByCertNo(11);
-        SingleScore list3 = cm.selectMinScoreByCertNo(11);
-        System.out.println(list1);
-        System.out.println(list2);
-        System.out.println(list3);
+//        SingleScore list1 = cm.selectMaxScoreByCertNo(11);
+//        SingleScore list2 = cm.selectAverageScoreByCertNo(11);
+//        SingleScore list3 = cm.selectMinScoreByCertNo(11);
+//        System.out.println(list1);
+//        System.out.println(list2);
+//        System.out.println(list3);
         // 综合筛选成绩信息(编号，最低，最高)
 //        List<ScoreInfo> list = cm.queryScore(1, 0, 200);
 //        for(ScoreInfo info: list)

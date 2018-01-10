@@ -1,4 +1,5 @@
 var myUrl = "http://127.0.0.1:8080";
+var xhr = null;
 
 /***  工具方法  ***/
 // 校验邮箱合法性
@@ -326,7 +327,7 @@ function showDetail(num) {
 
 /***  insertMemberInfo  ***/
 // 上传会员名录信息
-var xhr = new XMLHttpRequest();
+xhr = new XMLHttpRequest();
 function uploadMemberInfo() {
   bootbox.alert({
     size: "small",
@@ -334,28 +335,31 @@ function uploadMemberInfo() {
     message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)"
   });
   var fileObj = $("#exampleInputFile")[0].files[0];
-  var FileController = "/receiveMemberFile";
+  var FileController = myUrl+"/member/addByFile";
   var form = new FormData();
-  form.append("memberFile", fileObj);
+  form.append("file", fileObj);
   xhr.open("post", FileController, true);
   xhr.onload = function () {
 //           alert("上传完成!");
   };
   xhr.send(form);
-  xhr.onreadystatechange = callbackUpload;
+  xhr.onreadystatechange = callbackUploadMemberFile;
 }
-function callbackUpload() {
+function callbackUploadMemberFile() {
   if(xhr.readyState == 4 && xhr.status == 200) {
     var obj = jQuery.parseJSON(xhr.responseText);
     console.log(obj);
-    bootbox.alert({
-      size: "small",
-      title: "提示信息",
-      message: "录入完毕!",
-      callback: function(){  }
-    });
+    if(obj.data.length!=0) {
+      var str = "";
+      for(var i=0; i<obj.data.length; i++)
+        str.append(obj.data.data[0]+"，");
+      showAlertMessage(obj.msg+"\n以下同学录入出错："+str);
+    } else {
+      showAlertMessage(obj.msg);
+    }
   }
 }
+
 // 提交手动录入的会员信息
 function submitHandMemberInfo() {
   var forms = $("#form-import")[0];
