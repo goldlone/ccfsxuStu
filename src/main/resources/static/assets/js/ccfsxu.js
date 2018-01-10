@@ -403,12 +403,10 @@ function submitHandMemberInfo() {
 }
 
 
-
-
 /***  updateMemberInfo.html ***/
 // 查询要修改的会员信息
 function selectMemberInfo() {
-  if($("#memberNo").val() == "") {
+  if(isNull($("#memberNo").val())) {
     bootbox.alert({
       size: "small",
       title: "提示信息",
@@ -444,16 +442,25 @@ function selectMemberInfo() {
       $("input[name='startTime']")[0].value = res.data[0].startTime;
       $("input[name='endTime']")[0].value = res.data[0].endTime;
       switch (res.data[0].degree) {
+        case "专科":
+          $("select[name='degreeNo']")[0].value = 1;
+          break;
         case "本科":
-          $("select[name='degreeNo']")[0].value = 0;
+          $("select[name='degreeNo']")[0].value = 2;
           break;
         case "硕士":
-          $("select[name='degreeNo']")[0].value = 1;
+          $("select[name='degreeNo']")[0].value = 3;
+          break;
         case "博士":
-          $("select[name='degreeNo']")[0].value = 2;
+          $("select[name='degreeNo']")[0].value = 4;
+          break;
       }
       $("select[name='addSocre']")[0].value = res.data[0].addScore;
-      $("select[name='power']")[0].value = res.data[0].power;
+      if(res.data[0].power!=1) {
+        $("select[name='power']")[0].value = res.data[0].power;
+      } else {
+        $("#identity").hide();
+      }
     },
     fail: function (res) {
       console.log(res);
@@ -476,25 +483,12 @@ function submitUpdate() {
     callback: function (result) {
       if(result) {
         $.ajax({
-          url: "/updateMember",
+          url: myUrl+"/member/update",
           type: "post",
           data: $("#form-update").serialize(),
           success: function (res) {
             console.log(res);
-            if (res.ret) {
-              bootbox.alert({
-                size: "small",
-                title: "提示消息",
-                message: "修改成功"
-              });
-            } else {
-              bootbox.alert({
-                size: "small",
-                title: "提示消息",
-                message: "修改失败"
-              });
-            }
-
+            showAlertMessage(res.msg);
           },
           fail: function (res) {
             console.log(res);

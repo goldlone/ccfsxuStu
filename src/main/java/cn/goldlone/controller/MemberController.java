@@ -94,6 +94,24 @@ public class MemberController {
         return result;
     }
 
+    /**
+     * 更新会员信息
+     * @param member
+     * @return
+     */
+    @PostMapping("member/update")
+    public Result updateMember(Member member) {
+        Result result = null;
+        try {
+            mm.updateMemberInfo(member);
+            sqlSession.commit();
+            result = ResultUtils.success(null, "修改成功");
+        }catch (Exception e) {
+            result = ResultUtils.error(1, "更新失败："+e.getMessage());
+        }
+        return result;
+    }
+
 
 
 

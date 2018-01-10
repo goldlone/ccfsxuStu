@@ -159,9 +159,10 @@
                     <label class="control-label col-md-2">学历</label>
                     <div class="col-md-6">
                       <select class="form-control" name="degreeNo" >
-                        <option value="0">本科</option>
-                        <option value="1">硕士</option>
-                        <option value="2">博士</option>
+                        <option value="1">专科</option>
+                        <option value="2">本科</option>
+                        <option value="3">硕士</option>
+                        <option value="4">博士</option>
                       </select>
                     </div>
                   </div>
@@ -186,13 +187,13 @@
                   <div class="form-group">
                     <label class="control-label col-md-2">生效时间</label>
                     <div class="col-md-6">
-                      <input class="form-control" type="publicDate" name="startTime" />
+                      <input class="form-control" type="date" name="startTime" />
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="control-label col-md-2">失效时间</label>
                     <div class="col-md-6">
-                      <input class="form-control" type="publicDate" name="endTime" />
+                      <input class="form-control" type="date" name="endTime" />
                     </div>
                   </div>
                   <div class="form-group">
@@ -204,13 +205,14 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group" id="identity">
                     <label class="control-label col-md-2">身份权限</label>
                     <div class="col-md-6">
-                      <select class="form-control" name="power" >
-                        <option value="1">会员</option>
-                        <option value="1">普通管理员</option>
-                        <option value="2">高级管理员</option>
+                      <select class="form-control" name="power">
+                        <option value="2">会员信息管理员</option>
+                        <option value="3">CSP管理员</option>
+                        <option value="4">图书管理员</option>
+                        <option value="5">学生会员</option>
                       </select>
                     </div>
                   </div>
