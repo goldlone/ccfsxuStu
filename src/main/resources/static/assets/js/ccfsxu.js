@@ -841,6 +841,24 @@ function submitBack () {
   });
 }
 
+/***  insertBook.html  ***/
+// 手动录入图书信息
+function submitHandBookInfo() {
+  $.ajax({
+    url: myUrl+"/book/add",
+    type: "post",
+    data: $("#form-import").serialize(),
+    success: function (res) {
+      console.log(res);
+      showAlertMessage(res.msg);
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
+
+
 
 
 

@@ -118,55 +118,55 @@
             <div class="form-group">
               <label class="control-label col-md-2">ISBN</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="text" name="no" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">图书名称</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="text" name="name" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">类别</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="text" name="typeName" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">作者</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="text" name="author" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">出版社</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="text" name="publicer" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">出版时间</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="date" name="publicDate" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">价格</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="number" name="price" placeholder="必填" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">库存</label>
               <div class="col-md-4">
-                <input class="form-control" type="text" name="" placeholder="必填" required/>
+                <input class="form-control" type="number" name="inventory" placeholder="必填" required/>
               </div>
             </div>
 
             <div class="form-group col-md-4">
               <div class="col-md-8" style="float: right;">
-                <button class="form-control btn-primary" type="button" onclick="submitHandMemberInfo()">提交</button>
+                <button class="form-control btn-primary" type="button" onclick="submitHandBookInfo()">提交</button>
               </div>
             </div>
           </form>
@@ -209,7 +209,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="../assets/js/bootbox.min.js"></script>
+    <script src="../assets/js/ccfsxu.js"></script>
     <script type="text/javascript">
+      initHeadViewInMaster();
       showHand();
       function showHand() {
         $("#hand-li").addClass("active");
@@ -223,40 +225,42 @@
         $("#handImport").hide();
         $("#fileImport").show();
       }
+    </script>
+    <script type="text/javascript">
 
       // 上传会员名录信息
-      var xhr = new XMLHttpRequest();
-      function uploadBook() {
-        bootbox.alert({
-          size: "small",
-          title: "提示信息",
-          message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)",
-          callback: function(){  }
-        });
-        var fileObj = $("#exampleInputFile")[0].files[0];
-        var FileController = "/receiveBookFile";
-        var form = new FormData();
-        form.append("bookFile", fileObj);
-        xhr.open("post", FileController, true);
-        xhr.onload = function () {
-//           alert("上传完成!");
-        };
-        xhr.send(form);
-        xhr.onreadystatechange = callbackUpload;
-      }
-      function callbackUpload() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          var obj = jQuery.parseJSON(xhr.responseText);
-          console.log(obj);
-          bootbox.alert({
-            size: "small",
-            title: "提示信息",
-            message: "录入完毕!",
-            callback: function () {
-            }
-          });
-        }
-      }
+//      var xhr = new XMLHttpRequest();
+//      function uploadBook() {
+//        bootbox.alert({
+//          size: "small",
+//          title: "提示信息",
+//          message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)",
+//          callback: function(){  }
+//        });
+//        var fileObj = $("#exampleInputFile")[0].files[0];
+//        var FileController = "/receiveBookFile";
+//        var form = new FormData();
+//        form.append("bookFile", fileObj);
+//        xhr.open("post", FileController, true);
+//        xhr.onload = function () {
+////           alert("上传完成!");
+//        };
+//        xhr.send(form);
+//        xhr.onreadystatechange = callbackUpload;
+//      }
+//      function callbackUpload() {
+//        if (xhr.readyState == 4 && xhr.status == 200) {
+//          var obj = jQuery.parseJSON(xhr.responseText);
+//          console.log(obj);
+//          bootbox.alert({
+//            size: "small",
+//            title: "提示信息",
+//            message: "录入完毕!",
+//            callback: function () {
+//            }
+//          });
+//        }
+//      }
 
 
     </script>

@@ -113,4 +113,18 @@ public class Book {
     public void setPublicDate(String publicDate) {
         this.publicDate = publicDate;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "no='" + no + '\'' +
+                ", name='" + name + '\'' +
+                ", typeNo=" + typeNo +
+                ", author='" + author + '\'' +
+                ", publicer='" + publicer + '\'' +
+                ", publicDate='" + publicDate + '\'' +
+                ", price=" + price +
+                ", inventory=" + inventory +
+                '}';
+    }
 }

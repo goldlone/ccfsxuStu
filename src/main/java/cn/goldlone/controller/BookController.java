@@ -5,6 +5,7 @@ import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.BookInfo;
 import cn.goldlone.model.BorrowInfo;
 import cn.goldlone.model.Result;
+import cn.goldlone.po.Book;
 import cn.goldlone.po.BookType;
 import cn.goldlone.po.BorrowBook;
 import cn.goldlone.utils.MybatisUtils;
@@ -35,6 +36,7 @@ public class BookController {
         try {
             return ResultUtils.success(bm.getBookType(), "获取图书类别成功");
         } catch (Exception e) {
+            e.printStackTrace();
             return ResultUtils.error(1, "异常："+e.getMessage());
         } finally {
             sqlSession.close();
@@ -57,7 +59,8 @@ public class BookController {
             else
                 result = ResultUtils.success(bm.selectBookByType(typeNo), "按照图书类别查询成功");
         } catch (Exception e) {
-            return ResultUtils.error(1, "异常："+e.getMessage());
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }
@@ -77,7 +80,8 @@ public class BookController {
         try {
             result = ResultUtils.success(bm.selectBookByName(bookName), "按照图书名查询成功");
         } catch (Exception e) {
-            return ResultUtils.error(1, "异常："+e.getMessage());
+            result =  ResultUtils.error(1, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }
@@ -97,7 +101,8 @@ public class BookController {
         try {
             result = ResultUtils.success(bm.selectBookByISBN(isbn), "按照图书ISBN查询成功");
         } catch (Exception e) {
-            return ResultUtils.error(1, "异常："+e.getMessage());
+            result =  ResultUtils.error(1, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }
@@ -135,6 +140,7 @@ public class BookController {
             }
         } catch (Exception e) {
             result = ResultUtils.error(2, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }
@@ -155,6 +161,7 @@ public class BookController {
             result = ResultUtils.success(bm.selectNotBackBook(isbn), "查询借阅信息成功");
         } catch (Exception e) {
             result = ResultUtils.error(2, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }
@@ -184,6 +191,34 @@ public class BookController {
         }
         return result;
     }
-    
+
+    /**
+     * 添加图书
+     * @return
+     */
+    @PostMapping("/book/add")
+    public Result addBook(Book book, String typeName) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
+        Result result = null;
+        try {
+            Integer typeNo = bm.selectTypeNoByName(typeName);
+            if(typeNo==null) {
+                BookType bt = new BookType(typeName);
+                bm.addBookType(bt);
+                typeNo = bt.getNo();
+            }
+            book.setTypeNo(typeNo);
+            bm.addBook(book);
+            sqlSession.commit();
+            result = ResultUtils.success(null, "添加图书成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(2, "异常："+e.getMessage());
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return result;
+    }
 
 }
