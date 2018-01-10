@@ -1,15 +1,19 @@
 package cn.goldlone.controller;
 
 import cn.goldlone.mapper.BookMapper;
+import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.BookInfo;
+import cn.goldlone.model.BorrowInfo;
 import cn.goldlone.model.Result;
 import cn.goldlone.po.BookType;
+import cn.goldlone.po.BorrowBook;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -100,6 +104,86 @@ public class BookController {
         return result;
     }
 
+
+    /**
+     * 借书
+     * @return
+     */
+    @PostMapping("/book/borrowBook")
+    public Result borrowBook(String isbn, String memberNo) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
+        MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
+        Result result = null;
+        try {
+            if(mm.selectMemberByNo(memberNo) == null) {
+                result = ResultUtils.error(3, "该会员不存在");
+            } else {
+                Integer num = null;
+                BorrowBook book = new BorrowBook(isbn, memberNo, new Timestamp(System.currentTimeMillis()));
+                num = bm.selectInventory(book.getBookNo());
+                if (num != null && num > 0) {
+                    bm.borrowBook(book);
+                    bm.updateInventoryByBorrow(book.getBookNo());
+                    sqlSession.commit();
+                    result = ResultUtils.success(null, "借书成功");
+                } else if (num == null) {
+                    result = ResultUtils.error(1, "该图书不存在");
+                } else {
+                    result = ResultUtils.error(1, "库存不足");
+                }
+            }
+        } catch (Exception e) {
+            result = ResultUtils.error(2, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
+        return result;
+    }
+
+    /**
+     *
+     * @param isbn
+     * @return
+     */
+    @PostMapping("/book/searchBorrowOrder")
+    public Result searchBorrowOrder(String isbn) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
+        Result result = null;
+        try {
+            result = ResultUtils.success(bm.selectNotBackBook(isbn), "查询借阅信息成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(2, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
+        return result;
+    }
+
+    /**
+     * 还书
+     * @param no
+     * @return
+     */
+    @PostMapping("/book/backBook")
+    public Result backBook(int no, String isbn) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
+        Result result = null;
+        try {
+            bm.backBook(no);
+            bm.updateInventoryByBorrow(isbn);
+            sqlSession.commit();
+            result = ResultUtils.success(null, "还书成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(2, "异常："+e.getMessage());
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return result;
+    }
     
 
 }

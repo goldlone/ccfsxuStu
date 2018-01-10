@@ -38,7 +38,7 @@ public interface BookMapper {
     // 查询未归还图书列表
     public List<BorrowInfo> selectNotBackBook(String isbn);
     // 还书
-    public int backBook(BorrowBook book);
+    public int backBook(int no);
     // 还书更新库存
     public int updateInventoryByBack(String isbn);
 

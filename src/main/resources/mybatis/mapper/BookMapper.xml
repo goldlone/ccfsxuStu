@@ -116,9 +116,9 @@
               b.BB_memberNo=m.M_memberNo;
     </select>
     <!-- 还书 -->
-    <update id="backBook" parameterType="cn.goldlone.po.BorrowBook">
+    <update id="backBook" parameterType="int">
         UPDATE BorrowBook
-        SET BB_backTime=#{backTime}
+        SET BB_backTime=now()
         WHERE BB_no=#{no};
     </update>
     <!-- 还书更新库存 -->

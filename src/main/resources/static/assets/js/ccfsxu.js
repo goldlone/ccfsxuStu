@@ -660,7 +660,186 @@ function addCert() {
 }
 
 
-/***    ***/
+/***  borrowBook.html  ***/
+// var counts = 0;
+// $("#isbn").change(function () {
+//   // console.log(this.value);
+//   if(this.value.length>=13) {
+//     searchInventory();
+//   }
+// });
+// 查询库存
+// function searchInventory() {
+//   counts = 0;
+//   if($("#isbn").val() == "") {
+//     bootbox.alert({
+//       size: "small",
+//       title: "提示消息",
+//       message: "请输入合法的ISBN编号"
+//     });
+//     return;
+//   }
+//   $.ajax({
+//     url: myUrl+"/book/searchInventory",
+//     type: "post",
+//     data: {
+//       isbn: $("#isbn").val()
+//     },
+//     success: function (res) {
+//       console.log(res);
+//       counts = res.data;
+//       if(res.code==0) {
+//         bootbox.alert({
+//           size: "size",
+//           title: "提示消息",
+//           message: "剩余库存量："+res.num
+//         });
+//       } else {
+//         showAlertMessage(res.msg);
+//       }
+//       if(res.num == 0) {
+//         $("#memberNo")[0].disabled = true;
+//       } else {
+//         $("#memberNo")[0].disabled = false;
+//       }
+//     },
+//     error: function (res) {
+//       console.log(res);
+//     }
+//   });
+// }
+// 提交借书请求
+function submitBorrow() {
+  // if(counts<1) {
+  //   bootbox.alert({
+  //     size: "small",
+  //     title: "提示信息",
+  //     message: "请先查询图书的库存量"
+  //   });
+  //   return;
+  // }
+  if(isNull($("#isbn").val())) {
+    bootbox.alert({
+      size: "small",
+      title: "提示信息",
+      message: "ISBN编号不能为空"
+    });
+    return;
+  }
+  if(isNull($("#memberNo").val())) {
+    bootbox.alert({
+      size: "small",
+      title: "提示信息",
+      message: "会员号不能为空"
+    });
+    return;
+  }
+  bootbox.confirm({
+    title: "提示信息",
+    message: "请确认借阅信息无误?",
+    buttons: {
+      cancel: {
+        label: '<i class="fa fa-times"></i> 取消'
+      },
+      confirm: {
+        label: '<i class="fa fa-check"></i> 确认'
+      }
+    },
+    callback: function (result) {
+      if(result) {
+        $.ajax({
+          url: myUrl+"/book/borrowBook",
+          type: "post",
+          data: {
+            isbn: $("#isbn").val(),
+            memberNo: $("#memberNo").val()
+          },
+          success: function (res) {
+            console.log(res);
+            showAlertMessage(res.msg);
+          }
+        });
+      }
+    }
+  });
+}
+
+
+/***  backBook.html ***/
+//      $("#isbn").change(function () {
+//        if(this.value.length>=13) {
+//          searchBorrowOrder();
+//        }
+//      });
+
+// 查询借阅情况
+function searchBorrowOrder() {
+  $("#no").empty();
+  if(isNull($("#isbn").val())) {
+    bootbox.alert({
+      size: "small",
+      title: "提示消息",
+      message: "请输入合法的ISBN编号"
+    });
+    return;
+  }
+  $.ajax({
+    url: myUrl+"/book/searchBorrowOrder",
+    type: "post",
+    data: {
+      isbn: $("#isbn").val()
+    },
+    success: function (res) {
+      console.log(res);
+      if(res.code==0) {
+        if(res.data.length!=0) {
+          showOlder(res.data);
+          $("#submit-back-btn").attr('disabled',false);
+        } else {
+          $("#submit-back-btn").attr('disabled',true);
+        }
+        showAlertMessage(res.msg);
+      } else {
+        showAlertMessage(res.msg);
+        $("#submit-back-btn").attr('disabled',true);
+      }
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
+// 格式化时间
+Date.prototype.toLocaleString = function() {
+  return this.getFullYear() + "/" + (this.getMonth() + 1) + "/" + this.getDate() + "/ " + this.getHours() + ":" + this.getMinutes() + ":" + this.getSeconds();
+};
+// 展示借阅订单
+function showOlder(data) {
+  $("#no").empty();
+  for(var i=0; i<data.length; i++) {
+    var unixTimestamp = new Date(data[i].borrowTime) ;
+    var commonTime = unixTimestamp.toLocaleString();
+    $("#no").append("<option value=\""+data[i].no+"\">"+data[i].memberNo+" - "+data[i].memberName+" - "+commonTime+"</option>");
+  }
+}
+// 提交还书信息
+function submitBack () {
+  $.ajax({
+    url: myUrl+"/book/backBook",
+    type: "post",
+    data: {
+      isbn: $("#isbn").val(),
+      no: $("#no").val()
+    },
+    success: function (res) {
+      console.log(res);
+      showAlertMessage(res.msg);
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
 
 
 

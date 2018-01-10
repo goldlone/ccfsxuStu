@@ -209,7 +209,7 @@ public class Test {
 //            System.out.println(info);
 
 
-//        BookMapper bm = sqlSession.getMapper(BookMapper.class);
+        BookMapper bm = sqlSession.getMapper(BookMapper.class);
         // 添加图书类别
 //        BookType bt1 = new BookType("Java");
 //        BookType bt2 = new BookType("Python");
@@ -288,19 +288,20 @@ public class Test {
 //            System.out.println("该书籍不存在或库存不足");
 //        }
         // 还书
-//        List<BorrowInfo> list = bm.selectNotBackBook("9787040207705");
-//        if(list!=null && list.size()>0) {
-//            // 假设此处选选中第一个
-//            BorrowBook book = new BorrowBook(list.get(0));
-//            System.out.println(list.get(0));
-//            book.setBackTime(new Timestamp(System.currentTimeMillis()));
-//            bm.backBook(book);
-//            bm.updateInventoryByBorrow(book.getBookNo());
-//            sqlSession.commit();
-//            System.out.println("还书成功");
-//        } else {
-//            System.out.println("该书籍无外借记录");
-//        }
+        List<BorrowInfo> list = bm.selectNotBackBook("9787040207705");
+        System.out.println(list);
+        if(list!=null && list.size()>0) {
+            // 假设此处选选中第一个
+            BorrowBook book = new BorrowBook(list.get(0));
+            System.out.println(list.get(0));
+            book.setBackTime(new Timestamp(System.currentTimeMillis()));
+            bm.backBook(book.getNo());
+            bm.updateInventoryByBorrow(book.getBookNo());
+            sqlSession.commit();
+            System.out.println("还书成功");
+        } else {
+            System.out.println("该书籍无外借记录");
+        }
 
 
 

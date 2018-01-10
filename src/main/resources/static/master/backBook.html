@@ -114,14 +114,12 @@
                 <div class="form-group">
                   <div class="col-md-2"><label class="control-label">ISBN编号</label></div>
                   <div class="col-md-4"><input class="form-control" name="isbn" type="number" id="isbn" /></div>
-                  <div class="col-md-2"><button class="btn btn-block btn-primary" type="button" onclick="searchOrder()">查询借阅记录</button></div>
+                  <div class="col-md-2"><button class="btn btn-block btn-primary" type="button" onclick="searchBorrowOrder()">查询借阅记录</button></div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-2"><label class="control-label">选择归还</label></div>
                   <div class="col-md-4">
                     <select class="form-control" name="no" id="no">
-                      <option>62151G-程宁</option>
-                      <option>62595G-张玮铭</option>
                     </select>
                   </div>
                 </div>
@@ -130,7 +128,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="col-md-4"></div>
-                <div class="col-md-4"><button class="btn btn-primary btn-block" onclick="submitBorrow()" type="button">提交信息</button></div>
+                <div class="col-md-4"><button id="submit-back-btn" class="btn btn-primary btn-block" onclick="submitBack()" type="button">提交信息</button></div>
                 <div class="col-md-4"></div>
               </div>
               <div class="col-md-6"></div>
@@ -157,109 +155,10 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="../assets/js/bootbox.min.js"></script>
+    <script src="../assets/js/ccfsxu.js"></script>
     <script type="text/javascript">
-      var len = 0;
-      var datas;
-      var index = 0;
-//      $("#isbn").change(function () {
-//        if(this.value.length>=13) {
-//          searchOrder();
-//        }
-//      });
-      // 查询借阅情况
-      function searchOrder() {
-        if($("#isbn").val() == "") {
-          bootbox.alert({
-            size: "small",
-            title: "提示消息",
-            message: "请输入合法的ISBN编号"
-          });
-          return;
-        }
-        $.ajax({
-          url: "/searchOrder",
-          type: "post",
-          data: {
-            isbn: $("#isbn").val()
-          },
-          success: function (res) {
-//            console.log(res);
-            len = res.len;
-            datas = res.data;
-            showOlder();
-          },
-          error: function (res) {
-            console.log(res);
-          }
-        });
-      }
-      // 展示订单
-      function showOlder() {
-        $("#no").empty();
-        for(var i=0; i<datas.length; i++) {
-          index = i;
-          $.ajax({
-            url: "/selectMemberByNo",
-            type: "post",
-            data: {
-              no: datas[index].memberNo
-            },
-            success: function (res) {
-              $("#no").append("<option value=\""+datas[index].no+"\">"+datas[index].memberNo+" - "+res.data[0].name+"</option>");
-            },
-            error: function (res) {
-              console.log(res);
-            }
-          });
-        }
-        if(len>0) {
-          bootbox.alert({
-            size: "small",
-            title: "提示消息",
-            message: "查询成功"
-          });
-        } else {
-          bootbox.alert({
-            size: "small",
-            title: "提示消息",
-            message: "该书无借阅记录"
-          });
-        }
-      }
-      
-      // 提交还书信息
-      function submitBorrow () {
-        if(len<1) {
-          bootbox.alert({
-            size: "small",
-            title: "提示消息",
-            message: "请先查询借书记录"
-          });
-          return;
-        }
-        $.ajax({
-          url: "/backBook",
-          type: "post",
-          data: {
-            isbn: $("#isbn").val(),
-            no: $("#no").val()
-          },
-          success: function (res) {
-//            console.log(res);
-            if(res.ret) {
-              bootbox.alert({
-                size: "small",
-                title: "提示消息",
-                message: "还书成功"
-              });
-            }
-          },
-          error: function (res) {
-            console.log(res);
-          }
-        });
-      }
-
+      initHeadViewInMaster();
+      $("#submit-back-btn").attr('disabled',true);
     </script>
     
   </body>
