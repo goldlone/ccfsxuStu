@@ -535,7 +535,7 @@ function queryCSP() {
     }
   });
 }
-//
+// 获取某个会员的CSP成绩
 function getScoreByNo() {
   $.ajax({
     url: myUrl+"/csp/ScoreByMember",
@@ -569,6 +569,53 @@ function showScore(data) {
   $("#score-content").append(str);
 }
 
+/***  insertCSPScore.html  ***/
+xhr = new XMLHttpRequest();
+// 上传文件
+function uploadCSPScore() {
+  bootbox.alert({
+    size: "small",
+    title: "提示信息",
+    message: "正在上传，请耐心等待上传结果!",
+    callback: function(){  }
+  });
+  var fileObj = $("#exampleInputFile")[0].files[0];
+  var FileController = "/receiveCSPScoreFile";
+  // FormData 对象
+  var form = new FormData();
+  form.append("file", fileObj);// 文件对象
+  form.append("certNo", $("#certName").val());
+  // XMLHttpRequest 对象
+  xhr.open("post", FileController, true);
+  xhr.onload = function () {
+//           alert("上传完成!");
+  };
+  xhr.send(form);
+  xhr.onreadystatechange = callbackUpload;
+}
+function callbackUpload() {
+  if(xhr.readyState == 4 && xhr.status == 200) {
+//					var temp = xhr.responseText;
+//					console.log(temp);
+    var obj = jQuery.parseJSON(xhr.responseText);
+    console.log(obj);
+    if(obj.ret) {
+      bootbox.alert({
+        size: "small",
+        title: "提示信息",
+        message: "录入成功!",
+        callback: function(){  }
+      });
+    } else {
+      bootbox.alert({
+        size: "small",
+        title: "提交失败",
+        message: "录入失败!",
+        callback: function(){  }
+      });
+    }
+  }
+}
 
 
 

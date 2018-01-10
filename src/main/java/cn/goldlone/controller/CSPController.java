@@ -5,11 +5,14 @@ import cn.goldlone.model.Result;
 import cn.goldlone.model.ScoreInfo;
 import cn.goldlone.model.SingleScore;
 import cn.goldlone.po.Certification;
+import cn.goldlone.utils.ExcelUtils;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -74,9 +77,6 @@ public class CSPController {
         }
         return result;
     }
-
-
-
 
     /**
      * 获取某个会员的成绩信息
@@ -143,6 +143,16 @@ public class CSPController {
         return result;
     }
 
+    /**
+     * 文件录入CSP成绩
+     * @param file
+     * @return
+     */
+    @PostMapping("/csp/addScoreFile")
+    public Result uploadCSPScore(@RequestParam("file") MultipartFile file) {
+        Result result = ExcelUtils.importScore(file);
+        return result;
+    }
 
 
 
