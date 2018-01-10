@@ -619,6 +619,49 @@ function callbackUpload() {
 }
 
 
+/***  managerCSPApplication.html  ***/
+// 告诉系统可以下载了
+function downloadApplication() {
+  window.open(myUrl + "/csp/downLoadApplication?" + $("#downloadForm").serialize());
+}
+// 添加CSP认证
+function addCert() {
+  bootbox.confirm({
+    title: "请核实填写的信息？",
+    message: "请确认认证考试信息填写完整，*使用中文数字代替。",
+    buttons: {
+      cancel: {
+        label: '<i class="fa fa-times"></i> 取消'
+      },
+      confirm: {
+        label: '<i class="fa fa-check"></i> 确认'
+      }
+    },
+    callback: function (result) {
+      if(result) {
+        $.ajax({
+          url: myUrl+"/csp/addCertification",
+          type: "post",
+          data: $("#addCertForm").serialize(),
+          success: function (res) {
+            if(res.ret)
+              bootbox.alert("添加成功");
+            else
+              bootbox.alert("添加失败，请检查信息是否填写完整和准确，或者该认证已被添加");
+          },
+          fail: function (res) {
+            console.log(res);
+            bootbox.alert("添加失败，服务器内部故障");
+          }
+        });
+      }
+    }
+  });
+}
+
+
+/***    ***/
+
 
 
 

@@ -9,8 +9,12 @@ public class Application {
     private int certNo;
     // 认证名
     private String name;
+    // 会员名
+    private String memberName;
     // 会员号
     private String memberNo;
+    // 性别
+    private String gender;
     // 身份证号
     private String id;
     // 电话
@@ -21,6 +25,8 @@ public class Application {
     private String language;
     // 学历
     private String degree;
+    // 年级
+    private int grade;
     // 认证目的
     private String purpose;
     // 意向学校
@@ -35,18 +41,21 @@ public class Application {
     public Application() {
     }
 
-    public Application(int certNo, String name, String memberNo, String id,
-                       String phone, String email, String language, String degree,
-                       String purpose, String school, String username, String password,
-                       String photo) {
+    public Application(int certNo, String name, String memberName, String memberNo,
+                       String gender, String id, String phone, String email,
+                       String language, String degree, int grade, String purpose,
+                       String school, String username, String password, String photo) {
         this.certNo = certNo;
         this.name = name;
+        this.memberName = memberName;
         this.memberNo = memberNo;
+        this.gender = gender;
         this.id = id;
         this.phone = phone;
         this.email = email;
         this.language = language;
         this.degree = degree;
+        this.grade = grade;
         this.purpose = purpose;
         this.school = school;
         this.username = username;
@@ -158,17 +167,44 @@ public class Application {
         this.photo = photo;
     }
 
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
     @Override
     public String toString() {
         return "Application{" +
-                "certNo='" + certNo + '\'' +
+                "certNo=" + certNo +
                 ", name='" + name + '\'' +
+                ", memberName='" + memberName + '\'' +
                 ", memberNo='" + memberNo + '\'' +
+                ", gender='" + gender + '\'' +
                 ", id='" + id + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", language='" + language + '\'' +
                 ", degree='" + degree + '\'' +
+                ", grade=" + grade +
                 ", purpose='" + purpose + '\'' +
                 ", school='" + school + '\'' +
                 ", username='" + username + '\'' +

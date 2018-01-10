@@ -9,12 +9,15 @@ import cn.goldlone.utils.ExcelUtils;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -175,6 +178,64 @@ public class CSPController {
         return result;
     }
 
+    /**
+     * 下载CSP报名信息
+     * @param res
+     * @param certNo
+     * @return
+     */
+    @GetMapping("/csp/downLoadApplication")
+    public Result downLoadApplication(HttpServletResponse res, int certNo) {
+        res.setHeader("content-type", "application/octet-stream");
+        res.setContentType("application/octet-stream");
+        res.setHeader("Content-Disposition", "attachment;filename=" + "applicate.xls");
+        byte[] buff = new byte[1024];
+        BufferedInputStream bis = null;
+        OutputStream os = null;
+        Result result = null;
+        try {
+            os = res.getOutputStream();
+            File file = ExcelUtils.exportApplicationInfo(certNo);
+            bis = new BufferedInputStream(new FileInputStream(file));
+            int i = bis.read(buff);
+            while (i != -1) {
+                os.write(buff, 0, buff.length);
+                os.flush();
+                i = bis.read(buff);
+            }
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            if (bis != null) {
+                try {
+                    bis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 添加CSP认证
+     * @param cert
+     * @return
+     */
+    @PostMapping("/csp/addCertification")
+    public Result addCertification(Certification cert) {
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
+        Result result = null;
+        try {
+            result = ResultUtils.success(cm.addCert(cert), "查询CSP成绩成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
+        return result;
+    }
 
 
 

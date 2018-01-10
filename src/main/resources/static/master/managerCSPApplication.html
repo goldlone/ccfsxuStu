@@ -111,11 +111,8 @@
         <div class="table-responsive">
           <form class="form-inline" id="downloadForm">
             <label>考试名称</label>
-            <select id="certName" name="certNo" class="form-control">
-              <option value="0">无</option>
-              <option value="0">第十二次CCF软件能力认证</option>
-            </select>
-            <a class="btn btn-default" onclick="queryApplication()">下载</a>
+            <select id="certName" name="certNo" class="form-control"></select>
+            <span id="downBtn"><a class="btn btn-default" onclick="downloadApplication()">下载</a></span>
           </form>
         </div>
 
@@ -176,76 +173,12 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
   <script src="../assets/js/bootbox.min.js"></script>
+  <script src="../assets/js/ccfsxu.js"></script>
   <script type="text/javascript">
     initHeadViewInMaster();
-
-  </script>
-
-  <script type="text/javascript">
     getCertSet();
-
-    // 告诉系统可以下载了
-    function queryApplication() {
-//      window.open("/excel/applicate.xls", '', '', false);
-      $.ajax({
-        url: "/getApplication",
-        type: "post",
-        data: $("#downloadForm").serialize(),
-        success: function (res) {
-          console.log(res);
-          if(res.ret) {
-            var temp = window.location.href;
-            temp = temp.slice(0, temp.indexOf("/master"));
-            window.open(temp+"/excel/applicate.xls", '', '', false);
-          } else {
-            bootbox.alert("导出失败");
-          }
-        },
-        fail: function (res) {
-          bootbox.alert("导出失败");
-        }
-      });
-    }
-
-    // 添加CSP认证
-    function addCert() {
-      bootbox.confirm({
-        title: "请核实填写的信息？",
-        message: "请确认认证考试信息填写完整，*使用中文数字代替。",
-        buttons: {
-          cancel: {
-            label: '<i class="fa fa-times"></i> 取消'
-          },
-          confirm: {
-            label: '<i class="fa fa-check"></i> 确认'
-          }
-        },
-        callback: function (result) {
-          if(result) {
-            add();
-          }
-        }
-      });
-
-      function add() {
-        $.ajax({
-          url:"/addCertification",
-          type: "post",
-          data: $("#addCertForm").serialize(),
-          success: function (res) {
-            if(res.ret)
-              bootbox.alert("添加成功");
-            else
-              bootbox.alert("添加失败，请检查信息是否填写完整和准确，或者该认证已被添加");
-          },
-          fail: function (res) {
-            console.log(res);
-            bootbox.alert("添加失败，服务器内部故障");
-          }
-        });
-      }
-    }
   </script>
+
 
 </body>
 </html>

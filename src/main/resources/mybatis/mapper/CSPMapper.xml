@@ -16,12 +16,15 @@
     <resultMap id="applicationInfo" type="cn.goldlone.po.Application">
         <result property="certNo" column="A_certNo" />
         <result property="name" column="C_name" />
+        <result property="memberName" column="M_name" />
         <result property="memberNo" column="A_memberNo" />
+        <result property="gender" column="M_gender" />
         <result property="id" column="M_id" />
         <result property="phone" column="M_phone" />
         <result property="email" column="M_email" />
         <result property="language" column="A_language" />
         <result property="degree" column="DT_name" />
+        <result property="grade" column="M_grade" />
         <result property="purpose" column="A_purpose" />
         <result property="school" column="A_purposeUniversity" />
         <result property="username" column="A_username" />
@@ -90,8 +93,8 @@
     </update>
     <!-- 查询某次认证的报名信息 -->
     <select id="selectApplicationInfo" parameterType="int" resultMap="applicationInfo">
-        SELECT a.A_certNo,c.C_name,a.A_memberNo,m.M_id,m.M_phone,
-        m.M_email,a.A_language,d.DT_name,a.A_purpose,
+        SELECT a.A_certNo,c.C_name,m.M_name,a.A_memberNo,m.M_gender,m.M_id,m.M_phone,
+        m.M_email,a.A_language,d.DT_name,m.M_grade,a.A_purpose,
         a.A_purposeUniversity,a.A_username,a.A_password,m.M_photo
         FROM Application a,Certification c,Member m,DegreeType d
         WHERE a.A_certNo=#{certNo} AND
