@@ -4,12 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.goldlone.mapper.BookMapper;
 import cn.goldlone.mapper.CSPMapper;
 import cn.goldlone.mapper.MemberMapper;
 import cn.goldlone.model.Result;
-import cn.goldlone.po.Application;
-import cn.goldlone.po.Member;
-import cn.goldlone.po.Score;
+import cn.goldlone.po.*;
 import cn.goldlone.service.MemberService;
 import cn.goldlone.service.impl.MemberServiceImpl;
 import jxl.Sheet;
@@ -39,7 +38,9 @@ public class ExcelUtils {
 //        System.out.println("执行完成--------------");
 //        for(String name: (List<String>)res2.getData())
 //            System.out.println(name);
-        exportApplicationInfo(1);
+//        exportApplicationInfo(1);
+//        createBookTemplate();
+//        importBook(new File("./templateBook.xls"));
     }
 
     /**
@@ -254,6 +255,71 @@ public class ExcelUtils {
     }
 
     /**
+     * 导入图书信息
+     * @param file
+     * @return
+     */
+    public static Result importBook(MultipartFile file) {
+        List<String> list = new ArrayList<>();
+        SqlSession sqlSession = MybatisUtils.openSqlSession();
+        BookMapper bm = sqlSession.getMapper(BookMapper.class);
+        Book book = null;
+        try {
+            Workbook workbook = Workbook.getWorkbook(file.getInputStream());
+            Sheet sheet = workbook.getSheet(0);
+            for (int i = 1; i < sheet.getRows(); i++) {
+                // 图书编号
+                String no = sheet.getCell(0, i).getContents();
+                // 图书名
+                String name = sheet.getCell(1, i).getContents();
+                //
+                String typeName = sheet.getCell(2, i).getContents();
+                String author = sheet.getCell(3, i).getContents();
+                String publicer = sheet.getCell(4, i).getContents();
+                String publicDate = sheet.getCell(5, i).getContents();
+                double price = 0.0;
+                int inventory = 0;
+                try {
+                    price = Double.parseDouble(sheet.getCell(6, i).getContents());
+                    inventory = Integer.parseInt(sheet.getCell(7, i).getContents());
+                } catch (Exception e) {
+                    System.out.println("非数值："+e.getMessage());
+                }
+                System.out.println(no+","+name);
+                Integer typeNo = bm.selectTypeNoByName(typeName);
+                if(typeNo==null) {
+                    BookType bt = new BookType(typeName);
+                    bm.addBookType(bt);
+                    typeNo = bt.getNo();
+                }
+                book = new Book();
+                book.setTypeNo(typeNo);
+                book.setNo(no);
+                book.setName(name);
+                book.setAuthor(author);
+                book.setPublicer(publicer);
+                book.setPublicDate(publicDate);
+                book.setPrice(price);
+                book.setInventory(inventory);
+                System.out.println(book);
+                try{
+                    bm.addBook(book);
+                    sqlSession.commit();
+                } catch (Exception e) {
+                    System.out.println("出现异常："+e.getMessage());
+                    list.add(book.getName());
+                }
+            }
+            return ResultUtils.success(list, "录入成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return ResultUtils.error(1, "录入失败，可能是Excel文件问题");
+    }
+
+    /**
      * 创建会员信息导入模板
      */
     public static void createMemberTemplate() {
@@ -273,6 +339,16 @@ public class ExcelUtils {
                 "第三题", "第四题", "第五题", "邮箱"};
 //        File file = new File("./web/excel/templateScore.xls");
         File file = new File("./templateScore.xls");
+        createTemplate(file, title);
+    }
+
+    /**
+     * 创建图书信息导入模板
+     */
+    public static void createBookTemplate() {
+        String[] title = {"ISBN编码", "图书名", "类别", "作者",
+                "出版社", "出版时间", "价格", "库存" };
+        File file = new File("./templateBook.xls");
         createTemplate(file, title);
     }
 

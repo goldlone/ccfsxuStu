@@ -8,11 +8,14 @@ import cn.goldlone.model.Result;
 import cn.goldlone.po.Book;
 import cn.goldlone.po.BookType;
 import cn.goldlone.po.BorrowBook;
+import cn.goldlone.utils.ExcelUtils;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -218,6 +221,17 @@ public class BookController {
         } finally {
             sqlSession.close();
         }
+        return result;
+    }
+
+    /**
+     * 文件导入图书信息
+     * @param file
+     * @return
+     */
+    @PostMapping("/book/addByFile")
+    public Result addBookByFile(@RequestParam("file") MultipartFile file) {
+        Result result = ExcelUtils.importBook(file);
         return result;
     }
 

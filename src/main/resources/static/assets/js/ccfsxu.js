@@ -857,7 +857,39 @@ function submitHandBookInfo() {
     }
   });
 }
-
+// 文件上传图书信息
+xhr = new XMLHttpRequest();
+function uploadBookInfo() {
+  bootbox.alert({
+    size: "small",
+    title: "提示信息",
+    message: "正在上传，请耐心等待上传结果!(上传过程真得很慢，不要刷新页面。)"
+  });
+  var fileObj = $("#exampleInputFile")[0].files[0];
+  var FileController = myUrl+"/book/addByFile";
+  var form = new FormData();
+  form.append("file", fileObj);
+  xhr.open("post", FileController, true);
+  xhr.onload = function () {
+//           alert("上传完成!");
+  };
+  xhr.send(form);
+  xhr.onreadystatechange = callbackUploadBookFile;
+}
+function callbackUploadBookFile() {
+  if(xhr.readyState == 4 && xhr.status == 200) {
+    var obj = jQuery.parseJSON(xhr.responseText);
+    console.log(obj);
+    if(obj.data.length!=0) {
+      var str = "";
+      for(var i=0; i<obj.data.length; i++)
+        str.append(obj.data.data[0]+",");
+      showAlertMessage(obj.msg+"\n以下图书录入出错："+str);
+    } else {
+      showAlertMessage(obj.msg);
+    }
+  }
+}
 
 
 
