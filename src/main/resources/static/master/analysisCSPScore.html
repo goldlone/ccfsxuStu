@@ -103,23 +103,53 @@
     </div>
     <!-- end left nav -->
 
-        <!-- start content -->
-        <!-- end content -->
-
-      </div>
+    <!-- start content -->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">CSP管理</h1>
+        <h4 class="sub-header">成绩分析</h4>
+        <div style="width: 100%; padding: 0 20%;">
+          <!-- 三围预览 -->
+          <div id="chart_1" style="width: 100%; height:400px;"></div>
+          <hr>
+          <!-- 下拉菜单 -->
+          <div class="dropdown" style="float:left;">
+            <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">CSP认证考试
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <!-- <li role="presentation">
+                    <a class="select-questionNo" id="select-questionNo-1" role="menuitem" tabindex="-1" style="cursor: pointer;">第1题</a>
+                </li> -->
+            </ul>
+          </div>
+          <div style="clear:both;"></div>
+          <br>
+          <!-- 分阶段统计 -->
+          <div id="chart_2" style="width: 100%; height:400px;"></div>
+        </div>
     </div>
+    <!-- end content -->
+
+  </div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script type="text/javascript" src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     
+    
+    <!-- Echarts js -->
+    <script src="../assets/js/my/echarts.min.js"></script>
+    <script src="../assets/js/my/drawCharts.js"></script>
+    <script src="../assets/js/my/analysisCSPScore.js"></script>
+
   </body>
 </html>

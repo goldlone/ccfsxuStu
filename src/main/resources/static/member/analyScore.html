@@ -28,6 +28,11 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <style>
+    .charts-place {
+      margin: 0 20%;
+    }
+  </style>
 </head>
 <body>
   <!-- start 顶部导航栏 -->
@@ -69,8 +74,73 @@
   </nav>
   <!-- end 顶部导航栏 -->
 
-  <h1 align="center">功能正在完善...</h1><hr>
-  <div></div>
+  <!-- <h1 align="center">功能正在完善...</h1><hr> -->
+  <div class="charts-place" align="center">
+    <div id="chart_1" style="width: 100%; height: 400px;">
+
+    </div>
+    <hr>
+    <!-- 下拉菜单 选择题目 -->
+    <div class="dropdown" style="float:left;">
+        <button type="button" class="btn dropdown-toggle questionNo" id="dropdownMenu1" data-toggle="dropdown">题目
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu questionNo" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation">
+                <a class="select-questionNo" id="select-questionNo-1" role="menuitem" tabindex="-1" style="cursor: pointer;">第1题</a>
+            </li>
+            <li role="presentation">
+                <a class="select-questionNo" id="select-questionNo-2" role="menuitem" tabindex="-1" style="cursor: pointer;">第2题</a>
+            </li>
+            <li role="presentation">
+                <a class="select-questionNo" id="select-questionNo-3" role="menuitem" tabindex="-1" style="cursor: pointer;">第3题</a>
+            </li>
+            <li role="presentation">
+                <a class="select-questionNo" id="select-questionNo-4" role="menuitem" tabindex="-1" style="cursor: pointer;">第4题</a>
+            </li>
+            <li role="presentation">
+                <a class="select-questionNo" id="select-questionNo-5" role="menuitem" tabindex="-1" style="cursor: pointer;">第5题</a>
+            </li>
+        </ul>
+    </div>
+    <div style="clear:both;"></div>
+    <br>
+    <!-- <select id="select-questionNo">
+      <option value="0">第1题</option>
+      <option value="1">第2题</option>
+      <option value="2">第3题</option>
+      <option value="3">第4题</option>
+      <option value="4">第5题</option>
+    </select> -->
+    <div id="chart_2_2" style="width: 100%; height: 400px;">
+
+    </div>
+    <hr><!-- 下拉菜单 选择参加过的CSP考试 -->
+    <div class="dropdown" style="float:left;">
+        <button type="button" class="btn dropdown-toggle certNo" id="dropdownMenu1" data-toggle="dropdown">CSP认证考试
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu certNo" role="menu" aria-labelledby="dropdownMenu1">
+            <!-- <li role="presentation">
+                <a class="select-certNo" id="select-certNo-1" role="menuitem" tabindex="-1" style="cursor: pointer;">第1题</a>
+            </li> -->
+        </ul>
+    </div>
+    <div style="clear:both;"></div>
+    <br>
+    <!-- <select id="select-certNo">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select> -->
+    <div id="chart_2" style="width: 100%; height: 400px;">
+
+    </div>
+    <br>
+    <div id="chart_3" style="width: 100%; height: 400px;">
+
+    </div>
+  </div>
 
 
   <!-- Bootstrap core JavaScript
@@ -84,5 +154,10 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
   <script src="../assets/js/bootbox.min.js"></script>
+
+  <!-- Echarts js -->
+  <script src="../assets/js/my/echarts.min.js"></script>
+  <script src="../assets/js/my/drawCharts.js"></script>
+  <script src="../assets/js/my/analyScore.js"></script>
 </body>
 </html>

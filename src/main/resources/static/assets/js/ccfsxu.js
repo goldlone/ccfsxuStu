@@ -554,6 +554,7 @@ function getScoreByNo() {
 function showScore(data) {
   $("#score-content").empty();
   var str = "";
+  // if()
   for(var i=0; i<data.length; i++) {
     str = str + " <tr> <td>"+
       data[i].memberNo+"</td> <td>"+
