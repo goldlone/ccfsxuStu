@@ -32,126 +32,127 @@
 </head>
 
 <body>
-<!-- start 顶部导航栏 -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <img style="float: left;height: 50px;width:70px;padding: 5px 15px;" src="../assets/img/ccfsxu.png" alt="" class="img-circle" width="40" height="40">
-      <a class="navbar-brand" href="../index.html" style="cursor: default;">CCFSXU会员管理系统</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right" id="update-password-link" hidden>
-        <li><a href="#">修改密码</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right" id="login-link"></ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../master/main.html">管理端</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../member/application.html">CSP预报名</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../member/analyScore.html">CSP成绩分析</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../member/book.html">图书馆</a></li>
-      </ul>
-      <!-- <form class="navbar-form navbar-right">
-          <input type="text" class="form-control" placeholder="Search...">
-      </form> -->
-    </div>
-  </div>
-</nav>
-<!-- end 顶部导航栏 -->
-
-<div class="container-fluid">
-  <div class="row">
-    <!-- start left nav -->
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li><a href="#" style="color: #000;cursor: default;">
-          <h4 class="sub-header">会员信息</h4></a>
-        </li>
-        <li><a href="./main.html" >查询会员信息</a></li>
-        <li><a href="./insertMemberInfo.html">录入会员信息</a></li>
-        <li><a href="./updateMemberInfo.html">修改会员信息</a></li>
-      </ul>
-      <ul class="nav nav-sidebar">
-        <li><a href="#" style="color: #000;cursor:default;">
-          <h4 class="sub-header">CSP管理</h4></a>
-        </li>
-        <li class="active"><a href="./selectCSPScore.html">查询CSP成绩</a></li>
-        <li><a href="./insertCSPScore.html">录入CSP成绩</a></li>
-        <li><a href="./managerCSPApplication.html">CSP报名管理</a></li>
-        <li><a href="./analysisCSPScore.html">会员进步状况分析</a></li>
-      </ul>
-      <ul class="nav nav-sidebar">
-        <li><a href="#" style="color: #000;cursor:default;">
-          <h4 class="sub-header">图书馆</h4></a>
-        </li>
-        <li><a href="./borrowBook.html">借书</a></li>
-        <li><a href="./backBook.html">还书</a></li>
-        <li><a href="./insertBook.html">导入图书</a></li>
-      </ul>
-    </div>
-    <!-- end left nav -->
-        
-        <!-- start content -->
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">CSP管理</h1>
-          <h4 class="sub-header">查询CSP成绩</h4>
-
-          <!-- 筛选条件 -->
-          <div class="table-responsive">
-            <form class="form-inline" id="queryForm">
-              <label>考试名称</label>
-              <select id="certName" name="certNo" class="form-control">
-                <option value="0">所有</option>
-              </select>
-              <label>成绩区间</label>
-              <input type="number" class="form-control" name="lowScore" placeholder="大于等于" value="0" max="3">
-              ~
-              <input type="number" class="form-control" name="highScore" placeholder="小于等于" value="500" max="3">
-              <a class="btn btn-default" onclick="queryCSP()">查询</a>
-            </form><br>
-            <form id="selectScoreByNoForm" class="form-inline">
-              <label>查询该会员的所有成绩</label>
-              <input type="text" class="form-control" name="no" placeholder="请输入会员号">
-              <a class="btn btn-default" onclick="getScoreByNo()">查询</a>
-            </form>
-          </div>
-
-          <!-- 内容展示 -->
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>会员号</th>
-                  <th>姓名</th>
-                  <th>认证名称</th>
-                  <th>总分</th>
-                  <th>第一题</th>
-                  <th>第二题</th>
-                  <th>第三题</th>
-                  <th>第四题</th>
-                  <th>第五题</th>
-                </tr>
-              </thead>
-              <tbody id="score-content"></tbody>
-            </table>
-          </div>
-        </div>
-        <!-- end content -->
-        
+  <!-- start 顶部导航栏 -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img style="float: left;height: 50px;width:70px;padding: 5px 15px;" src="../assets/img/ccfsxu.png" alt="" class="img-circle" width="40" height="40">
+        <a class="navbar-brand" href="../index.html" style="cursor: default;">CCFSXU会员管理系统</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right" id="update-password-link" hidden>
+          <li><a href="#">修改密码</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" id="login-link"></ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../master/main.html">管理端</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../member/application.html">CSP预报名</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../member/analyScore.html">CSP成绩分析</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../member/book.html">图书馆</a></li>
+        </ul>
+        <!-- <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+        </form> -->
       </div>
     </div>
+  </nav>
+  <!-- end 顶部导航栏 -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- start left nav -->
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="#" style="color: #000;cursor: default;">
+            <h4 class="sub-header">会员信息</h4></a>
+          </li>
+          <li><a href="./main.html" >查询会员信息</a></li>
+          <li><a href="./insertMemberInfo.html">录入会员信息</a></li>
+          <li><a href="./updateMemberInfo.html">修改会员信息</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="#" style="color: #000;cursor:default;">
+            <h4 class="sub-header">CSP管理</h4></a>
+          </li>
+          <li class="active"><a href="./selectCSPScore.html">查询CSP成绩</a></li>
+          <li><a href="./insertCSPScore.html">录入CSP成绩</a></li>
+          <li><a href="./managerCSPApplication.html">CSP报名管理</a></li>
+          <li><a href="./analysisCSPScore.html">会员进步状况分析</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="#" style="color: #000;cursor:default;">
+            <h4 class="sub-header">图书馆</h4></a>
+          </li>
+          <li><a href="./borrowBook.html">借书</a></li>
+          <li><a href="./backBook.html">还书</a></li>
+          <li><a href="./insertBook.html">导入图书</a></li>
+        </ul>
+      </div>
+      <!-- end left nav -->
+
+      <!-- start content -->
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">CSP管理</h1>
+        <h4 class="sub-header">查询CSP成绩</h4>
+
+        <!-- 筛选条件 -->
+        <div class="table-responsive">
+          <form class="form-inline" id="queryForm">
+            <label>考试名称</label>
+            <select id="certName" name="certNo" class="form-control">
+              <option value="0">所有</option>
+            </select>
+            <label>成绩区间</label>
+            <input type="number" class="form-control" name="lowScore" placeholder="大于等于" value="0" max="3">
+            ~
+            <input type="number" class="form-control" name="highScore" placeholder="小于等于" value="500" max="3">
+            <a class="btn btn-default" onclick="queryCSP()">查询</a>
+          </form>
+          <br>
+          <form id="selectScoreByNoForm" class="form-inline">
+            <label>查询该会员的所有成绩</label>
+            <input type="text" class="form-control" name="memberNo" placeholder="请输入会员号">
+            <a class="btn btn-default" onclick="getScoreByNo()">查询</a>
+          </form>
+        </div>
+
+        <!-- 内容展示 -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>会员号</th>
+                <th>姓名</th>
+                <th>认证名称</th>
+                <th>总分</th>
+                <th>第一题</th>
+                <th>第二题</th>
+                <th>第三题</th>
+                <th>第四题</th>
+                <th>第五题</th>
+              </tr>
+            </thead>
+            <tbody id="score-content"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- end content -->
+
+    </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -168,6 +169,7 @@
     <script type="text/javascript">
       initHeadViewInMaster();
       getCertSet();
+      queryCSP();
     </script>
-  </body>
+</body>
 </html>

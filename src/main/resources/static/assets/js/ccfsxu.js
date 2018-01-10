@@ -504,13 +504,16 @@ function submitUpdate() {
 // 获取考试集合
 function getCertSet() {
   $.ajax({
-    url: myUrl+"/getCertSet",
+    url: myUrl+"/csp/certSet",
     type: "post",
     success: function (res) {
       console.log(res);
-      for(var i=0; i<res.data.length; i++)
-        $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
-
+      if(res.code==0) {
+        for(var i=0; i<res.data.length; i++)
+          $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
+      } else {
+        showAlertMessage(res.msg);
+      }
     },
     error: function (res) {
       console.log(res);
@@ -520,22 +523,22 @@ function getCertSet() {
 // 获取CSP成绩列表
 function queryCSP() {
   $.ajax({
-    url: "/queryScore",
+    url: myUrl+"/csp/queryScore",
     type: "post",
     data: $("#queryForm").serialize(),
     success: function (res) {
       console.log(res);
-      showScore(res.data)
+      showScore(res.data);
     },
     error: function (res) {
       console.log(res);
     }
   });
 }
-
+//
 function getScoreByNo() {
   $.ajax({
-    url: "/getScoreByNo",
+    url: myUrl+"/csp/ScoreByMember",
     type: "post",
     data: $("#selectScoreByNoForm").serialize(),
     success: function (res) {
@@ -557,8 +560,8 @@ function showScore(data) {
       data[i].memberName+"</td> <td>"+
       data[i].certName+"</td> <td>"+
       data[i].all+"</td> <td>"+
-      data[i].fifth+"</td> <td>"+
-      data[i].sencond+"</td> <td>"+
+      data[i].first+"</td> <td>"+
+      data[i].second+"</td> <td>"+
       data[i].third+"</td> <td>"+
       data[i].forth+"</td> <td>"+
       data[i].fifth+"</td> </tr>";

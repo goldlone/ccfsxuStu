@@ -4,6 +4,7 @@ import cn.goldlone.mapper.CSPMapper;
 import cn.goldlone.model.Result;
 import cn.goldlone.model.ScoreInfo;
 import cn.goldlone.model.SingleScore;
+import cn.goldlone.po.Certification;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -22,6 +23,57 @@ public class CSPController {
     private CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
 
 
+    /**
+     * 获取CSP认证集合
+     * @return
+     */
+    @PostMapping("/csp/certSet")
+    public Result getCertSet() {
+        Result result = null;
+        try {
+            result = ResultUtils.success(cm.getCertSet(), "获取CSP认证集合成功");
+//            List<Certification> list = cm.getCertSet();
+//            for(Certification cert: list)
+//                System.out.println(cert);
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+        }
+        return result;
+    }
+
+    /**
+     * 查询成绩
+     * @param certNo
+     * @param lowScore
+     * @param highScore
+     * @return
+     */
+    @PostMapping("/csp/queryScore")
+    public Result queryScore(Integer certNo, Integer lowScore, Integer highScore) {
+        Result result = null;
+        try {
+            result = ResultUtils.success(cm.queryScore(certNo, lowScore, highScore), "查询CSP成绩成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+        }
+        return result;
+    }
+
+    /**
+     * 获取某个会员的成绩
+     * @param memberNo
+     * @return
+     */
+    @PostMapping("/csp/ScoreByMember")
+    public Result getScoreByMemberNo(String memberNo) {
+        Result result = null;
+        try {
+            result = ResultUtils.success(cm.selectScoreByMemberNo(memberNo), "查询CSP成绩成功");
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+        }
+        return result;
+    }
 
 
 
