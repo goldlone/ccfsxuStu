@@ -79,7 +79,7 @@
         <li><a href="#" style="color: #000;cursor: default;">
           <h4 class="sub-header">会员信息</h4></a>
         </li>
-        <li class="active"><a href="./main.html" >查询会员信息</a></li>
+        <li><a href="./main.html" >查询会员信息</a></li>
         <li><a href="./insertMemberInfo.html">录入会员信息</a></li>
         <li><a href="./updateMemberInfo.html">修改会员信息</a></li>
       </ul>
@@ -87,7 +87,7 @@
         <li><a href="#" style="color: #000;cursor:default;">
           <h4 class="sub-header">CSP管理</h4></a>
         </li>
-        <li><a href="./selectCSPScore.html">查询CSP成绩</a></li>
+        <li class="active"><a href="./selectCSPScore.html">查询CSP成绩</a></li>
         <li><a href="./insertCSPScore.html">录入CSP成绩</a></li>
         <li><a href="./managerCSPApplication.html">CSP报名管理</a></li>
         <li><a href="./analysisCSPScore.html">会员进步状况分析</a></li>
@@ -144,44 +144,9 @@
                   <th>第五题</th>
                 </tr>
               </thead>
-              <tbody id="memberContent">
-                <tr>
-                  <td>62151G</td>
-                  <td>程宁</td>
-                  <td>第八次CCF计算机软件能力认证</td>
-                  <td>230</td>
-                  <td>100</td>
-                  <td>90</td>
-                  <td>40</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>62151G</td>
-                  <td>程宁</td>
-                  <td>第九次CCF计算机软件能力认证</td>
-                  <td>170</td>
-                  <td>100</td>
-                  <td>70</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>62151G</td>
-                  <td>程宁</td>
-                  <td>第十二次CCF计算机软件能力认证</td>
-                  <td>270</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>0</td>
-                  <td>70</td>
-                  <td>0</td>
-                </tr>
-
-              </tbody>
+              <tbody id="score-content"></tbody>
             </table>
-          </div>    
+          </div>
         </div>
         <!-- end content -->
         
@@ -192,82 +157,17 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script type="text/javascript" src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="/assets/js/vendor/holder.min.js"></script>
+    <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
-
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../assets/js/ccfsxu.js"></script>
     <script type="text/javascript">
-      // 获取考试集合
-      function getCertSet() {
-          $.ajax({
-              url: "/getCertSet",
-              type: "post",
-              success: function (res) {
-                  console.log(res);
-                  for(var i=0; i<res.data.length; i++)
-                    $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
-
-              },
-              error: function (res) {
-                  console.log(res);
-              }
-          });
-      }
+      initHeadViewInMaster();
       getCertSet();
-
-      // 获取CSP成绩列表
-      function queryCSP() {
-          $.ajax({
-              url: "/queryScore",
-              type: "post",
-              data: $("#queryForm").serialize(),
-              success: function (res) {
-                  console.log(res);
-                  showScore(res.data)
-              },
-              error: function (res) {
-                  console.log(res);
-              }
-          });
-      }
-      
-      function getScoreByNo() {
-          $.ajax({
-              url: "/getScoreByNo",
-              type: "post",
-              data: $("#selectScoreByNoForm").serialize(),
-              success: function (res) {
-                  console.log(res);
-                  showScore(res.data);
-              },
-              error: function (res) {
-                  console.log(res);
-              }
-          });
-      }
-      // 展示获取的会员成绩信息
-      function showScore(data) {
-          $("#memberContent").empty();
-          var str = "";
-          for(var i=0; i<data.length; i++) {
-              str = str + " <tr> <td>"+
-                  data[i].memberNo+"</td> <td>"+
-                  data[i].memberName+"</td> <td>"+
-                  data[i].certName+"</td> <td>"+
-                  data[i].all+"</td> <td>"+
-                  data[i].fifth+"</td> <td>"+
-                  data[i].sencond+"</td> <td>"+
-                  data[i].third+"</td> <td>"+
-                  data[i].forth+"</td> <td>"+
-                  data[i].fifth+"</td> </tr>";
-          }
-          $("#memberContent").append(str);
-      }
     </script>
-    
   </body>
 </html>

@@ -498,3 +498,87 @@ function submitUpdate() {
     }
   });
 }
+
+
+/***  selectCSPScore.html  ***/
+// 获取考试集合
+function getCertSet() {
+  $.ajax({
+    url: myUrl+"/getCertSet",
+    type: "post",
+    success: function (res) {
+      console.log(res);
+      for(var i=0; i<res.data.length; i++)
+        $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
+
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
+// 获取CSP成绩列表
+function queryCSP() {
+  $.ajax({
+    url: "/queryScore",
+    type: "post",
+    data: $("#queryForm").serialize(),
+    success: function (res) {
+      console.log(res);
+      showScore(res.data)
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
+
+function getScoreByNo() {
+  $.ajax({
+    url: "/getScoreByNo",
+    type: "post",
+    data: $("#selectScoreByNoForm").serialize(),
+    success: function (res) {
+      console.log(res);
+      showScore(res.data);
+    },
+    error: function (res) {
+      console.log(res);
+    }
+  });
+}
+// 展示获取的会员成绩信息
+function showScore(data) {
+  $("#score-content").empty();
+  var str = "";
+  for(var i=0; i<data.length; i++) {
+    str = str + " <tr> <td>"+
+      data[i].memberNo+"</td> <td>"+
+      data[i].memberName+"</td> <td>"+
+      data[i].certName+"</td> <td>"+
+      data[i].all+"</td> <td>"+
+      data[i].fifth+"</td> <td>"+
+      data[i].sencond+"</td> <td>"+
+      data[i].third+"</td> <td>"+
+      data[i].forth+"</td> <td>"+
+      data[i].fifth+"</td> </tr>";
+  }
+  $("#score-content").append(str);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

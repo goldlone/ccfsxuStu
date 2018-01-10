@@ -99,7 +99,7 @@ public class MemberController {
      * @param member
      * @return
      */
-    @PostMapping("member/update")
+    @PostMapping("/member/update")
     public Result updateMember(Member member) {
         Result result = null;
         try {
