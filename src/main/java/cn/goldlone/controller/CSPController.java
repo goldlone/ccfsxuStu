@@ -22,8 +22,8 @@ import java.util.List;
  */
 @RestController
 public class CSPController {
-    private SqlSession sqlSession = MybatisUtils.openSqlSession();
-    private CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
+    private SqlSession sqlSession = null;
+    private CSPMapper cm = null;
 
 
     /**
@@ -32,6 +32,9 @@ public class CSPController {
      */
     @PostMapping("/csp/certSet")
     public Result getCertSet() {
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
+
         Result result = null;
         try {
             result = ResultUtils.success(cm.getCertSet(), "获取CSP认证集合成功");
@@ -40,6 +43,8 @@ public class CSPController {
 //                System.out.println(cert);
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -53,11 +58,15 @@ public class CSPController {
      */
     @PostMapping("/csp/queryScore")
     public Result queryScore(Integer certNo, Integer lowScore, Integer highScore) {
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
         Result result = null;
         try {
             result = ResultUtils.success(cm.queryScore(certNo, lowScore, highScore), "查询CSP成绩成功");
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -69,11 +78,15 @@ public class CSPController {
      */
     @PostMapping("/csp/ScoreByMember")
     public Result getScoreByMemberNo(String memberNo) {
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
         Result result = null;
         try {
             result = ResultUtils.success(cm.selectScoreByMemberNo(memberNo), "查询CSP成绩成功");
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -85,6 +98,8 @@ public class CSPController {
      */
     @PostMapping("/csp/memberScore")
     public Result getScoreByMemberNo(HttpServletRequest request) {
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
         Result result = null;
         String memberNo = (String) request.getSession().getAttribute("memberNo");
 //        if(memberNo==null || "".equals(memberNo)) {
@@ -105,6 +120,8 @@ public class CSPController {
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
             e.printStackTrace();
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -123,6 +140,8 @@ public class CSPController {
         // 检测权限
 
         // 查询成绩
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
         try{
             List<ScoreInfo> list = cm.selectScoreByNo(certNo);
             ScoreInfo info = null;
@@ -139,6 +158,8 @@ public class CSPController {
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
             e.printStackTrace();
+        } finally {
+           sqlSession.close();
         }
         return result;
     }

@@ -176,27 +176,14 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
   <script src="../assets/js/bootbox.min.js"></script>
+  <script type="text/javascript">
+    initHeadViewInMaster();
+
+  </script>
 
   <script type="text/javascript">
-    // 获取考试集合
-    function getCertSet() {
-      $.ajax({
-        url: "/getCertSet",
-        type: "post",
-        success: function (res) {
-//          console.log(res);
-          for(var i=0; i<res.data.length; i++)
-            $("#certName").append("<option value=\""+res.data[i].no+"\">"+res.data[i].name+"</option>");
-
-        },
-        error: function (res) {
-          console.log(res);
-        }
-      });
-    }
     getCertSet();
 
-    console.log();
     // 告诉系统可以下载了
     function queryApplication() {
 //      window.open("/excel/applicate.xls", '', '', false);

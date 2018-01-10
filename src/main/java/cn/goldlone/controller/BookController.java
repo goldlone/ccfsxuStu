@@ -17,16 +17,24 @@ import java.util.List;
  */
 @RestController
 public class BookController {
-    private SqlSession sqlSession = MybatisUtils.openSqlSession();
-    private BookMapper bm = sqlSession.getMapper(BookMapper.class);
+    private SqlSession sqlSession = null;
+    private BookMapper bm = null;
 
     /**
      * 获取图书类别
      * @return
      */
     @PostMapping("/book/getBookType")
-    public Result<List<BookType>> getBookType() {
-        return ResultUtils.success(bm.getBookType(), "获取图书类别成功");
+    public Result getBookType() {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
+        try {
+            return ResultUtils.success(bm.getBookType(), "获取图书类别成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
     }
 
     /**
@@ -36,11 +44,19 @@ public class BookController {
      */
     @PostMapping("/book/selectBookByType")
     public Result selectBookByType(int typeNo) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
         Result result = null;
-        if(typeNo==0)
-            result =  ResultUtils.success(bm.selectAllBook(), "获取全部图书信息");
-        else
-            result =  ResultUtils.success(bm.selectBookByType(typeNo), "按照图书类别查询成功");
+        try {
+            if (typeNo == 0)
+                result = ResultUtils.success(bm.selectAllBook(), "获取全部图书信息");
+            else
+                result = ResultUtils.success(bm.selectBookByType(typeNo), "按照图书类别查询成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 
@@ -51,8 +67,16 @@ public class BookController {
      */
     @PostMapping("/book/selectBookByName")
     public Result selectBookByName(String bookName) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
         Result result = null;
-        result = ResultUtils.success(bm.selectBookByName(bookName), "按照图书名查询成功");
+        try {
+            result = ResultUtils.success(bm.selectBookByName(bookName), "按照图书名查询成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 
@@ -63,8 +87,16 @@ public class BookController {
      */
     @PostMapping("/book/selectBookByISBN")
     public Result selectBookByISBN(String isbn) {
+        sqlSession = MybatisUtils.openSqlSession();
+        bm = sqlSession.getMapper(BookMapper.class);
         Result result = null;
-        result = ResultUtils.success(bm.selectBookByISBN(isbn), "按照图书ISBN查询成功");
+        try {
+            result = ResultUtils.success(bm.selectBookByISBN(isbn), "按照图书ISBN查询成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 

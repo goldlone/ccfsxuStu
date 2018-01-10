@@ -26,8 +26,8 @@ import java.util.Map;
  */
 @RestController
 public class MemberController {
-    private SqlSession sqlSession = MybatisUtils.openSqlSession();
-    private MemberMapper mm = sqlSession.getMapper(MemberMapper.class);
+    private SqlSession sqlSession = null;
+    private MemberMapper mm = null;
 
     /**
      * 获取年级集合
@@ -35,9 +35,16 @@ public class MemberController {
      */
     @PostMapping("/member/getGradeSet")
     public Result getGradeSet() {
+        sqlSession = MybatisUtils.openSqlSession();
+        mm = sqlSession.getMapper(MemberMapper.class);
         Result result = null;
-        List<Integer> list = mm.selectGradeSet();
-        result = ResultUtils.success(list, "获取年级集合成功");
+        try {
+            result = ResultUtils.success(mm.selectGradeSet(), "获取年级集合成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 
@@ -48,12 +55,16 @@ public class MemberController {
      */
     @PostMapping("/member/queryMember")
     public Result queryMember(Member member) {
+        sqlSession = MybatisUtils.openSqlSession();
+        mm = sqlSession.getMapper(MemberMapper.class);
         Result result = null;
-//        System.out.println(member);
-        List<UserInfo> list = mm.queryMember(member);
-//        for(UserInfo info: list)
-//            System.out.println(info);
-        result = ResultUtils.success(list, "查询会员信息成功");
+        try {
+            result = ResultUtils.success(mm.queryMember(member), "查询会员信息成功");
+        } catch (Exception e) {
+            return ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 
@@ -64,6 +75,8 @@ public class MemberController {
      */
     @PostMapping("/member/add")
     public Result addMember(Member member) {
+        sqlSession = MybatisUtils.openSqlSession();
+        mm = sqlSession.getMapper(MemberMapper.class);
         Result result = null;
         try {
             member.setPassword(DigestUtils.sha256Hex(member.getNo()));
@@ -77,8 +90,10 @@ public class MemberController {
                 result =  ResultUtils.error(1, "录入失败：数据有问题，数据库插入失败");
             }
         } catch (Exception e) {
-            result = ResultUtils.error(2, "录入失败："+e.getMessage());
+            result = ResultUtils.error(2, "异常："+e.getMessage());
             e.printStackTrace();
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -90,7 +105,16 @@ public class MemberController {
      */
     @PostMapping("/member/addByFile")
     public Result addMemberByFile(@RequestParam("file")MultipartFile file) {
-        Result result = ExcelUtils.importMemberInfo(file);
+        sqlSession = MybatisUtils.openSqlSession();
+        mm = sqlSession.getMapper(MemberMapper.class);
+        Result result = null;
+        try {
+            result = ExcelUtils.importMemberInfo(file);
+        } catch (Exception e) {
+            result =  ResultUtils.error(1, "异常："+e.getMessage());
+        } finally {
+            sqlSession.close();
+        }
         return result;
     }
 
@@ -108,6 +132,8 @@ public class MemberController {
             result = ResultUtils.success(null, "修改成功");
         }catch (Exception e) {
             result = ResultUtils.error(1, "更新失败："+e.getMessage());
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
