@@ -209,3 +209,14 @@ WHERE s.S_certNo = ? AND
       s.S_certNo=c.C_no AND
       s.S_memberNo=m.M_memberNo
 ORDER BY S_all DESC;
+
+
+SELECT S_certNo,
+        MAX(S_all) S_all,
+       MAX(S_first) S_first,
+       MAX(S_second) S_second,
+       MAX(S_third) S_third,
+       MAX(S_forth) S_forth,
+       MAX(S_fifth) S_fifth
+FROM Score
+GROUP BY S_certNo;

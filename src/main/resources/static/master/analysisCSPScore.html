@@ -153,14 +153,16 @@
     <!--<script src="../assets/js/my/analysisCSPScore.js"></script>-->
 
     <script type="text/javascript">
-      getCertSet();
+      showChart1();
+
+      // 获取认证集合
       function getCertSet() {
         $.ajax({
           url: "http://127.0.0.1:8080/csp/certSet",
           type: "post",
           success: function (res) {
             console.log(res);
-            if(res && res.code == 0) {
+            if(res && !res.code) {
               console.log("添加csp考试选项");
               for(var i = 0; i < res.data.length; i++) {
                 $("ul.dropdown-menu").append(
@@ -192,13 +194,13 @@
                       }
                       drawPie(chart_2, result.data[0].certName, statisticsArray);
                     } else {
-                      $("#chart_2").empty();
+//                      $("#chart_2").empty();
                       console.log("没有数据，清空显示。");
                       bootbox.alert({
                         size: "small",
                         title: "提示消息",
                         message: "没有数据，换另一次的CSP成绩吧"
-                      })
+                      });
                       // alert("没有数据！");
                     }// if
                   } else {
@@ -220,8 +222,41 @@
       var chart_1 = echarts.init(document.getElementById('chart_1'));
       var chart_2 = echarts.init(document.getElementById('chart_2'));
 
-      showChart();
-      function showChart() {
+      // 统计三围属性
+      function showChart1() {
+        $.ajax({
+          url: "http://127.0.0.1:8080/csp/certThreeScore",
+          type: "post",
+          success: function (res) {
+            getCertSet();
+            showChart2();
+            console.log(res);
+            if(res && !res.code) {
+              var certNameArray = new Array();
+              var maxArray = new Array();
+              var averageArray = new Array();
+              var minArray = new Array();
+              for (var i = 0; i < res.data.length; i++) {
+                certName = res.data[i].certName;
+                certNameArray.push(certName.substring(0, certName.indexOf("CCF")));
+                maxArray.push(res.data[i].max.all);
+                averageArray.push(res.data[i].average.all);
+                minArray.push(res.data[i].min.all);
+              }
+              drawLine2(chart_1, certNameArray, maxArray, averageArray, minArray);
+            } else {
+              bootbox.alert({
+                size: "small",
+                title: "提示消息",
+                message: "请求出错"
+              });
+            }
+          }
+        });
+      }
+      
+      // 统计得分人数（饼图）
+      function showChart2() {
         $.ajax({
           url: "http://127.0.0.1:8080/csp/certScore",
           type: "post",
@@ -245,19 +280,6 @@
               }
               drawPie(chart_2, res.data[0].certName, statisticsArray);
               $(".btn.dropdown-toggle").html('第十二次CCF计算机软件能力认证\n<span class="caret"></span>');
-
-              var certNameArray = new Array();
-              var maxArray = new Array();
-              var averageArray = new Array();
-              var minArray = new Array();
-              for (var i = 0; i < res.data.length; i++) {
-                certName = res.data[i].certName;
-                certNameArray.push(certName.substring(0, certName.indexOf("CCF")));
-                maxArray.push(res.data[i].max.all);
-                averageArray.push(res.data[i].average.all);
-                minArray.push(res.data[i].min.all);
-              }
-              drawLine2(chart_1, certNameArray, maxArray, averageArray, minArray);
             }
           },
           error: function (res) {

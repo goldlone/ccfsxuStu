@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -193,7 +194,31 @@ public class CSPController {
         sqlSession = MybatisUtils.openSqlSession();
         cm = sqlSession.getMapper(CSPMapper.class);
         try{
-            
+            List<ScoreInfo> list = new ArrayList<>();
+            ScoreInfo info = null;
+            List<Certification> certList = cm.getCertSet();
+            SingleScore max = null;
+            SingleScore average = null;
+            SingleScore min = null;
+            for(Certification cert: certList) {
+                info = new ScoreInfo();
+                info.setCertNo(cert.getNo());
+                info.setCertName(cert.getName());
+                max = cm.selectMaxScoreByCertNo(cert.getNo());
+                average = cm.selectAverageScoreByCertNo(cert.getNo());
+                min = cm.selectMinScoreByCertNo(cert.getNo());
+                if(max==null)
+                    max = new SingleScore();
+                if(average==null)
+                    average = new SingleScore();
+                if(min==null)
+                    min = new SingleScore();
+                info.setMax(max);
+                info.setAverage(average);
+                info.setMin(min);
+                list.add(info);
+            }
+            result = ResultUtils.success(list, "查询成功");
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
             e.printStackTrace();
@@ -202,6 +227,8 @@ public class CSPController {
         }
         return result;
     }
+
+//    public Result
 
     /**
      * 文件录入CSP成绩
