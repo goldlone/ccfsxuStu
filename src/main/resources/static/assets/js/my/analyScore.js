@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    url = "http://192.168.1.101:8080/csp/memberScore";
+    url = "http://127.0.0.1:8080/csp/memberScore";
     var data;
     var chart_1 = echarts.init(document.getElementById('chart_1'));
     var chart_2 = echarts.init(document.getElementById('chart_2'));
@@ -214,7 +214,7 @@ $(document).ready(function(){
 });
 
 function getData() {
-    url = "http://192.168.1.101:8080/csp/memberScore";
+    url = "http://127.0.0.1:8080/csp/memberScore";
     var data;
     $.post(url, function(result){
         // console.log(result);

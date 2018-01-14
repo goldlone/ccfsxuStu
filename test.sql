@@ -137,3 +137,75 @@ SELECT MAX(S_all) S_all,
        MAX(S_fifth) S_fifth
 FROM Score
 WHERE S_certNo=12;
+
+
+CREATE UNIQUE INDEX index_uq_member_type_name ON MemberType(MT_name);
+CREATE UNIQUE INDEX index_uq_degree_type_name ON DegreeType(DT_name);
+CREATE UNIQUE INDEX index_uq_power_type_name ON PowerType(PT_name);
+CREATE INDEX index_member_name ON Member(M_name);
+CREATE INDEX index_uq_member_email ON Member(M_email);
+CREATE INDEX index_member_grade ON Member(M_grade);
+CREATE INDEX index_member_endTime ON Member(M_endTime);
+
+CREATE UNIQUE INDEX index_uq_cert_name ON Certification(C_name);
+CREATE UNIQUE INDEX index_uq_cert_startTime ON Certification(C_startTime);
+CREATE UNIQUE INDEX index_score_certNo ON Score(S_certNo);
+CREATE UNIQUE INDEX index_score_memberNo ON Score(S_memberNo);
+
+CREATE UNIQUE INDEX index_uq_book_type_name ON BookType(BT_name);
+CREATE INDEX index_book_type ON BookInfo(B_typeNo);
+CREATE INDEX index_book_name ON BookInfo(B_name);
+CREATE INDEX index_borrow_book_isbn ON BorrowBook(BB_no);
+
+
+CREATE VIEW LoginView
+AS
+SELECT M_password, M_memberNo, M_power
+FROM Member;
+
+CREATE VIEW MemberInfoView
+AS
+SELECT m1.M_memberNo,m1.M_name,m1.M_stuNo,m1.M_phone,
+  m1.M_email,m1.M_gender,m1.M_discipline,m1.M_grade,
+  m1.M_class,d.DT_name,m1.M_id,m1.M_startTime,m1.M_endTime,
+  m2.MT_name,m1.M_power,p.PT_name,m1.M_addScore,
+  now()>m1.M_endTime as expired
+FROM Member m1, MemberType m2, PowerType p, DegreeType d
+WHERE m1.M_typeNo=m2.MT_no AND
+      m1.M_power=p.PT_no AND
+      m1.M_degreeNo=d.DT_no;
+
+CREATE VIEW ApplicationView
+AS
+SELECT a.A_certNo,c.C_name,m.M_name,a.A_memberNo,m.M_gender,
+  m.M_id,m.M_phone,m.M_email,a.A_language,d.DT_name,m.M_grade,
+  a.A_purpose,a.A_purposeUniversity,a.A_username,a.A_password,
+  m.M_photo
+FROM Application a,Certification c,Member m,DegreeType d
+WHERE a.A_certNo=c.C_no AND
+      a.A_memberNo=m.M_memberNo AND
+      m.M_degreeNo=d.DT_no;
+
+CREATE VIEW ScoreInfoView
+AS
+SELECT s.S_certNo,c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+  s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_certNo=c.C_no AND
+      s.S_memberNo=m.M_memberNo;
+
+CREATE VIEW BookInfoView
+AS
+SELECT b1.B_no,b1.B_name,b2.BT_name,b1.B_author,b1.B_publicer,
+  b1.B_publiceDate,b1.B_price,b1.B_inventory
+FROM BookInfo b1,BookType b2
+WHERE b1.B_typeNo=b2.BT_no;
+
+
+SELECT s.S_certNo,c.C_name,m.M_name,s.S_memberNo,s.S_all,s.S_first,
+  s.S_second,s.S_third,s.S_forth,s.S_fifth
+FROM Score s,Certification c,Member m
+WHERE s.S_certNo = ? AND
+      s.S_certNo=c.C_no AND
+      s.S_memberNo=m.M_memberNo
+ORDER BY S_all DESC;

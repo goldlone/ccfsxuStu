@@ -543,7 +543,9 @@ function getScoreByNo() {
     data: $("#selectScoreByNoForm").serialize(),
     success: function (res) {
       console.log(res);
-      showScore(res.data);
+      if(res.data!=null) {
+        showScore(res.data);
+      }
     },
     error: function (res) {
       console.log(res);
@@ -554,7 +556,6 @@ function getScoreByNo() {
 function showScore(data) {
   $("#score-content").empty();
   var str = "";
-  // if()
   for(var i=0; i<data.length; i++) {
     str = str + " <tr> <td>"+
       data[i].memberNo+"</td> <td>"+

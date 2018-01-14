@@ -59,13 +59,13 @@ public class MemberController {
         mm = sqlSession.getMapper(MemberMapper.class);
         Result result = null;
         try {
-            result = ResultUtils.success(mm.queryMember(member), "查询会员信息成功");
+            return ResultUtils.success(mm.queryMember(member), "查询会员信息成功");
         } catch (Exception e) {
+            e.printStackTrace();
             return ResultUtils.error(1, "异常："+e.getMessage());
         } finally {
             sqlSession.close();
         }
-        return result;
     }
 
     /**

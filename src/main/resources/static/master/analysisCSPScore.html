@@ -144,12 +144,129 @@
     <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-    
+
     
     <!-- Echarts js -->
     <script src="../assets/js/my/echarts.min.js"></script>
     <script src="../assets/js/my/drawCharts.js"></script>
-    <script src="../assets/js/my/analysisCSPScore.js"></script>
+    <script src="../assets/js/bootbox.min.js"></script>
+    <!--<script src="../assets/js/my/analysisCSPScore.js"></script>-->
+
+    <script type="text/javascript">
+      getCertSet();
+      function getCertSet() {
+        $.ajax({
+          url: "http://127.0.0.1:8080/csp/certSet",
+          type: "post",
+          success: function (res) {
+            console.log(res);
+            if(res && res.code == 0) {
+              console.log("添加csp考试选项");
+              for(var i = 0; i < res.data.length; i++) {
+                $("ul.dropdown-menu").append(
+                  '<li role="presentation">\
+                      <a class="select-questionNo" id="select-questionNo-' + res.data[i].no + '" role="menuitem" tabindex="-1" style="cursor: pointer;">' + res.data[i].name + '</a>\
+                        </li>'
+                );
+              }
+              $("a.select-questionNo").click(function(){
+                $(".btn.dropdown-toggle").html($(this).text() + '\n<span class="caret"></span>');
+                var domId = $(this).attr('id');
+                $.post("http://127.0.0.1:8080/csp/certScore", {
+                  certNo: parseInt(domId.substring(domId.lastIndexOf("-") + 1))
+                }, function(result){
+                  console.log(result);
+                  if (result && !result.code) {
+                    var statisticsArray = [0, 0, 0, 0, 0];
+                    if (result.data.length) { // 有数据
+                      for (var i = 0; i < result.data.length; i++) {
+                        if (result.data[i].all < 100) {
+                          statisticsArray[0]++;
+                        } else if (result.data[i].all < 200) {
+                          statisticsArray[1]++;
+                        } else if (result.data[i].all < 300) {
+                          statisticsArray[2]++;
+                        } else {
+                          statisticsArray[3]++;
+                        }
+                      }
+                      drawPie(chart_2, result.data[0].certName, statisticsArray);
+                    } else {
+                      $("#chart_2").empty();
+                      console.log("没有数据，清空显示。");
+                      bootbox.alert({
+                        size: "small",
+                        title: "提示消息",
+                        message: "没有数据，换另一次的CSP成绩吧"
+                      })
+                      // alert("没有数据！");
+                    }// if
+                  } else {
+                    alert("网络请求出错！");
+                  }
+
+                }); // post
+              }); // click
+            } else {
+              // showAlertMessage(res.msg);
+            }
+          },
+          error: function (res) {
+            console.log(res);
+          }
+        });
+      }
+
+      var chart_1 = echarts.init(document.getElementById('chart_1'));
+      var chart_2 = echarts.init(document.getElementById('chart_2'));
+
+      showChart();
+      function showChart() {
+        $.ajax({
+          url: "http://127.0.0.1:8080/csp/certScore",
+          type: "post",
+          data: {
+            certNo: 12
+          },
+          success: function (res) {
+            console.log(res);
+            if (res && !res.code) {
+              var statisticsArray = [0, 0, 0, 0, 0];
+              for (var i = 0; i < res.data.length; i++) {
+                if (res.data[i].all < 100) {
+                  statisticsArray[0]++;
+                } else if (res.data[i].all < 200) {
+                  statisticsArray[1]++;
+                } else if (res.data[i].all < 300) {
+                  statisticsArray[2]++;
+                } else {
+                  statisticsArray[3]++;
+                }
+              }
+              drawPie(chart_2, res.data[0].certName, statisticsArray);
+              $(".btn.dropdown-toggle").html('第十二次CCF计算机软件能力认证\n<span class="caret"></span>');
+
+              var certNameArray = new Array();
+              var maxArray = new Array();
+              var averageArray = new Array();
+              var minArray = new Array();
+              for (var i = 0; i < res.data.length; i++) {
+                certName = res.data[i].certName;
+                certNameArray.push(certName.substring(0, certName.indexOf("CCF")));
+                maxArray.push(res.data[i].max.all);
+                averageArray.push(res.data[i].average.all);
+                minArray.push(res.data[i].min.all);
+              }
+              drawLine2(chart_1, certNameArray, maxArray, averageArray, minArray);
+            }
+          },
+          error: function (res) {
+            console.log(res);
+          }
+        });
+      }
+
+    </script>
 
   </body>
 </html>

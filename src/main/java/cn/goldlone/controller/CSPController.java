@@ -112,12 +112,23 @@ public class CSPController {
         memberNo = "62151G";
         try{
             List<ScoreInfo> list = cm.selectScoreByMemberNo(memberNo);
-            ScoreInfo info = null;
-            for(int i=0; i<list.size(); i++) {
-                info = list.get(i);
-                info.setMax(cm.selectMaxScoreByCertNo(info.getCertNo()));
-                info.setAverage(cm.selectAverageScoreByCertNo(info.getCertNo()));
-                info.setMin(cm.selectMinScoreByCertNo(info.getCertNo()));
+            for (ScoreInfo info : list) {
+                System.out.println(info);
+                SingleScore ss = cm.selectMaxScoreByCertNo(info.getCertNo());
+                if (ss == null)
+                    info.setMax(new SingleScore());
+                else
+                    info.setMax(ss);
+                ss = cm.selectAverageScoreByCertNo(info.getCertNo());
+                if (ss == null)
+                    info.setAverage(new SingleScore());
+                else
+                    info.setAverage(ss);
+                ss = cm.selectMinScoreByCertNo(info.getCertNo());
+                if (ss == null)
+                    info.setMin(new SingleScore());
+                else
+                    info.setMin(ss);
             }
             result = ResultUtils.success(list, "获取成绩成功");
         } catch (Exception e) {
@@ -146,13 +157,18 @@ public class CSPController {
         sqlSession = MybatisUtils.openSqlSession();
         cm = sqlSession.getMapper(CSPMapper.class);
         try{
+            System.out.println("QAQ:"+certNo);
             List<ScoreInfo> list = cm.selectScoreByNo(certNo);
-            ScoreInfo info = null;
             SingleScore max = cm.selectMaxScoreByCertNo(certNo);
             SingleScore average = cm.selectAverageScoreByCertNo(certNo);
             SingleScore min = cm.selectMinScoreByCertNo(certNo);
-            for(int i=0; i<list.size(); i++) {
-                info = list.get(i);
+            if(max==null)
+                max = new SingleScore();
+            if(average==null)
+                average = new SingleScore();
+            if(min==null)
+                min = new SingleScore();
+            for (ScoreInfo info : list) {
                 info.setMax(max);
                 info.setAverage(average);
                 info.setMin(min);
@@ -163,6 +179,26 @@ public class CSPController {
             e.printStackTrace();
         } finally {
            sqlSession.close();
+        }
+        return result;
+    }
+
+    /**
+     * 获取历次CSP的三围属性
+     * @return
+     */
+    @PostMapping("/csp/certThreeScore")
+    public Result getCertThreeScore() {
+        Result result = null;
+        sqlSession = MybatisUtils.openSqlSession();
+        cm = sqlSession.getMapper(CSPMapper.class);
+        try{
+            
+        } catch (Exception e) {
+            result = ResultUtils.error(1, "异常："+e.getMessage());
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
         }
         return result;
     }
@@ -231,6 +267,7 @@ public class CSPController {
             result = ResultUtils.success(cm.addCert(cert), "查询CSP成绩成功");
         } catch (Exception e) {
             result = ResultUtils.error(1, "异常："+e.getMessage());
+            e.printStackTrace();
         } finally {
             sqlSession.close();
         }

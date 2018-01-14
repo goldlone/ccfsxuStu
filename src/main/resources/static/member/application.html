@@ -7,7 +7,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="/assets/img/favicon.ico">
+	<link rel="icon" href="../assets/img/favicon.ico">
 
 	<title>CSP预报名</title>
 
@@ -204,12 +204,12 @@
 		<script src="../assets/js/bootbox.min.js"></script>
 
   	<script text="text/javascript">
-      getCertSetNotStart();
-      getMemberIfo();
+//      getCertSetNotStart();
+//      getMemberIfo();
       // 获取会员信息
 			function getMemberIfo() {
 				$.ajax({
-					url: "/getMemberInfo",
+					url: "http://127.0.0.1:8080/getMemberInfo",
 					type: "POST",
           success: function (res) {
 					  if(res.ret) {

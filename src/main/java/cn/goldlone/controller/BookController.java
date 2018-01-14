@@ -57,8 +57,9 @@ public class BookController {
         bm = sqlSession.getMapper(BookMapper.class);
         Result result = null;
         try {
-            if (typeNo == 0)
-                result = ResultUtils.success(bm.selectAllBook(), "获取全部图书信息");
+            if (typeNo == 0) {
+                return ResultUtils.success(bm.selectAllBook(), "获取全部图书信息");
+            }
             else
                 result = ResultUtils.success(bm.selectBookByType(typeNo), "按照图书类别查询成功");
         } catch (Exception e) {

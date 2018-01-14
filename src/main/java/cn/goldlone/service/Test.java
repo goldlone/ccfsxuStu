@@ -186,9 +186,10 @@ public class Test {
 //        for(ScoreInfo info: list)
 //            System.out.println(info);
         // 按认证编号查询查询所有人的成绩
-//        List<ScoreInfo> list = cm.selectScoreByNo(1);
-//        for(ScoreInfo info: list)
-//            System.out.println(info);
+//        sqlSession.close();
+        List<ScoreInfo> list = cm.selectScoreByNo(12);
+        for(ScoreInfo info: list)
+            System.out.println(info);
         // 按会员号查询查询所有认证的成绩
 //        List<ScoreInfo> list = cm.selectScoreByMemberNo("62151G");
 //        for(ScoreInfo info: list)
@@ -207,6 +208,8 @@ public class Test {
 //        List<ScoreInfo> list = cm.selectAddScore();
 //        for(ScoreInfo info: list)
 //            System.out.println(info);
+//        SingleScore ss = cm.selectAverageScoreByCertNo(1);
+//        System.out.println(ss.toString());
 
 
         BookMapper bm = sqlSession.getMapper(BookMapper.class);
