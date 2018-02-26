@@ -151,6 +151,7 @@
     <script src="../assets/js/my/drawCharts.js"></script>
     <script src="../assets/js/bootbox.min.js"></script>
     <!--<script src="../assets/js/my/analysisCSPScore.js"></script>-->
+    <script src="../assets/js/ccfsxu.js"></script>
 
     <script type="text/javascript">
       showChart1();
@@ -158,7 +159,7 @@
       // 获取认证集合
       function getCertSet() {
         $.ajax({
-          url: "http://127.0.0.1:8080/csp/certSet",
+          url: myUrl+"/csp/certSet",
           type: "post",
           success: function (res) {
             console.log(res);
@@ -225,7 +226,7 @@
       // 统计三围属性
       function showChart1() {
         $.ajax({
-          url: "http://127.0.0.1:8080/csp/certThreeScore",
+          url: myUrl+"/csp/certThreeScore",
           type: "post",
           success: function (res) {
             getCertSet();
@@ -258,7 +259,7 @@
       // 统计得分人数（饼图）
       function showChart2() {
         $.ajax({
-          url: "http://127.0.0.1:8080/csp/certScore",
+          url: myUrl+"/csp/certScore",
           type: "post",
           data: {
             certNo: 12

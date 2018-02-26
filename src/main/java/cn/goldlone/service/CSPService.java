@@ -1,6 +1,7 @@
 package cn.goldlone.service;
 
 import cn.goldlone.model.ImportScore;
+import cn.goldlone.model.Result;
 import cn.goldlone.po.Score;
 
 import java.util.List;
@@ -17,5 +18,7 @@ public interface CSPService {
     public boolean addScore(List<Score> list);
     // 使用导入成绩信息，批量添加CSP认证成绩
     public boolean ImportScoreInfo(List<ImportScore> list);
+
+    public Result getScoreByCertNo(int certNo);
 
 }

@@ -5,6 +5,7 @@ import cn.goldlone.model.Result;
 import cn.goldlone.model.ScoreInfo;
 import cn.goldlone.model.SingleScore;
 import cn.goldlone.po.Certification;
+import cn.goldlone.service.impl.CSPServiceImpl;
 import cn.goldlone.utils.ExcelUtils;
 import cn.goldlone.utils.MybatisUtils;
 import cn.goldlone.utils.ResultUtils;
@@ -182,6 +183,7 @@ public class CSPController {
            sqlSession.close();
         }
         return result;
+//        return new CSPServiceImpl().getScoreByCertNo(certNo);
     }
 
     /**
@@ -226,6 +228,7 @@ public class CSPController {
             sqlSession.close();
         }
         return result;
+//        return new CSPServiceImpl().getCertThreeScore();
     }
 
 //    public Result

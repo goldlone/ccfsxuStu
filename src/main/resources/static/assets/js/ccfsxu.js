@@ -1,4 +1,5 @@
-var myUrl = "http://127.0.0.1:8080";
+// var myUrl = "https://www.goldlone.cn/ccfsxu";
+var myUrl = "http://localhost:8080";
 var xhr = null;
 
 /***  工具方法  ***/
@@ -892,6 +893,7 @@ function callbackUploadBookFile() {
   }
 }
 
+/***  selectCSPScore.html  ***/
 
 
 

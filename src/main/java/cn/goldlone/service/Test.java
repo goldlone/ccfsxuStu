@@ -91,67 +91,67 @@ public class Test {
 
         CSPMapper cm = sqlSession.getMapper(CSPMapper.class);
         // 添加CSP认证
-//        Certification cert1 = new Certification("第一次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2014-03-15 13:30:00"),
-//                Timestamp.valueOf("2014-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert2 = new Certification("第二次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2014-09-15 13:30:00"),
-//                Timestamp.valueOf("2014-09-15 17:30:00"),
-//                180, 300);
-//        Certification cert3 = new Certification("第三次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2014-12-15 13:30:00"),
-//                Timestamp.valueOf("2014-12-15 17:30:00"),
-//                180, 300);
-//        Certification cert4 = new Certification("第四次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2015-03-15 13:30:00"),
-//                Timestamp.valueOf("2015-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert5 = new Certification("第五次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2015-03-15 13:30:00"),
-//                Timestamp.valueOf("2015-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert6 = new Certification("第六次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2015-03-15 13:30:00"),
-//                Timestamp.valueOf("2015-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert7 = new Certification("第七次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2016-03-15 13:30:00"),
-//                Timestamp.valueOf("2016-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert8 = new Certification("第八次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2016-03-15 13:30:00"),
-//                Timestamp.valueOf("2016-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert9 = new Certification("第九次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2016-03-15 13:30:00"),
-//                Timestamp.valueOf("2016-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert10 = new Certification("第十次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2017-03-15 13:30:00"),
-//                Timestamp.valueOf("2017-03-15 17:30:00"),
-//                180, 300);
-//        Certification cert11 = new Certification("第十一次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2017-09-15 13:30:00"),
-//                Timestamp.valueOf("2017-09-15 17:30:00"),
-//                180, 300);
-//        Certification cert12 = new Certification("第十二次CCF计算机软件能力认证",
-//                Timestamp.valueOf("2017-12-21 13:30:00"),
-//                Timestamp.valueOf("2017-12-21 17:30:00"),
-//                180, 300);
-//        cm.addCert(cert1);
-//        cm.addCert(cert2);
-//        cm.addCert(cert3);
-//        cm.addCert(cert4);
-//        cm.addCert(cert5);
-//        cm.addCert(cert6);
-//        cm.addCert(cert7);
-//        cm.addCert(cert8);
-//        cm.addCert(cert9);
-//        cm.addCert(cert10);
-//        cm.addCert(cert11);
-//        cm.addCert(cert12);
-//        sqlSession.commit();
+        Certification cert1 = new Certification("第一次CCF计算机软件能力认证",
+                Timestamp.valueOf("2014-03-15 13:30:00"),
+                Timestamp.valueOf("2014-03-15 17:30:00"),
+                180, 300);
+        Certification cert2 = new Certification("第二次CCF计算机软件能力认证",
+                Timestamp.valueOf("2014-09-15 13:30:00"),
+                Timestamp.valueOf("2014-09-15 17:30:00"),
+                180, 300);
+        Certification cert3 = new Certification("第三次CCF计算机软件能力认证",
+                Timestamp.valueOf("2014-12-15 13:30:00"),
+                Timestamp.valueOf("2014-12-15 17:30:00"),
+                180, 300);
+        Certification cert4 = new Certification("第四次CCF计算机软件能力认证",
+                Timestamp.valueOf("2015-03-15 13:30:00"),
+                Timestamp.valueOf("2015-03-15 17:30:00"),
+                180, 300);
+        Certification cert5 = new Certification("第五次CCF计算机软件能力认证",
+                Timestamp.valueOf("2015-03-15 13:30:00"),
+                Timestamp.valueOf("2015-03-15 17:30:00"),
+                180, 300);
+        Certification cert6 = new Certification("第六次CCF计算机软件能力认证",
+                Timestamp.valueOf("2015-03-15 13:30:00"),
+                Timestamp.valueOf("2015-03-15 17:30:00"),
+                180, 300);
+        Certification cert7 = new Certification("第七次CCF计算机软件能力认证",
+                Timestamp.valueOf("2016-03-15 13:30:00"),
+                Timestamp.valueOf("2016-03-15 17:30:00"),
+                180, 300);
+        Certification cert8 = new Certification("第八次CCF计算机软件能力认证",
+                Timestamp.valueOf("2016-03-15 13:30:00"),
+                Timestamp.valueOf("2016-03-15 17:30:00"),
+                180, 300);
+        Certification cert9 = new Certification("第九次CCF计算机软件能力认证",
+                Timestamp.valueOf("2016-03-15 13:30:00"),
+                Timestamp.valueOf("2016-03-15 17:30:00"),
+                180, 300);
+        Certification cert10 = new Certification("第十次CCF计算机软件能力认证",
+                Timestamp.valueOf("2017-03-15 13:30:00"),
+                Timestamp.valueOf("2017-03-15 17:30:00"),
+                180, 300);
+        Certification cert11 = new Certification("第十一次CCF计算机软件能力认证",
+                Timestamp.valueOf("2017-09-15 13:30:00"),
+                Timestamp.valueOf("2017-09-15 17:30:00"),
+                180, 300);
+        Certification cert12 = new Certification("第十二次CCF计算机软件能力认证",
+                Timestamp.valueOf("2017-12-21 13:30:00"),
+                Timestamp.valueOf("2017-12-21 17:30:00"),
+                180, 300);
+        cm.addCert(cert1);
+        cm.addCert(cert2);
+        cm.addCert(cert3);
+        cm.addCert(cert4);
+        cm.addCert(cert5);
+        cm.addCert(cert6);
+        cm.addCert(cert7);
+        cm.addCert(cert8);
+        cm.addCert(cert9);
+        cm.addCert(cert10);
+        cm.addCert(cert11);
+        cm.addCert(cert12);
+        sqlSession.commit();
         // 获取认证名集合
 //        List<Certification> list = cm.getCertSet();
 //        for(Certification cert: list)
@@ -187,9 +187,9 @@ public class Test {
 //            System.out.println(info);
         // 按认证编号查询查询所有人的成绩
 //        sqlSession.close();
-        List<ScoreInfo> list = cm.selectScoreByNo(12);
-        for(ScoreInfo info: list)
-            System.out.println(info);
+//        List<ScoreInfo> list = cm.selectScoreByNo(12);
+//        for(ScoreInfo info: list)
+//            System.out.println(info);
         // 按会员号查询查询所有认证的成绩
 //        List<ScoreInfo> list = cm.selectScoreByMemberNo("62151G");
 //        for(ScoreInfo info: list)

@@ -220,3 +220,192 @@ SELECT S_certNo,
        MAX(S_fifth) S_fifth
 FROM Score
 GROUP BY S_certNo;
+
+
+CREATE TRIGGER borrow_book
+AFTER INSERT ON BorrowBook
+FOR EACH ROW
+BEGIN
+  UPDATE BookInfo SET B_inventory=B_inventory-1 WHERE B_no=BorrowBook.BB_bookNo;
+END;
+
+CREATE TRIGGER back_book
+AFTER UPDATE ON BorrowBook
+FOR EACH ROW
+BEGIN
+  UPDATE BookInfo SET B_inventory=B_inventory+1 WHERE B_no=BorrowBook.BB_bookNo;
+END;
+
+CREATE TRIGGER add_score
+AFTER INSERT ON Score
+FOR EACH ROW
+BEGIN
+  UPDATE Member SET M_addScore=Score.S_certNo WHERE Score.S_all>200 AND M_addScore=0;
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO `BookInfo` VALUES ('1111', '编译原理', '7', '郑超', '山西大学出版社', '2018-01-08', '999.99', '6');
+INSERT INTO `BookInfo` VALUES ('2222', 'QQ', '10', '确定', '去去去', '2018-01-06', '21.9', '20');
+INSERT INTO `BookInfo` VALUES ('3333', 'Linux私房菜', '3', '鸟哥', '人民邮电出版社', '2012-10-01', '97', '1');
+INSERT INTO `BookInfo` VALUES ('9787040207705', '编译程序设计原理', '7', '金成植，金英', '高等教育出版社', '2000-07-01', '40', '1');
+INSERT INTO `BookInfo` VALUES ('9787115373991', 'Flask Web开发，基于Python的Web应用开发实战', '2', 'Miguel Grinberg', '人民邮电出版社', '2015-01-01', '59', '1');
+
+
+
+-- ----------------------------
+-- Records of BorrowBook
+-- ----------------------------
+INSERT INTO `BorrowBook` VALUES ('1', '1111', '62151G', '2018-01-11 01:55:48', '2018-01-11 02:34:56');
+INSERT INTO `BorrowBook` VALUES ('3', '1111', '62151G', '2018-01-11 01:59:18', null);
+INSERT INTO `BorrowBook` VALUES ('4', '1111', '62151G', '2018-01-11 02:40:19', null);
+
+
+
+INSERT INTO `Score` VALUES ('8', '62151G', '230', '100', '90', '40', '0', '0');
+INSERT INTO `Score` VALUES ('8', '62496G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('8', '62595G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('9', '62151G', '170', '100', '70', '0', '0', '0');
+INSERT INTO `Score` VALUES ('9', '62496G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('9', '62595G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('10', '62151G', '130', '100', '30', '0', '0', '0');
+INSERT INTO `Score` VALUES ('10', '62496G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('10', '62595G', '250', '100', '100', '50', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62151G', '210', '100', '100', '10', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62202G', '140', '100', '40', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62214G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62373G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62419G', '80', '70', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62626G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62637G', '160', '100', '60', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '62664G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '63184G', '160', '100', '30', '30', '0', '0');
+INSERT INTO `Score` VALUES ('11', '63317G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '64345G', '140', '100', '40', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '64352G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '64676G', '5', '0', '0', '0', '5', '0');
+INSERT INTO `Score` VALUES ('11', '64822G', '220', '100', '0', '20', '100', '0');
+INSERT INTO `Score` VALUES ('11', '66031G', '70', '70', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '66595G', '130', '100', '0', '0', '0', '30');
+INSERT INTO `Score` VALUES ('11', '68083G', '140', '100', '30', '10', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73084G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73092G', '160', '100', '30', '30', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73298G', '140', '100', '40', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73592G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73711G', '120', '100', '20', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '73971G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '78094G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '78172G', '90', '90', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '78263G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82379G', '225', '100', '90', '0', '5', '30');
+INSERT INTO `Score` VALUES ('11', '82382G', '120', '100', '20', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82383G', '160', '100', '30', '0', '0', '30');
+INSERT INTO `Score` VALUES ('11', '82384G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82654G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82655G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82656G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82657G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82658G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82659G', '90', '90', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82660G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82661G', '90', '90', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82663G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82664G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82666G', '130', '100', '30', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82667G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('11', '82668G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '52886G', '130', '100', '30', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62151G', '270', '100', '100', '0', '70', '0');
+INSERT INTO `Score` VALUES ('12', '62202G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62212G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62213G', '210', '100', '100', '0', '10', '0');
+INSERT INTO `Score` VALUES ('12', '62214G', '160', '100', '30', '0', '30', '0');
+INSERT INTO `Score` VALUES ('12', '62350G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62372G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62373G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62378G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62379G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62381G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62382G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62419G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62577G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62595G', '210', '100', '90', '0', '20', '0');
+INSERT INTO `Score` VALUES ('12', '62626G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62664G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62715G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '62847G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '63184G', '240', '100', '100', '0', '40', '0');
+INSERT INTO `Score` VALUES ('12', '63304G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '63305G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '63317G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '64345G', '120', '20', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '64822G', '185', '100', '10', '5', '70', '0');
+INSERT INTO `Score` VALUES ('12', '64827G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '64912G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '65354G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '65356G', '90', '0', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '65730G', '220', '100', '90', '0', '30', '0');
+INSERT INTO `Score` VALUES ('12', '66031G', '120', '100', '20', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '66595G', '150', '100', '30', '0', '20', '0');
+INSERT INTO `Score` VALUES ('12', '68082G', '150', '100', '30', '0', '20', '0');
+INSERT INTO `Score` VALUES ('12', '68083G', '225', '100', '100', '5', '20', '0');
+INSERT INTO `Score` VALUES ('12', '68084G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '73084G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '73092G', '225', '100', '100', '5', '20', '0');
+INSERT INTO `Score` VALUES ('12', '73298G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '73308G', '220', '100', '100', '0', '20', '0');
+INSERT INTO `Score` VALUES ('12', '73971G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '78172G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '78263G', '200', '100', '90', '0', '10', '0');
+INSERT INTO `Score` VALUES ('12', '79835G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '81761G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82363G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82379G', '110', '100', '10', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82382G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82383G', '210', '100', '100', '0', '10', '0');
+INSERT INTO `Score` VALUES ('12', '82384G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82386G', '100', '100', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82395G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82403G', '130', '100', '30', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82407G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82438G', '230', '100', '100', '0', '30', '0');
+INSERT INTO `Score` VALUES ('12', '82448G', '230', '100', '100', '0', '30', '0');
+INSERT INTO `Score` VALUES ('12', '82480G', '0', '0', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82493G', '20', '20', '0', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82496G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82661G', '130', '100', '30', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82666G', '190', '100', '90', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82668G', '200', '100', '100', '0', '0', '0');
+INSERT INTO `Score` VALUES ('12', '82674G', '30', '30', '0', '0', '0', '0');
+
+
+
+
+
+
+
+

@@ -16,8 +16,8 @@
             <!-- 配置数据库链接信息 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/ccfsxu?characterEncoding=UTF-8"/>
-                <property name="username" value="root"/>
+                <property name="url" value="jdbc:mysql://123.207.159.214:3306/ccfsxu?characterEncoding=UTF-8&amp;useSSL=false"/>
+                <property name="username" value="cn"/>
                 <property name="password" value="cheng521"/>
             </dataSource>
         </environment>
