@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" th:href="@{/assets/img/favicon.ico}">
+
+    <title>山西大学党委选课系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/assets/css/floating-labels.css}" rel="stylesheet">
+  </head>
+
+  <body>
+    <form class="form-signin" th:action="@{/loginVerify}" method="post">
+      <div class="text-center mb-4">
+        <img class="mb-4" th:src="@{/assets/img/logo.png}" alt="" width="128" height="128">
+        <h1 class="h3 mb-3 font-weight-normal">CCFSXU会员管理系统</h1>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="no" name="email" class="form-control" placeholder="邮箱" required autofocus>
+        <label for="no">邮箱</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
+        <label for="inputPassword">密码</label>
+      </div>
+
+      <!--/*@thymesVar id="tips" type="java.lang.String"*/-->
+      <div class="alert alert-danger" role="alert" th:if="${tips!=null}" th:text="${tips}"></div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+  </body>
+</html>

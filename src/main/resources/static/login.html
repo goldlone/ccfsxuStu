@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <title>CCF会员管理系统</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/floating-labels.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <form class="form-signin" id="loginForm">
+    <div class="text-center mb-4">
+      <img class="mb-4" src="assets/img/logo.png" alt="" width="128" height="128">
+      <h1 class="h3 mb-3 font-weight-normal">登录CCFSXU会员管理系统</h1>
+    </div>
+
+
+
+    <div class="form-label-group">
+      <input type="text" id="inputEmail" name="email" class="form-control" placeholder="邮箱" required autofocus>
+      <label for="inputEmail">邮箱</label>
+    </div>
+
+    <div class="form-label-group">
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
+      <label for="inputPassword">密码</label>
+    </div>
+
+    <div id="warnInfo" class="alert alert-danger" role="alert"></div>
+
+    <a class="btn btn-lg btn-primary btn-block" onclick="login()">登录</a>
+  </form>
+  <script type="text/javascript" src="assets/js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/ccfsxu.js"></script>
+
+  <script type="text/javascript">
+    $("#warnInfo").hide();
+  </script>
+</body>
+</html>
+
